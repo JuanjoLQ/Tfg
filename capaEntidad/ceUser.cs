@@ -1,19 +1,21 @@
 ﻿namespace capaEntidad
 {
-    public class ceCliente
+    public class ceUser
     {
-        /*
-         * public UserControl(bool isAdmin, string email, string password)
+        public ceUser()
+        {
+
+        }
+        public ceUser(int isAdmin, string email, string password)
         {
 
             this.Email = email;
             this.Password = password;
             this.isAdmin = isAdmin;
         }
-        */
         public string Email { get; set; }
         public string Password { get; set; }
-        public bool isAdmin { get; set; }
+        public int isAdmin { get; set; }
 
         public override string ToString()
         {
@@ -21,3 +23,18 @@
         }
     }
 }
+
+//
+//
+//
+/*
+parsear tipos de datos a este objeto
+user.Id = (int) txtId.Value;
+
+user.Nombre = tbNombre.Text;;
+
+user.Foto = picFoto.ImageLocation;
+
+
+
+*/
