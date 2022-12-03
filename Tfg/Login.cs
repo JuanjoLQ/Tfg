@@ -1,5 +1,6 @@
 using capaEntidad;
 using capaNegocio;
+using capaPresentacion;
 using Microsoft.VisualBasic.ApplicationServices;
 using System.Diagnostics;
 
@@ -16,7 +17,7 @@ namespace Tfg
 
         private void tbEmail_Focus(object sender, EventArgs e)
         {
-            if (tbEmail.Text == "Email")
+            if (tbEmail.Text == Res.Email)
             {
                 tbEmail.Text = string.Empty;
                 tbEmail.ForeColor = Color.Black;
@@ -27,14 +28,14 @@ namespace Tfg
         {
             if (tbEmail.Text == string.Empty)
             {
-                tbEmail.Text = "Email";
+                tbEmail.Text = Res.Email;
                 tbEmail.ForeColor = Color.DimGray;
             }
         }
 
         private void tbPassword_Focus(object sender, EventArgs e)
         {
-            if (tbPassword.Text == "Password")
+            if (tbPassword.Text == Res.Pass)
             {
                 tbPassword.Text = string.Empty;
                 tbPassword.ForeColor = Color.Black;
@@ -45,7 +46,7 @@ namespace Tfg
         {
             if (tbPassword.Text == string.Empty)
             {
-                tbPassword.Text = "Password";
+                tbPassword.Text = Res.Pass;
                 tbPassword.ForeColor = Color.DimGray;
             }
         }
@@ -71,7 +72,7 @@ namespace Tfg
 
         private void tbREmail_Focus(object sender, EventArgs e)
         {
-            if (tbREmail.Text == "Email")
+            if (tbREmail.Text == Res.Email)
             {
                 tbREmail.Text = string.Empty;
                 tbREmail.ForeColor = Color.Black;
@@ -81,14 +82,14 @@ namespace Tfg
         {
             if (tbREmail.Text == string.Empty)
             {
-                tbREmail.Text = "Email";
+                tbREmail.Text = Res.Email;
                 tbREmail.ForeColor = Color.DimGray;
             }
         }
 
         private void tbRPassword_Focus(object sender, EventArgs e)
         {
-            if (tbRPassword.Text == "Password")
+            if (tbRPassword.Text == Res.Pass)
             {
                 tbRPassword.Text = string.Empty;
                 tbRPassword.ForeColor = Color.Black;
@@ -98,7 +99,7 @@ namespace Tfg
         {
             if (tbRPassword.Text == string.Empty)
             {
-                tbRPassword.Text = "Password";
+                tbRPassword.Text = Res.Pass;
                 tbRPassword.ForeColor = Color.DimGray;
 
             }
@@ -124,12 +125,53 @@ namespace Tfg
 
         private void Login_Load(object sender, EventArgs e)
         {
+            if(ceGlobals.lang == null)
+            {
+                Debug.WriteLine("Form load Lang Default");
+                ceGlobals.lang = "en-US";
+            }
+                
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(ceGlobals.lang);
+            cbLanguage.SelectedIndex = 0;
+            GetLanguage();
+        }
 
+        private void GetLanguage()
+        {
+            lbLogin.Text = Res.Login;
+            tbEmail.Text = Res.Email;
+            tbPassword.Text = Res.Pass;
+            btnRegistrar.Text = Res.Register;
+            btnLogin.Text = Res.Login;
+
+            lbRegister.Text = Res.Register;
+            tbREmail.Text = Res.Email;
+            tbRPassword.Text= Res.Pass;
+            btnRRegistrar.Text = Res.Register;   
+
+            btnSalir.Text = Res.Exit;
+
+        }
+
+        private void cbLanguage_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cbLanguage.SelectedItem.Equals("ES - Spanish"))
+            {
+                ceGlobals.lang = "";
+            }
+            else
+            {
+                ceGlobals.lang = "en-US";
+            }
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(ceGlobals.lang);
+            GetLanguage();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
+        
     }
 }

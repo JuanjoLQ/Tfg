@@ -39,16 +39,16 @@
             this.tbREmail = new System.Windows.Forms.TextBox();
             this.lbLogin = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.cbLanguage = new System.Windows.Forms.ComboBox();
             this.panelRegister.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbPassword
             // 
             this.tbPassword.ForeColor = System.Drawing.Color.DimGray;
-            this.tbPassword.Location = new System.Drawing.Point(211, 129);
-            this.tbPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbPassword.Location = new System.Drawing.Point(185, 97);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(84, 27);
+            this.tbPassword.Size = new System.Drawing.Size(74, 23);
             this.tbPassword.TabIndex = 2;
             this.tbPassword.Text = "Password";
             this.tbPassword.GotFocus += new System.EventHandler(this.tbPassword_Focus);
@@ -56,10 +56,9 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(211, 200);
-            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRegistrar.Location = new System.Drawing.Point(185, 150);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(105, 36);
+            this.btnRegistrar.Size = new System.Drawing.Size(92, 27);
             this.btnRegistrar.TabIndex = 3;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
@@ -67,10 +66,9 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(211, 259);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLogin.Location = new System.Drawing.Point(185, 194);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(105, 36);
+            this.btnLogin.Size = new System.Drawing.Size(92, 27);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -79,10 +77,9 @@
             // tbEmail
             // 
             this.tbEmail.ForeColor = System.Drawing.Color.DimGray;
-            this.tbEmail.Location = new System.Drawing.Point(211, 75);
-            this.tbEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbEmail.Location = new System.Drawing.Point(185, 56);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(84, 27);
+            this.tbEmail.Size = new System.Drawing.Size(74, 23);
             this.tbEmail.TabIndex = 1;
             this.tbEmail.Text = "Email";
             this.tbEmail.GotFocus += new System.EventHandler(this.tbEmail_Focus);
@@ -95,19 +92,17 @@
             this.panelRegister.Controls.Add(this.lbRegister);
             this.panelRegister.Controls.Add(this.tbRPassword);
             this.panelRegister.Controls.Add(this.tbREmail);
-            this.panelRegister.Location = new System.Drawing.Point(427, 103);
-            this.panelRegister.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelRegister.Location = new System.Drawing.Point(374, 77);
             this.panelRegister.Name = "panelRegister";
-            this.panelRegister.Size = new System.Drawing.Size(350, 331);
+            this.panelRegister.Size = new System.Drawing.Size(306, 248);
             this.panelRegister.TabIndex = 5;
             this.panelRegister.Visible = false;
             // 
             // btnRRegistrar
             // 
-            this.btnRRegistrar.Location = new System.Drawing.Point(63, 200);
-            this.btnRRegistrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRRegistrar.Location = new System.Drawing.Point(55, 150);
             this.btnRRegistrar.Name = "btnRRegistrar";
-            this.btnRRegistrar.Size = new System.Drawing.Size(105, 36);
+            this.btnRRegistrar.Size = new System.Drawing.Size(92, 27);
             this.btnRRegistrar.TabIndex = 7;
             this.btnRRegistrar.Text = "Registrar";
             this.btnRRegistrar.UseVisualStyleBackColor = true;
@@ -116,19 +111,18 @@
             // lbRegister
             // 
             this.lbRegister.AutoSize = true;
-            this.lbRegister.Location = new System.Drawing.Point(83, 13);
+            this.lbRegister.Location = new System.Drawing.Point(73, 10);
             this.lbRegister.Name = "lbRegister";
-            this.lbRegister.Size = new System.Drawing.Size(63, 20);
+            this.lbRegister.Size = new System.Drawing.Size(49, 15);
             this.lbRegister.TabIndex = 7;
             this.lbRegister.Text = "Register";
             // 
             // tbRPassword
             // 
             this.tbRPassword.ForeColor = System.Drawing.Color.DimGray;
-            this.tbRPassword.Location = new System.Drawing.Point(83, 140);
-            this.tbRPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbRPassword.Location = new System.Drawing.Point(73, 105);
             this.tbRPassword.Name = "tbRPassword";
-            this.tbRPassword.Size = new System.Drawing.Size(84, 27);
+            this.tbRPassword.Size = new System.Drawing.Size(74, 23);
             this.tbRPassword.TabIndex = 3;
             this.tbRPassword.Text = "Password";
             this.tbRPassword.GotFocus += new System.EventHandler(this.tbRPassword_Focus);
@@ -137,10 +131,9 @@
             // tbREmail
             // 
             this.tbREmail.ForeColor = System.Drawing.Color.DimGray;
-            this.tbREmail.Location = new System.Drawing.Point(83, 68);
-            this.tbREmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbREmail.Location = new System.Drawing.Point(73, 51);
             this.tbREmail.Name = "tbREmail";
-            this.tbREmail.Size = new System.Drawing.Size(84, 27);
+            this.tbREmail.Size = new System.Drawing.Size(74, 23);
             this.tbREmail.TabIndex = 2;
             this.tbREmail.Text = "Email";
             this.tbREmail.GotFocus += new System.EventHandler(this.tbREmail_Focus);
@@ -149,27 +142,41 @@
             // lbLogin
             // 
             this.lbLogin.AutoSize = true;
-            this.lbLogin.Location = new System.Drawing.Point(211, 29);
+            this.lbLogin.Location = new System.Drawing.Point(185, 22);
             this.lbLogin.Name = "lbLogin";
-            this.lbLogin.Size = new System.Drawing.Size(46, 20);
+            this.lbLogin.Size = new System.Drawing.Size(37, 15);
             this.lbLogin.TabIndex = 6;
             this.lbLogin.Text = "Login";
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(184, 396);
+            this.btnSalir.Location = new System.Drawing.Point(142, 330);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(134, 34);
+            this.btnSalir.Size = new System.Drawing.Size(117, 26);
             this.btnSalir.TabIndex = 7;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // cbLanguage
+            // 
+            this.cbLanguage.FormattingEnabled = true;
+            this.cbLanguage.Items.AddRange(new object[] {
+            "EN - English",
+            "ES - Spanish"});
+            this.cbLanguage.Location = new System.Drawing.Point(144, 273);
+            this.cbLanguage.Name = "cbLanguage";
+            this.cbLanguage.Size = new System.Drawing.Size(133, 23);
+            this.cbLanguage.TabIndex = 8;
+            this.cbLanguage.SelectedValueChanged += new System.EventHandler(this.cbLanguage_SelectedValueChanged);
+            // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 600);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cbLanguage);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lbLogin);
             this.Controls.Add(this.panelRegister);
@@ -177,7 +184,6 @@
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.tbPassword);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Login";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Login_Load);
@@ -200,5 +206,6 @@
         private TextBox tbREmail;
         private Label lbLogin;
         private Button btnSalir;
+        private ComboBox cbLanguage;
     }
 }

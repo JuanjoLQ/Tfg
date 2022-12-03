@@ -13,4 +13,28 @@
     <ProjectReference Include="..\capaNegocio\capaNegocio.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Res.en-US.Designer.cs">
+      <DependentUpon>Res.en-US.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Res.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Res.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Res.en-US.resx">
+      <LastGenOutput>Res.en-US.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Res.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Res.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>
