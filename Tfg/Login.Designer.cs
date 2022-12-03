@@ -48,7 +48,7 @@
             this.tbPassword.ForeColor = System.Drawing.Color.DimGray;
             this.tbPassword.Location = new System.Drawing.Point(185, 97);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(74, 23);
+            this.tbPassword.Size = new System.Drawing.Size(104, 23);
             this.tbPassword.TabIndex = 2;
             this.tbPassword.Text = "Password";
             this.tbPassword.GotFocus += new System.EventHandler(this.tbPassword_Focus);
@@ -79,7 +79,7 @@
             this.tbEmail.ForeColor = System.Drawing.Color.DimGray;
             this.tbEmail.Location = new System.Drawing.Point(185, 56);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(74, 23);
+            this.tbEmail.Size = new System.Drawing.Size(104, 23);
             this.tbEmail.TabIndex = 1;
             this.tbEmail.Text = "Email";
             this.tbEmail.GotFocus += new System.EventHandler(this.tbEmail_Focus);
@@ -122,7 +122,7 @@
             this.tbRPassword.ForeColor = System.Drawing.Color.DimGray;
             this.tbRPassword.Location = new System.Drawing.Point(73, 105);
             this.tbRPassword.Name = "tbRPassword";
-            this.tbRPassword.Size = new System.Drawing.Size(74, 23);
+            this.tbRPassword.Size = new System.Drawing.Size(105, 23);
             this.tbRPassword.TabIndex = 3;
             this.tbRPassword.Text = "Password";
             this.tbRPassword.GotFocus += new System.EventHandler(this.tbRPassword_Focus);
@@ -133,7 +133,7 @@
             this.tbREmail.ForeColor = System.Drawing.Color.DimGray;
             this.tbREmail.Location = new System.Drawing.Point(73, 51);
             this.tbREmail.Name = "tbREmail";
-            this.tbREmail.Size = new System.Drawing.Size(74, 23);
+            this.tbREmail.Size = new System.Drawing.Size(105, 23);
             this.tbREmail.TabIndex = 2;
             this.tbREmail.Text = "Email";
             this.tbREmail.GotFocus += new System.EventHandler(this.tbREmail_Focus);

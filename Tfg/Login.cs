@@ -60,7 +60,8 @@ namespace Tfg
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            cnUser.PruebaMySql();
+            cnUser.CheckUser(new ceUser(0, tbEmail.Text, tbPassword.Text));
+
         }
 
         //
@@ -68,7 +69,6 @@ namespace Tfg
         // Panel Register
         //
         //
-
 
         private void tbREmail_Focus(object sender, EventArgs e)
         {

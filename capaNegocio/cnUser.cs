@@ -7,7 +7,6 @@ namespace capaNegocio
     {
         cdUser cdUser = new cdUser();
 
-
         public bool ValidarDatos(ceUser user)
         {
             bool result = true;
@@ -37,6 +36,10 @@ namespace capaNegocio
             cdUser.CrearUsuario(user);
         }
 
+        public void CheckUser(ceUser user)
+        {
+            cdUser.LogUsuario(user);
+        }
 
     }
 }
