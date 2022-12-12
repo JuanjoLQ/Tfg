@@ -1,9 +1,7 @@
 using capaEntidad;
 using capaNegocio;
 using capaPresentacion;
-using Microsoft.VisualBasic.ApplicationServices;
 using System.Diagnostics;
-using System.Text.RegularExpressions;
 
 namespace Tfg
 {
@@ -13,6 +11,7 @@ namespace Tfg
 
         public Login()
         {
+            ceGlobals.initializeDataUser();
             InitializeComponent();
         }
 
@@ -54,14 +53,12 @@ namespace Tfg
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            
             panelRegister.Visible = true;
             
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
             if (cnUser.CheckUser(new ceUser(0, tbEmail.Text, tbPassword.Text)))
             {
                 ceGlobals.email = tbEmail.Text;
@@ -70,8 +67,6 @@ namespace Tfg
                 homePage.Show();
 
             }
-
-            
 
         }
 

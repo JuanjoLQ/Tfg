@@ -1,11 +1,9 @@
 ﻿using capaEntidad;
 using MySql.Data.MySqlClient;
-using static System.ComponentModel.Design.ObjectSelectorEditor;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-using System.Windows.Forms;
 using System.Diagnostics;
 
-namespace capaDatos{
+namespace capaDatos
+{
 
     public class cdUser
     {

@@ -6,7 +6,17 @@ namespace capaNegocio
 {
     public class cnUser
     {
-        cdUser cdUser = new cdUser(); 
+        cdUser cdUser = new cdUser();
+
+        public bool CheckUser(ceUser user)
+        {
+            if (regexEmail(user) && cdUser.LogUsuario(user))
+            {
+                return true;
+            }
+            return false;
+
+        }
 
         public bool ValidarDatos(ceUser user)
         {
@@ -48,14 +58,7 @@ namespace capaNegocio
             cdUser.CrearUsuario(user);
         }
 
-        public bool CheckUser(ceUser user)
-        {
-            if(regexEmail(user) && cdUser.LogUsuario(user)) {
-                return true;
-            }
-            return false;
-
-        }
+        
 
     }
 }
