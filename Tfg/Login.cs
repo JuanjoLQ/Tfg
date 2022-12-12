@@ -124,7 +124,14 @@ namespace Tfg
             {
                 return;
             }
-            cnUser.CrearUser(user);
+            if (cnUser.CrearUser(user))
+            {
+                MessageBox.Show("Usuario creado con éxito.");
+            }
+            else
+            {
+                MessageBox.Show("Usuario NO creado con éxito");
+            }
             
         }
 

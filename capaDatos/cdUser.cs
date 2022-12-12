@@ -2,6 +2,22 @@
 using MySql.Data.MySqlClient;
 using System.Diagnostics;
 
+/*
+string cuote = "0110";
+char[] chars = cuote.ToCharArray();
+
+foreach (var word in chars)
+{
+    System.Console.WriteLine($"{word}");
+}
+
+0
+1
+1
+0
+
+ */
+
 namespace capaDatos
 {
 
@@ -22,20 +38,28 @@ namespace capaDatos
                 MessageBox.Show("Error conectarse BBDD" + ex.Message);
                 return;
             }
-
             MessageBox.Show("Conectado a la BBDD");
 
         }
 
-        public void CrearUsuario(ceUser user) {
-            MySqlConnection conn = new MySqlConnection(cadenaConexion);
-            conn.Open();
-            string query = "INSERT INTO user (isAdmin, email, password) VALUES " +
-                "('" + user.isAdmin + "','" + user.Email + "', '" + user.Password + "');";
-            MySqlCommand command = new MySqlCommand(query, conn);
-            command.ExecuteNonQuery();
-            conn.Close();
-            MessageBox.Show("Registro de user creado");
+        public bool CrearUsuario(ceUser user) {
+
+            if (LogUsuario(user) == false)
+            {
+                MySqlConnection conn = new MySqlConnection(cadenaConexion);
+                conn.Open();
+                string query = "INSERT INTO user (isAdmin, email, password) VALUES " +
+                    "('" + user.isAdmin + "','" + user.Email + "', '" + user.Password + "');";
+                MySqlCommand command = new MySqlCommand(query, conn);
+                command.ExecuteNonQuery();
+                conn.Close();
+                MessageBox.Show("Registro de user creado");
+                return true;
+            } else
+            {
+                MessageBox.Show("Email ya existente.");
+                return false;
+            }
 
         }
 

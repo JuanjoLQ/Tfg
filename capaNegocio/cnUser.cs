@@ -53,9 +53,9 @@ namespace capaNegocio
             cdUser.PruebaConexion();
         }
 
-        public void CrearUser(ceUser user)
+        public bool CrearUser(ceUser user)
         {
-            cdUser.CrearUsuario(user);
+            return cdUser.CrearUsuario(user);
         }
 
         
