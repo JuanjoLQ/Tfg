@@ -3,6 +3,7 @@ using capaNegocio;
 using capaPresentacion;
 using Microsoft.VisualBasic.ApplicationServices;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace Tfg
 {
@@ -60,7 +61,17 @@ namespace Tfg
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            cnUser.CheckUser(new ceUser(0, tbEmail.Text, tbPassword.Text));
+
+            if (cnUser.CheckUser(new ceUser(0, tbEmail.Text, tbPassword.Text)))
+            {
+                ceGlobals.email = tbEmail.Text;
+
+                HomePage homePage = new HomePage();
+                homePage.Show();
+
+            }
+
+            
 
         }
 
@@ -114,7 +125,6 @@ namespace Tfg
             Debug.WriteLine(tbREmail.Text);
             Debug.WriteLine(tbRPassword.Text);
 
-            
             if (cnUser.ValidarDatos(user) == false)
             {
                 return;
@@ -171,7 +181,6 @@ namespace Tfg
         {
             Application.Exit();
         }
-
-        
+                
     }
 }

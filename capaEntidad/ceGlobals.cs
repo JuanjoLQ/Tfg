@@ -9,8 +9,14 @@ namespace capaEntidad
     public static class ceGlobals
     {
         
-        public static string lang { get; set; }
 
-        
+        public static string lang { get; set; }
+        public static string id { get; set; }
+        public static string email { get; set; }
+        public static string password { get; set; }
+        public static string role { get; set;}
+        public static string privileges { get;}
+
+
     }
 }

@@ -32,7 +32,8 @@ namespace capaDatos{
         public void CrearUsuario(ceUser user) {
             MySqlConnection conn = new MySqlConnection(cadenaConexion);
             conn.Open();
-            string query = "INSERT INTO user (isAdmin, email, password) VALUES ('" + user.isAdmin + "','" + user.Email + "', '" + user.Password + "');";
+            string query = "INSERT INTO user (isAdmin, email, password) VALUES " +
+                "('" + user.isAdmin + "','" + user.Email + "', '" + user.Password + "');";
             MySqlCommand command = new MySqlCommand(query, conn);
             command.ExecuteNonQuery();
             conn.Close();
@@ -40,7 +41,7 @@ namespace capaDatos{
 
         }
 
-        public void LogUsuario(ceUser user)
+        public bool LogUsuario(ceUser user)
         {
             Debug.WriteLine("Capa datos logUser");
             MySqlConnection conn = new MySqlConnection(cadenaConexion);
@@ -52,11 +53,11 @@ namespace capaDatos{
             
             if (count == 1)
             {
-                MessageBox.Show("El email existe.");
+                return true;
             }
             else
             {
-                MessageBox.Show("Error login.");
+                return false;
             }
 
         }

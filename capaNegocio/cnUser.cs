@@ -1,11 +1,12 @@
 ﻿using capaDatos;
 using capaEntidad;
+using System.Text.RegularExpressions;
 
 namespace capaNegocio
 {
     public class cnUser
     {
-        cdUser cdUser = new cdUser();
+        cdUser cdUser = new cdUser(); 
 
         public bool ValidarDatos(ceUser user)
         {
@@ -13,7 +14,7 @@ namespace capaNegocio
             if (user.Email == string.Empty || user.Email == "Email")
             {
                 result = false;
-                MessageBox.Show("El email es obligatorio");
+                MessageBox.Show("El email es obligatorio"); 
             }
 
             if (user.Password == string.Empty || user.Password == "Password")
@@ -23,6 +24,17 @@ namespace capaNegocio
             }
 
             return result;
+
+        }
+
+        public bool regexEmail(ceUser user) {
+            bool test;
+            Regex validateEmailRegex = new Regex("^[a-z0-9!#$%&'*+/=?^_`{|}~-]" +
+                "+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*" +
+                "[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$");
+            test = validateEmailRegex.IsMatch(user.Email);
+
+            return test;
 
         }
 
@@ -36,9 +48,13 @@ namespace capaNegocio
             cdUser.CrearUsuario(user);
         }
 
-        public void CheckUser(ceUser user)
+        public bool CheckUser(ceUser user)
         {
-            cdUser.LogUsuario(user);
+            if(regexEmail(user) && cdUser.LogUsuario(user)) {
+                return true;
+            }
+            return false;
+
         }
 
     }
