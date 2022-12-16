@@ -79,6 +79,15 @@ namespace capaPresentacion {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Por favor, inicia sesión.
+        /// </summary>
+        internal static string gbLogin {
+            get {
+                return ResourceManager.GetString("gbLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Login.
         /// </summary>
         internal static string Login {

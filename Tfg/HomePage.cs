@@ -1,8 +1,11 @@
 ﻿using capaEntidad;
+using capaNegocio;
+using capaPresentacion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,18 +18,28 @@ namespace capaPresentacion
     {
         bool sidebarExpand;
         bool sidebarSubMenu;
+        cnUser cnUser = new cnUser();
+
         public HomePage()
         {
             InitializeComponent();
 
         }
 
+        // To Do: mostrar módulos según privilegios
         private void HomePage_Load(object sender, EventArgs e)
         {
+            pSolicitudDieta.Visible = false;
+            pUsuarios.Visible = true;
+            pGestionDietas.Visible = false;
+
             StringBuilder sb = new StringBuilder("User: ", 50);
             sb.Append(ceGlobals.email);
-
             lbUser.Text = sb.ToString();
+
+            ceGlobals.role = cnUser.nameRole(ceGlobals.email);
+
+            lbRole.Text = "Roles: " + ceGlobals.role;
         }
 
         // Define min and max size of sizebar
@@ -50,7 +63,6 @@ namespace capaPresentacion
                     sidebarExpand = true;
                     sidebarTimer.Stop();
                 }
-
             }
         }
 
@@ -59,8 +71,8 @@ namespace capaPresentacion
             panel4.Visible = true;
             if (sidebarSubMenu)
             {
-                containerSubMenu.Height -= 5;
-                if (containerSubMenu.Height == containerSubMenu.MinimumSize.Height)
+                containerModulos.Height -= 5;
+                if (containerModulos.Height == containerModulos.MinimumSize.Height)
                 {
                     sidebarSubMenu = false;
                     timerSubMenu.Stop();
@@ -68,13 +80,12 @@ namespace capaPresentacion
             }
             else
             {
-                containerSubMenu.Height += 5;
-                if (containerSubMenu.Height == containerSubMenu.MaximumSize.Height)
+                containerModulos.Height += 5;
+                if (containerModulos.Height == containerModulos.MaximumSize.Height)
                 {
                     sidebarSubMenu = true;
                     timerSubMenu.Stop();
                 }
-
             }
         }
 
@@ -102,6 +113,76 @@ namespace capaPresentacion
         private void button5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pGestionDietas_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnRRegistrar_Click(object sender, EventArgs e)
+        {
+            //pRegister.Visible = false;
+            string role;
+            ceUser user = new ceUser(0, tbREmail.Text, tbRPassword.Text);
+
+            Debug.WriteLine(tbREmail.Text);
+            Debug.WriteLine(tbRPassword.Text);
+            Debug.WriteLine(cbRole.SelectedItem.ToString());
+            role = cbRole.SelectedItem.ToString();
+
+            if (cnUser.ValidarDatos(user) == false || role == null)
+            {
+                return;
+            }
+            if (cnUser.CrearUser(user, role))
+            {
+                MessageBox.Show("Usuario creado con éxito.");
+            }
+            else
+            {
+                MessageBox.Show("Usuario NO creado con éxito");
+            }
+        }
+
+        private void tbREmail_Focus(object sender, EventArgs e)
+        {
+            if (tbREmail.Text == Res.Email)
+            {
+                tbREmail.Text = string.Empty;
+                tbREmail.ForeColor = Color.Black;
+            }
+        }
+        private void tbREmail_LostFocus(object sender, EventArgs e)
+        {
+            if (tbREmail.Text == string.Empty)
+            {
+                tbREmail.Text = Res.Email;
+                tbREmail.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void tbRPassword_Focus(object sender, EventArgs e)
+        {
+            if (tbRPassword.Text == Res.Pass)
+            {
+                tbRPassword.Text = string.Empty;
+                tbRPassword.ForeColor = Color.Black;
+            }
+        }
+        private void tbRPassword_LostFocus(object sender, EventArgs e)
+        {
+            if (tbRPassword.Text == string.Empty)
+            {
+                tbRPassword.Text = Res.Pass;
+                tbRPassword.ForeColor = Color.DimGray;
+
+            }
         }
 
         

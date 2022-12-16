@@ -48,17 +48,26 @@ namespace capaNegocio
 
         }
 
+        public string nameRole(string role)
+        {
+            return cdUser.obtainNameRole(role);
+        }
+
+        public string idUser(string email)
+        {
+            return cdUser.obtainIdUser(email).ToString();
+        }
+
+
         public void PruebaMySql()
         {
             cdUser.PruebaConexion();
         }
 
-        public bool CrearUser(ceUser user)
+        public bool CrearUser(ceUser user, string role)
         {
-            return cdUser.CrearUsuario(user);
+            return cdUser.CrearUsuario(user, role);
         }
-
-        
 
     }
 }

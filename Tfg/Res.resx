@@ -123,6 +123,9 @@
   <data name="Exit" xml:space="preserve">
     <value>Salir</value>
   </data>
+  <data name="gbLogin" xml:space="preserve">
+    <value>Por favor, inicia sesión</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Login</value>
   </data>

@@ -51,12 +51,6 @@ namespace Tfg
             }
         }
 
-        private void btnRegistrar_Click(object sender, EventArgs e)
-        {
-            panelRegister.Visible = true;
-            
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (cnUser.CheckUser(new ceUser(0, tbEmail.Text, tbPassword.Text)))
@@ -68,71 +62,6 @@ namespace Tfg
 
             }
 
-        }
-
-        //
-        //
-        // Panel Register
-        //
-        //
-
-        private void tbREmail_Focus(object sender, EventArgs e)
-        {
-            if (tbREmail.Text == Res.Email)
-            {
-                tbREmail.Text = string.Empty;
-                tbREmail.ForeColor = Color.Black;
-            }
-        }
-        private void tbREmail_LostFocus(object sender, EventArgs e)
-        {
-            if (tbREmail.Text == string.Empty)
-            {
-                tbREmail.Text = Res.Email;
-                tbREmail.ForeColor = Color.DimGray;
-            }
-        }
-
-        private void tbRPassword_Focus(object sender, EventArgs e)
-        {
-            if (tbRPassword.Text == Res.Pass)
-            {
-                tbRPassword.Text = string.Empty;
-                tbRPassword.ForeColor = Color.Black;
-            }
-        }
-        private void tbRPassword_LostFocus(object sender, EventArgs e)
-        {
-            if (tbRPassword.Text == string.Empty)
-            {
-                tbRPassword.Text = Res.Pass;
-                tbRPassword.ForeColor = Color.DimGray;
-
-            }
-        }
-        
-        private void btnRRegistrar_Click(object sender, EventArgs e)
-        {
-            panelRegister.Visible = false;
-
-            ceUser user = new ceUser(0, tbREmail.Text, tbRPassword.Text);
-            
-            Debug.WriteLine(tbREmail.Text);
-            Debug.WriteLine(tbRPassword.Text);
-
-            if (cnUser.ValidarDatos(user) == false)
-            {
-                return;
-            }
-            if (cnUser.CrearUser(user))
-            {
-                MessageBox.Show("Usuario creado con éxito.");
-            }
-            else
-            {
-                MessageBox.Show("Usuario NO creado con éxito");
-            }
-            
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -150,18 +79,19 @@ namespace Tfg
 
         private void GetLanguage()
         {
-            lbLogin.Text = Res.Login;
+            gbLogin.Text = Res.gbLogin;
             tbEmail.Text = Res.Email;
             tbPassword.Text = Res.Pass;
-            btnRegistrar.Text = Res.Register;
             btnLogin.Text = Res.Login;
 
+            /*º
             lbRegister.Text = Res.Register;
             tbREmail.Text = Res.Email;
             tbRPassword.Text= Res.Pass;
             btnRRegistrar.Text = Res.Register;   
+            */
 
-            btnSalir.Text = Res.Exit;
+            //btnSalir.Text = Res.Exit;
 
         }
 
@@ -183,6 +113,15 @@ namespace Tfg
         {
             Application.Exit();
         }
-                
+
+        private void btnSalir_ControlAdded(object sender, ControlEventArgs e)
+        {
+            btnSalir.BackColor= Color.Red;
+        }
+
+        private void cbLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

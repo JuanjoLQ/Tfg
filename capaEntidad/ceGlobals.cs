@@ -16,7 +16,7 @@ namespace capaEntidad
         public static string email { get; set; }
         public static string password { get; set; }
         public static string role { get; set;}
-        public static string privileges { get; set; }
+        public static int[] privileges = new int[5];
 
         public static void initializeDataUser()
         {
@@ -25,7 +25,12 @@ namespace capaEntidad
             email = string.Empty;
             password = string.Empty;
             role = string.Empty;
-            privileges = string.Empty;
+            
+        }
+
+        public static void setPrivileges(String privileges)
+        {
+
         }
 
     }

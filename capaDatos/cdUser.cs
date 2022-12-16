@@ -1,6 +1,10 @@
 ﻿using capaEntidad;
+using Microsoft.VisualBasic.ApplicationServices;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Asn1.Mozilla;
+using System.Data;
 using System.Diagnostics;
+using System.Text;
 
 /*
 string cuote = "0110";
@@ -42,24 +46,173 @@ namespace capaDatos
 
         }
 
-        public bool CrearUsuario(ceUser user) {
+        public bool checkRole(string role)
+        {
+            Debug.WriteLine("Capa datos checkRole");
+            MySqlConnection conn = new MySqlConnection(cadenaConexion);
+            conn.Open();
+            string query = "SELECT COUNT(*) FROM role where nameRole='" + role + "';";
+            MySqlCommand command = new MySqlCommand(query, conn);
 
-            if (LogUsuario(user) == false)
+            int count = Convert.ToInt32(command.ExecuteScalar());
+            
+            conn.Close();
+
+            if (count == 1)
             {
-                MySqlConnection conn = new MySqlConnection(cadenaConexion);
-                conn.Open();
-                string query = "INSERT INTO user (isAdmin, email, password) VALUES " +
-                    "('" + user.isAdmin + "','" + user.Email + "', '" + user.Password + "');";
-                MySqlCommand command = new MySqlCommand(query, conn);
-                command.ExecuteNonQuery();
-                conn.Close();
-                MessageBox.Show("Registro de user creado");
                 return true;
-            } else
+            }
+            else
             {
+                return false;
+            }
+            
+        }
+
+        public bool CrearUsuario(ceUser user, string role) 
+        {
+            Debug.WriteLine("cdUser -CrearUsuario");
+
+            // Checkear que el role existe
+
+            if (!checkRole(role))
+            {
+                Debug.WriteLine("CrearUsuario Role NO válido");
+                MessageBox.Show("Role NO válido.");
+                return false;
+            }
+            if (LogUsuario(user) == true)
+            {
+                Debug.WriteLine("CrearUsuario Usuario NO válido");
                 MessageBox.Show("Email ya existente.");
                 return false;
             }
+
+            // asignar role a usuario nuevo
+
+            MySqlConnection conn = new MySqlConnection(cadenaConexion);
+            conn.Open();
+            string query = "INSERT INTO user (email, password) VALUES " +
+                "('" + user.Email + "', '" + user.Password + "');";
+            MySqlCommand command = new MySqlCommand(query, conn);
+            command.ExecuteNonQuery();
+            conn.Close();
+
+            MessageBox.Show("Registro de user creado");
+
+            if (assignRole2User(user.Email, role) == false)
+            {
+                Debug.WriteLine("CrearUsuario -assignRole2User error");
+                return false;
+            }
+
+            Debug.WriteLine("CrearUsuario Succesfull");
+
+            return true;
+
+        }
+        // No acabado
+        public bool assignRole2User(string email, string role)
+        {
+            Debug.WriteLine("cdUser -assignRole2User");
+
+            int idUser = obtainIdUser(email);
+            int idRole = obtainIdRole(role);
+
+            if(idUser != 0)
+            {
+                Debug.WriteLine("assignRole2User error: idUser");
+                return false;
+            }
+
+            if (idRole != 0)
+            {
+                Debug.WriteLine("assignRole2User error: idRole");
+                return false;
+            }
+
+            MySqlConnection conn = new MySqlConnection(cadenaConexion);
+            conn.Open();
+            string query = "INSERT INTO Role_User (User_idUser, Role_idRole) VALUES " +
+                "('" + idUser + "', '" + idRole + "');";
+            MySqlCommand command = new MySqlCommand(query, conn);
+            command.ExecuteNonQuery();
+            conn.Close();
+
+            Debug.WriteLine("assignRole2User Succesfull");
+
+            return true;
+
+        }
+
+        public int obtainIdRole(string role)
+        {
+            int idRole = 0;
+            MySqlConnection conn = new MySqlConnection(cadenaConexion);
+            conn.Open();
+            string query = "SELECT idRole FROM Role where nameRolel='" + role + "';";
+
+            MySqlCommand command = new MySqlCommand(query, conn);
+
+            var dr = command.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                dr.Read();// Get first record.
+                idRole = int.Parse(dr.GetString(0));// Get value of first column as string.
+                MessageBox.Show("Id del usuario: " + idRole);
+            }
+
+            MessageBox.Show("Registro de user creado");
+
+            dr.Close();// Close reader.
+            conn.Close();// Close connection.
+
+            if (idRole != 0)
+            {
+                return idRole;
+            }
+            return idRole;
+        }
+
+        public int obtainIdUser(string email)
+        {
+            int idUser = 0;
+            MySqlConnection conn = new MySqlConnection(cadenaConexion);
+            conn.Open();
+            string query = "SELECT idUser FROM user where email='" + email + "';";
+
+            MySqlCommand command = new MySqlCommand(query, conn);
+
+            var dr = command.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                dr.Read();// Get first record.
+                idUser = int.Parse(dr.GetString(0));// Get value of first column as string.
+                MessageBox.Show("Id del usuario: " + idUser);
+            }
+            
+            MessageBox.Show("Registro de user creado");
+
+            dr.Close();// Close reader.
+            conn.Close();// Close connection.
+
+            if (idUser != 0)
+            {
+                return (idUser);
+            }
+            return idUser;
+
+            /* Para seleccionar un solo valor
+            var queryResult = cmd.ExecuteScalar();//Return an object so first check for null
+            if (queryResult != null)
+                // If we have result, then convert it from object to string.
+                roboIp = Convert.ToString(queryResult);
+            else
+                // Else make id = "" so you can later check it.
+                roboIp = "";
+            */
 
         }
 
@@ -72,7 +225,9 @@ namespace capaDatos
             MySqlCommand command = new MySqlCommand(query, conn);
 
             int count = Convert.ToInt32(command.ExecuteScalar());
-            
+
+            conn.Close();
+
             if (count == 1)
             {
                 return true;
@@ -81,9 +236,40 @@ namespace capaDatos
             {
                 return false;
             }
-
         }
 
-    }
+        public string obtainNameRole(string email)
+        {
+            StringBuilder namesRole = new StringBuilder("", 50);
+            MySqlConnection conn = new MySqlConnection(cadenaConexion);
+            conn.Open();
+            string query = "select role.nameRole " +
+                "FROM((Role_user INNER JOIN user ON Role_user.User_idUser = user.idUser) INNER JOIN role ON Role_user.role_idRole = role.idRole) " +
+                "where user.email ='" + email + "';";
 
+            MySqlCommand command = new MySqlCommand(query, conn);
+
+            var dr = command.ExecuteReader();
+
+            while (dr.Read())
+            {
+                if (dr.HasRows)
+                {
+                    namesRole.Append(dr[0].ToString() + ", ");// Get value of first column as string.
+                }
+                
+            }
+
+            MessageBox.Show("Roles del usuario: " + namesRole.ToString());
+
+            dr.Close();// Close reader.
+            conn.Close();// Close connection.
+
+            if (namesRole.Length == 0)
+            {
+                return null;
+            }
+            return namesRole.ToString();
+        }
+    }
 }
