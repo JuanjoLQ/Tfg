@@ -132,7 +132,13 @@
   <data name="Pass" xml:space="preserve">
     <value>Contraseña</value>
   </data>
+  <data name="passwd" xml:space="preserve">
+    <value>1234</value>
+  </data>
   <data name="Register" xml:space="preserve">
     <value>Registrarse</value>
+  </data>
+  <data name="user" xml:space="preserve">
+    <value>juan@gmail.com</value>
   </data>
 </root>

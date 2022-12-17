@@ -1,26 +1,12 @@
 ﻿using capaEntidad;
 using Microsoft.VisualBasic.ApplicationServices;
 using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI;
 using Org.BouncyCastle.Asn1.Mozilla;
 using System.Data;
 using System.Diagnostics;
 using System.Text;
-
-/*
-string cuote = "0110";
-char[] chars = cuote.ToCharArray();
-
-foreach (var word in chars)
-{
-    System.Console.WriteLine($"{word}");
-}
-
-0
-1
-1
-0
-
- */
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace capaDatos
 {
@@ -43,9 +29,8 @@ namespace capaDatos
                 return;
             }
             MessageBox.Show("Conectado a la BBDD");
-
         }
-
+        
         public bool checkRole(string role)
         {
             Debug.WriteLine("Capa datos checkRole");
@@ -66,14 +51,11 @@ namespace capaDatos
             {
                 return false;
             }
-            
         }
 
         public bool CrearUsuario(ceUser user, string role) 
         {
             Debug.WriteLine("cdUser -CrearUsuario");
-
-            // Checkear que el role existe
 
             if (!checkRole(role))
             {
@@ -87,8 +69,6 @@ namespace capaDatos
                 MessageBox.Show("Email ya existente.");
                 return false;
             }
-
-            // asignar role a usuario nuevo
 
             MySqlConnection conn = new MySqlConnection(cadenaConexion);
             conn.Open();
@@ -109,9 +89,8 @@ namespace capaDatos
             Debug.WriteLine("CrearUsuario Succesfull");
 
             return true;
-
         }
-        // No acabado
+        
         public bool assignRole2User(string email, string role)
         {
             Debug.WriteLine("cdUser -assignRole2User");
@@ -119,13 +98,13 @@ namespace capaDatos
             int idUser = obtainIdUser(email);
             int idRole = obtainIdRole(role);
 
-            if(idUser != 0)
+            if(idUser == 0)
             {
                 Debug.WriteLine("assignRole2User error: idUser");
                 return false;
             }
 
-            if (idRole != 0)
+            if (idRole == 0)
             {
                 Debug.WriteLine("assignRole2User error: idRole");
                 return false;
@@ -142,7 +121,6 @@ namespace capaDatos
             Debug.WriteLine("assignRole2User Succesfull");
 
             return true;
-
         }
 
         public int obtainIdRole(string role)
@@ -150,7 +128,7 @@ namespace capaDatos
             int idRole = 0;
             MySqlConnection conn = new MySqlConnection(cadenaConexion);
             conn.Open();
-            string query = "SELECT idRole FROM Role where nameRolel='" + role + "';";
+            string query = "SELECT idRole FROM Role where nameRole='" + role + "';";
 
             MySqlCommand command = new MySqlCommand(query, conn);
 
@@ -243,7 +221,7 @@ namespace capaDatos
             StringBuilder namesRole = new StringBuilder("", 50);
             MySqlConnection conn = new MySqlConnection(cadenaConexion);
             conn.Open();
-            string query = "select role.nameRole " +
+            string query = "select role.nameRole, role.privileges " +
                 "FROM((Role_user INNER JOIN user ON Role_user.User_idUser = user.idUser) INNER JOIN role ON Role_user.role_idRole = role.idRole) " +
                 "where user.email ='" + email + "';";
 
@@ -256,8 +234,8 @@ namespace capaDatos
                 if (dr.HasRows)
                 {
                     namesRole.Append(dr[0].ToString() + ", ");// Get value of first column as string.
+                    ceGlobals.setPrivileges(dr[1].ToString());
                 }
-                
             }
 
             MessageBox.Show("Roles del usuario: " + namesRole.ToString());
@@ -271,5 +249,8 @@ namespace capaDatos
             }
             return namesRole.ToString();
         }
+
     }
 }
+
+

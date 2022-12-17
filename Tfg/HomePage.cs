@@ -8,6 +8,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +19,7 @@ namespace capaPresentacion
     {
         bool sidebarExpand;
         bool sidebarSubMenu;
+        int aux = 0;
         cnUser cnUser = new cnUser();
 
         public HomePage()
@@ -26,26 +28,47 @@ namespace capaPresentacion
 
         }
 
-        // To Do: mostrar módulos según privilegios
         private void HomePage_Load(object sender, EventArgs e)
         {
             pSolicitudDieta.Visible = false;
-            pUsuarios.Visible = true;
+            pUsuarios.Visible = false;
             pGestionDietas.Visible = false;
 
             StringBuilder sb = new StringBuilder("User: ", 50);
             sb.Append(ceGlobals.email);
             lbUser.Text = sb.ToString();
-
+            
             ceGlobals.role = cnUser.nameRole(ceGlobals.email);
 
-            lbRole.Text = "Roles: " + ceGlobals.role;
+            if (ceGlobals.privileges[1] == 1)
+            {
+                pGestDietas.Visible = true;
+                aux++;
+            }
+            if (ceGlobals.privileges[2] == 1)
+            {
+                pGestionUsers.Visible = true;
+                aux++;
+            }
+            if (ceGlobals.privileges[3] == 1)
+            {
+                pSoliDietas.Visible = true;
+                aux++;
+            }
+
+            containerModulos.MaximumSize = new Size(180, 37 + 45 * aux);
+            containerModulos.Size = new Size(180, 37);
+
+            cnUser.dgvUsers(dgvUser);
+
+
+
+            
         }
 
         // Define min and max size of sizebar
         private void sidebarTimer_Tick(object sender, EventArgs e)
         {
-            panel4.Visible = false;
             if (sidebarExpand)
             {
                 sidebar.Width -= 10;
@@ -68,7 +91,6 @@ namespace capaPresentacion
 
         private void timerSubMenu_Tick(object sender, EventArgs e)
         {
-            panel4.Visible = true;
             if (sidebarSubMenu)
             {
                 containerModulos.Height -= 5;
@@ -89,7 +111,6 @@ namespace capaPresentacion
             }
         }
 
-
         private void btnMenu_Click(object sender, EventArgs e)
         {
             sidebarTimer.Start();
@@ -102,7 +123,9 @@ namespace capaPresentacion
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-
+            pUsuarios.Visible = false;
+            pSolicitudDieta.Visible = false;
+            pGestionDietas.Visible = false;
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -110,10 +133,6 @@ namespace capaPresentacion
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void pGestionDietas_Paint(object sender, PaintEventArgs e)
         {
@@ -127,7 +146,6 @@ namespace capaPresentacion
 
         private void btnRRegistrar_Click(object sender, EventArgs e)
         {
-            //pRegister.Visible = false;
             string role;
             ceUser user = new ceUser(0, tbREmail.Text, tbRPassword.Text);
 
@@ -185,6 +203,30 @@ namespace capaPresentacion
             }
         }
 
-        
+        private void btnGestUser_Click(object sender, EventArgs e)
+        {
+            pUsuarios.Visible = true;
+            pSolicitudDieta.Visible = false;
+            pGestionDietas.Visible = false;
+        }
+
+        private void btnSolDietas_Click(object sender, EventArgs e)
+        {
+            pSolicitudDieta.Visible = true;
+            pUsuarios.Visible = false;
+            pGestionDietas.Visible = false;
+        }
+
+        private void btnGestDietas_Click(object sender, EventArgs e)
+        {
+            pGestionDietas.Visible = true;
+            pSolicitudDieta.Visible = false;
+            pUsuarios.Visible = false;
+        }
+
+        private void dgvUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

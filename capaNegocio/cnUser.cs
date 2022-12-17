@@ -7,6 +7,7 @@ namespace capaNegocio
     public class cnUser
     {
         cdUser cdUser = new cdUser();
+        cdDgvUser cdDgvUser = new cdDgvUser();
 
         public bool CheckUser(ceUser user)
         {
@@ -15,7 +16,6 @@ namespace capaNegocio
                 return true;
             }
             return false;
-
         }
 
         public bool ValidarDatos(ceUser user)
@@ -34,7 +34,6 @@ namespace capaNegocio
             }
 
             return result;
-
         }
 
         public bool regexEmail(ceUser user) {
@@ -45,7 +44,6 @@ namespace capaNegocio
             test = validateEmailRegex.IsMatch(user.Email);
 
             return test;
-
         }
 
         public string nameRole(string role)
@@ -58,7 +56,6 @@ namespace capaNegocio
             return cdUser.obtainIdUser(email).ToString();
         }
 
-
         public void PruebaMySql()
         {
             cdUser.PruebaConexion();
@@ -67,6 +64,12 @@ namespace capaNegocio
         public bool CrearUser(ceUser user, string role)
         {
             return cdUser.CrearUsuario(user, role);
+        }
+
+        public void dgvUsers(DataGridView dgvUser)
+        {
+            cdDgvUser.GetData();
+            cdDgvUser.updateDatagrid(dgvUser);
         }
 
     }

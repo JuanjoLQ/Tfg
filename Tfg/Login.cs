@@ -56,6 +56,7 @@ namespace Tfg
             if (cnUser.CheckUser(new ceUser(0, tbEmail.Text, tbPassword.Text)))
             {
                 ceGlobals.email = tbEmail.Text;
+                ceGlobals.password = tbPassword.Text;
 
                 HomePage homePage = new HomePage();
                 homePage.Show();
@@ -80,8 +81,8 @@ namespace Tfg
         private void GetLanguage()
         {
             gbLogin.Text = Res.gbLogin;
-            tbEmail.Text = Res.Email;
-            tbPassword.Text = Res.Pass;
+            tbEmail.Text = Res.user;
+            tbPassword.Text = Res.passwd;
             btnLogin.Text = Res.Login;
 
             /*º

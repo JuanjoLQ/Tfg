@@ -106,11 +106,29 @@ namespace capaPresentacion {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a 1234.
+        /// </summary>
+        internal static string passwd {
+            get {
+                return ResourceManager.GetString("passwd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Registrarse.
         /// </summary>
         internal static string Register {
             get {
                 return ResourceManager.GetString("Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a juan@gmail.com.
+        /// </summary>
+        internal static string user {
+            get {
+                return ResourceManager.GetString("user", resourceCulture);
             }
         }
     }
