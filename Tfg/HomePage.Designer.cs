@@ -31,33 +31,27 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePage));
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.containerModulos = new System.Windows.Forms.Panel();
             this.pGestDietas = new System.Windows.Forms.Panel();
             this.btnGestDietas = new System.Windows.Forms.Button();
             this.pSoliDietas = new System.Windows.Forms.Panel();
             this.btnSolDietas = new System.Windows.Forms.Button();
             this.pGestionUsers = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.pSolDietas = new System.Windows.Forms.Panel();
             this.btnGestUsers = new System.Windows.Forms.Button();
             this.btnSubMenu = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pSettings = new System.Windows.Forms.Panel();
+            this.btnSettings = new System.Windows.Forms.Button();
+            this.pMenu = new System.Windows.Forms.Panel();
             this.lbMenu = new System.Windows.Forms.Label();
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
             this.timerSubMenu = new System.Windows.Forms.Timer(this.components);
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pHeader = new System.Windows.Forms.Panel();
             this.lbUser = new System.Windows.Forms.Label();
             this.lbRole = new System.Windows.Forms.Label();
             this.lbTitle = new System.Windows.Forms.Label();
             this.pSolicitudDieta = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.pSolKilometraje = new System.Windows.Forms.Panel();
             this.lbMileageTitle = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -128,8 +122,8 @@
             this.state = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbGestDietas = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
+            this.pGestDietasDietas = new System.Windows.Forms.Panel();
+            this.pGestDietasKilometraje = new System.Windows.Forms.Panel();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -139,19 +133,19 @@
             this.Final = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pricePerKilometer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnHome = new System.Windows.Forms.Button();
+            this.pHome = new System.Windows.Forms.Panel();
             this.sidebar.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.containerModulos.SuspendLayout();
             this.pGestDietas.SuspendLayout();
             this.pSoliDietas.SuspendLayout();
             this.pGestionUsers.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pSettings.SuspendLayout();
+            this.pMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.pHeader.SuspendLayout();
             this.pSolicitudDieta.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.pSolKilometraje.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.thumbNailInvoice)).BeginInit();
             this.pUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
@@ -159,16 +153,17 @@
             this.pGestionDietas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKilometraje)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDietas)).BeginInit();
-            this.panel7.SuspendLayout();
-            this.panel9.SuspendLayout();
+            this.pGestDietasDietas.SuspendLayout();
+            this.pGestDietasKilometraje.SuspendLayout();
+            this.pHome.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidebar
             // 
             this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(107)))), ((int)(((byte)(114)))));
-            this.sidebar.Controls.Add(this.panel1);
+            this.sidebar.Controls.Add(this.pHome);
             this.sidebar.Controls.Add(this.containerModulos);
-            this.sidebar.Controls.Add(this.panel5);
+            this.sidebar.Controls.Add(this.pSettings);
             this.sidebar.Location = new System.Drawing.Point(0, 69);
             this.sidebar.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.sidebar.MaximumSize = new System.Drawing.Size(225, 550);
@@ -177,32 +172,6 @@
             this.sidebar.Size = new System.Drawing.Size(225, 550);
             this.sidebar.TabIndex = 0;
             this.sidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Location = new System.Drawing.Point(3, 1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(180, 40);
-            this.panel1.TabIndex = 1;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(-3, -9);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(185, 60);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Home";
-            this.button3.UseVisualStyleBackColor = false;
             // 
             // containerModulos
             // 
@@ -273,8 +242,6 @@
             // 
             // pGestionUsers
             // 
-            this.pGestionUsers.Controls.Add(this.panel6);
-            this.pGestionUsers.Controls.Add(this.pSolDietas);
             this.pGestionUsers.Controls.Add(this.btnGestUsers);
             this.pGestionUsers.Location = new System.Drawing.Point(0, 49);
             this.pGestionUsers.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
@@ -282,46 +249,6 @@
             this.pGestionUsers.Size = new System.Drawing.Size(180, 45);
             this.pGestionUsers.TabIndex = 9;
             this.pGestionUsers.Visible = false;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.panel8);
-            this.panel6.Controls.Add(this.button4);
-            this.panel6.Location = new System.Drawing.Point(0, 47);
-            this.panel6.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(180, 45);
-            this.panel6.TabIndex = 10;
-            // 
-            // panel8
-            // 
-            this.panel8.Location = new System.Drawing.Point(2, 52);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(180, 45);
-            this.panel8.TabIndex = 6;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(-3, -9);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(156, 60);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Gest. Users";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // pSolDietas
-            // 
-            this.pSolDietas.Location = new System.Drawing.Point(2, 52);
-            this.pSolDietas.Name = "pSolDietas";
-            this.pSolDietas.Size = new System.Drawing.Size(180, 45);
-            this.pSolDietas.TabIndex = 6;
             // 
             // btnGestUsers
             // 
@@ -356,41 +283,41 @@
             this.btnSubMenu.UseVisualStyleBackColor = false;
             this.btnSubMenu.Click += new System.EventHandler(this.btnSubMenu_Click);
             // 
-            // panel5
+            // pSettings
             // 
-            this.panel5.BackColor = System.Drawing.Color.Transparent;
-            this.panel5.Controls.Add(this.button1);
-            this.panel5.Location = new System.Drawing.Point(3, 217);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(180, 40);
-            this.panel5.TabIndex = 3;
+            this.pSettings.BackColor = System.Drawing.Color.Transparent;
+            this.pSettings.Controls.Add(this.btnSettings);
+            this.pSettings.Location = new System.Drawing.Point(3, 217);
+            this.pSettings.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.pSettings.Name = "pSettings";
+            this.pSettings.Size = new System.Drawing.Size(180, 40);
+            this.pSettings.TabIndex = 3;
             // 
-            // button1
+            // btnSettings
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(-3, -9);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(185, 60);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Settings";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSettings.BackColor = System.Drawing.Color.Transparent;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSettings.ForeColor = System.Drawing.Color.White;
+            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
+            this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSettings.Location = new System.Drawing.Point(-3, -9);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.btnSettings.Size = new System.Drawing.Size(185, 60);
+            this.btnSettings.TabIndex = 6;
+            this.btnSettings.Text = "Settings";
+            this.btnSettings.UseVisualStyleBackColor = false;
             // 
-            // panel2
+            // pMenu
             // 
-            this.panel2.Controls.Add(this.lbMenu);
-            this.panel2.Controls.Add(this.btnMenu);
-            this.panel2.Location = new System.Drawing.Point(13, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(170, 58);
-            this.panel2.TabIndex = 0;
+            this.pMenu.Controls.Add(this.lbMenu);
+            this.pMenu.Controls.Add(this.btnMenu);
+            this.pMenu.Location = new System.Drawing.Point(13, 0);
+            this.pMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pMenu.Name = "pMenu";
+            this.pMenu.Size = new System.Drawing.Size(170, 58);
+            this.pMenu.TabIndex = 0;
             // 
             // lbMenu
             // 
@@ -425,18 +352,18 @@
             this.timerSubMenu.Interval = 20;
             this.timerSubMenu.Tick += new System.EventHandler(this.timerSubMenu_Tick);
             // 
-            // panel3
+            // pHeader
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(205)))));
-            this.panel3.Controls.Add(this.lbUser);
-            this.panel3.Controls.Add(this.lbRole);
-            this.panel3.Controls.Add(this.lbTitle);
-            this.panel3.Controls.Add(this.panel2);
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1424, 69);
-            this.panel3.TabIndex = 1;
+            this.pHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(205)))));
+            this.pHeader.Controls.Add(this.lbUser);
+            this.pHeader.Controls.Add(this.lbRole);
+            this.pHeader.Controls.Add(this.lbTitle);
+            this.pHeader.Controls.Add(this.pMenu);
+            this.pHeader.Location = new System.Drawing.Point(0, 0);
+            this.pHeader.Margin = new System.Windows.Forms.Padding(0);
+            this.pHeader.Name = "pHeader";
+            this.pHeader.Size = new System.Drawing.Size(1424, 69);
+            this.pHeader.TabIndex = 1;
             // 
             // lbUser
             // 
@@ -470,8 +397,7 @@
             // pSolicitudDieta
             // 
             this.pSolicitudDieta.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pSolicitudDieta.Controls.Add(this.pGestionDietas);
-            this.pSolicitudDieta.Controls.Add(this.panel4);
+            this.pSolicitudDieta.Controls.Add(this.pSolKilometraje);
             this.pSolicitudDieta.Controls.Add(this.lbSolDietas);
             this.pSolicitudDieta.Controls.Add(this.thumbNailInvoice);
             this.pSolicitudDieta.Controls.Add(this.dtpTimeDietas);
@@ -485,37 +411,37 @@
             this.pSolicitudDieta.Controls.Add(this.lbFechaDieta);
             this.pSolicitudDieta.Controls.Add(this.textBox2);
             this.pSolicitudDieta.Controls.Add(this.lbTitleSolDieta);
-            this.pSolicitudDieta.Location = new System.Drawing.Point(228, 71);
+            this.pSolicitudDieta.Location = new System.Drawing.Point(0, 0);
             this.pSolicitudDieta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pSolicitudDieta.Name = "pSolicitudDieta";
             this.pSolicitudDieta.Size = new System.Drawing.Size(1196, 557);
             this.pSolicitudDieta.TabIndex = 4;
             this.pSolicitudDieta.Visible = false;
             // 
-            // panel4
+            // pSolKilometraje
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.panel4.Controls.Add(this.lbMileageTitle);
-            this.panel4.Controls.Add(this.dateTimePicker1);
-            this.panel4.Controls.Add(this.textBox9);
-            this.panel4.Controls.Add(this.textBox8);
-            this.panel4.Controls.Add(this.textBox7);
-            this.panel4.Controls.Add(this.textBox6);
-            this.panel4.Controls.Add(this.textBox4);
-            this.panel4.Controls.Add(this.textBox3);
-            this.panel4.Controls.Add(this.comboBox1);
-            this.panel4.Controls.Add(this.lbTitleMileage);
-            this.panel4.Controls.Add(this.lbDate);
-            this.panel4.Controls.Add(this.lbSubcategory);
-            this.panel4.Controls.Add(this.lbOrigen);
-            this.panel4.Controls.Add(this.lbDestino);
-            this.panel4.Controls.Add(this.lbTotalFinal);
-            this.panel4.Controls.Add(this.lbPricepKilometer);
-            this.panel4.Controls.Add(this.lbSolKilometraje);
-            this.panel4.Location = new System.Drawing.Point(659, 74);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(327, 298);
-            this.panel4.TabIndex = 7;
+            this.pSolKilometraje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.pSolKilometraje.Controls.Add(this.lbMileageTitle);
+            this.pSolKilometraje.Controls.Add(this.dateTimePicker1);
+            this.pSolKilometraje.Controls.Add(this.textBox9);
+            this.pSolKilometraje.Controls.Add(this.textBox8);
+            this.pSolKilometraje.Controls.Add(this.textBox7);
+            this.pSolKilometraje.Controls.Add(this.textBox6);
+            this.pSolKilometraje.Controls.Add(this.textBox4);
+            this.pSolKilometraje.Controls.Add(this.textBox3);
+            this.pSolKilometraje.Controls.Add(this.comboBox1);
+            this.pSolKilometraje.Controls.Add(this.lbTitleMileage);
+            this.pSolKilometraje.Controls.Add(this.lbDate);
+            this.pSolKilometraje.Controls.Add(this.lbSubcategory);
+            this.pSolKilometraje.Controls.Add(this.lbOrigen);
+            this.pSolKilometraje.Controls.Add(this.lbDestino);
+            this.pSolKilometraje.Controls.Add(this.lbTotalFinal);
+            this.pSolKilometraje.Controls.Add(this.lbPricepKilometer);
+            this.pSolKilometraje.Controls.Add(this.lbSolKilometraje);
+            this.pSolKilometraje.Location = new System.Drawing.Point(659, 74);
+            this.pSolKilometraje.Name = "pSolKilometraje";
+            this.pSolKilometraje.Size = new System.Drawing.Size(327, 298);
+            this.pSolKilometraje.TabIndex = 7;
             // 
             // lbMileageTitle
             // 
@@ -784,6 +710,7 @@
             // pUsuarios
             // 
             this.pUsuarios.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.pUsuarios.Controls.Add(this.pSolicitudDieta);
             this.pUsuarios.Controls.Add(this.tbOcupacion);
             this.pUsuarios.Controls.Add(this.tbPassword);
             this.pUsuarios.Controls.Add(this.tbEmail);
@@ -1025,11 +952,11 @@
             // pGestionDietas
             // 
             this.pGestionDietas.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pGestionDietas.Controls.Add(this.panel9);
-            this.pGestionDietas.Controls.Add(this.panel7);
+            this.pGestionDietas.Controls.Add(this.pGestDietasKilometraje);
+            this.pGestionDietas.Controls.Add(this.pGestDietasDietas);
             this.pGestionDietas.Controls.Add(this.comboBox2);
             this.pGestionDietas.Controls.Add(this.lbGestDietas);
-            this.pGestionDietas.Location = new System.Drawing.Point(0, 0);
+            this.pGestionDietas.Location = new System.Drawing.Point(228, 71);
             this.pGestionDietas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pGestionDietas.Name = "pGestionDietas";
             this.pGestionDietas.Size = new System.Drawing.Size(1171, 557);
@@ -1197,23 +1124,23 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // panel7
+            // pGestDietasDietas
             // 
-            this.panel7.Controls.Add(this.dgvDietas);
-            this.panel7.Controls.Add(this.lbDietas);
-            this.panel7.Location = new System.Drawing.Point(16, 65);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1134, 145);
-            this.panel7.TabIndex = 8;
+            this.pGestDietasDietas.Controls.Add(this.dgvDietas);
+            this.pGestDietasDietas.Controls.Add(this.lbDietas);
+            this.pGestDietasDietas.Location = new System.Drawing.Point(16, 65);
+            this.pGestDietasDietas.Name = "pGestDietasDietas";
+            this.pGestDietasDietas.Size = new System.Drawing.Size(1134, 145);
+            this.pGestDietasDietas.TabIndex = 8;
             // 
-            // panel9
+            // pGestDietasKilometraje
             // 
-            this.panel9.Controls.Add(this.lbKilometraje);
-            this.panel9.Controls.Add(this.dgvKilometraje);
-            this.panel9.Location = new System.Drawing.Point(16, 248);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1155, 226);
-            this.panel9.TabIndex = 9;
+            this.pGestDietasKilometraje.Controls.Add(this.lbKilometraje);
+            this.pGestDietasKilometraje.Controls.Add(this.dgvKilometraje);
+            this.pGestDietasKilometraje.Location = new System.Drawing.Point(16, 248);
+            this.pGestDietasKilometraje.Name = "pGestDietasKilometraje";
+            this.pGestDietasKilometraje.Size = new System.Drawing.Size(1155, 226);
+            this.pGestDietasKilometraje.TabIndex = 9;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -1282,37 +1209,62 @@
             this.dataGridViewComboBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.dataGridViewComboBoxColumn1.Width = 125;
             // 
+            // btnHome
+            // 
+            this.btnHome.BackColor = System.Drawing.Color.Transparent;
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnHome.ForeColor = System.Drawing.Color.White;
+            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.Location = new System.Drawing.Point(-3, -9);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.btnHome.Size = new System.Drawing.Size(185, 60);
+            this.btnHome.TabIndex = 5;
+            this.btnHome.Text = "Home";
+            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // pHome
+            // 
+            this.pHome.BackColor = System.Drawing.Color.Transparent;
+            this.pHome.Controls.Add(this.btnHome);
+            this.pHome.Location = new System.Drawing.Point(3, 1);
+            this.pHome.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.pHome.Name = "pHome";
+            this.pHome.Size = new System.Drawing.Size(180, 40);
+            this.pHome.TabIndex = 1;
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1702, 777);
-            this.Controls.Add(this.pSolicitudDieta);
+            this.Controls.Add(this.pGestionDietas);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.pUsuarios);
             this.Controls.Add(this.sidebar);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.pHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "HomePage";
             this.Text = "Home Page";
             this.Load += new System.EventHandler(this.HomePage_Load);
             this.sidebar.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.containerModulos.ResumeLayout(false);
             this.pGestDietas.ResumeLayout(false);
             this.pSoliDietas.ResumeLayout(false);
             this.pGestionUsers.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.pSettings.ResumeLayout(false);
+            this.pMenu.ResumeLayout(false);
+            this.pMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.pHeader.ResumeLayout(false);
+            this.pHeader.PerformLayout();
             this.pSolicitudDieta.ResumeLayout(false);
             this.pSolicitudDieta.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.pSolKilometraje.ResumeLayout(false);
+            this.pSolKilometraje.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.thumbNailInvoice)).EndInit();
             this.pUsuarios.ResumeLayout(false);
             this.pUsuarios.PerformLayout();
@@ -1323,10 +1275,11 @@
             this.pGestionDietas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKilometraje)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDietas)).EndInit();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
+            this.pGestDietasDietas.ResumeLayout(false);
+            this.pGestDietasDietas.PerformLayout();
+            this.pGestDietasKilometraje.ResumeLayout(false);
+            this.pGestDietasKilometraje.PerformLayout();
+            this.pHome.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1334,31 +1287,25 @@
         #endregion
 
         private FlowLayoutPanel sidebar;
-        private Panel panel1;
-        private Panel panel2;
+        private Panel pMenu;
         private Panel containerModulos;
-        private Panel panel5;
+        private Panel pSettings;
         private Label lbMenu;
         private PictureBox btnMenu;
         private System.Windows.Forms.Timer sidebarTimer;
-        private Button button3;
         private Button btnSubMenu;
         private Button btnGestUsers;
-        private Button button1;
+        private Button btnSettings;
         private Panel pGestionUsers;
         private System.Windows.Forms.Timer timerSubMenu;
-        private Panel panel3;
+        private Panel pHeader;
         private Label lbTitle;
         private Panel pSolicitudDieta;
         private Panel pGestionDietas;
         private Panel pUsuarios;
         private Label lbUser;
         private Label lbRole;
-        private Panel pSolDietas;
         private Panel pSoliDietas;
-        private Panel panel6;
-        private Panel panel8;
-        private Button button4;
         private Button btnSolDietas;
         private Panel pGestDietas;
         private Button btnGestDietas;
@@ -1404,7 +1351,7 @@
         private DateTimePicker dtpTimeDietas;
         private Label lbSolDietas;
         private PictureBox thumbNailInvoice;
-        private Panel panel4;
+        private Panel pSolKilometraje;
         private Label lbMileageTitle;
         private DateTimePicker dateTimePicker1;
         private TextBox textBox9;
@@ -1431,7 +1378,7 @@
         private DataGridViewTextBoxColumn endHour;
         private DataGridViewImageColumn invoice;
         private DataGridViewTextBoxColumn state;
-        private Panel panel9;
+        private Panel pGestDietasKilometraje;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn title;
         private DataGridViewTextBoxColumn date;
@@ -1441,6 +1388,8 @@
         private DataGridViewTextBoxColumn Final;
         private DataGridViewTextBoxColumn pricePerKilometer;
         private DataGridViewTextBoxColumn dataGridViewComboBoxColumn1;
-        private Panel panel7;
+        private Panel pGestDietasDietas;
+        private Panel pHome;
+        private Button btnHome;
     }
 }
