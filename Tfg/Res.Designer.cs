@@ -124,7 +124,7 @@ namespace capaPresentacion {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a juan@gmail.com.
+        ///   Busca una cadena traducida similar a jose@gmail.com.
         /// </summary>
         internal static string user {
             get {

@@ -1,6 +1,7 @@
 ﻿using capaEntidad;
 using capaNegocio;
 using capaPresentacion;
+using Google.Protobuf.WellKnownTypes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,9 @@ namespace capaPresentacion
         bool sidebarSubMenu;
         int aux = 0;
         cnUser cnUser = new cnUser();
+        cnDgvAllowance cnDgvAllowance = new cnDgvAllowance();
+        cnDgvMileage cnDgvMileage = new cnDgvMileage();
+        cnDgvUser cnDgvUser = new cnDgvUser();
 
         public HomePage()
         {
@@ -39,7 +43,7 @@ namespace capaPresentacion
             lbUser.Text = sb.ToString();
             
             ceGlobals.role = cnUser.nameRole(ceGlobals.email);
-
+            lbRole.Text = ceGlobals.role;
             if (ceGlobals.privileges[1] == 1)
             {
                 pGestDietas.Visible = true;
@@ -61,9 +65,12 @@ namespace capaPresentacion
 
             cnUser.dgvUsers(dgvUser);
 
+            cnDgvAllowance.dgvAllowance(dgvDietas);
+            cnDgvMileage.dgvUsers(dgvKilometraje);
 
+            dtpTimeDietas.Format = DateTimePickerFormat.Time;
+            dtpTimeDietas.ShowUpDown = true;
 
-            
         }
 
         // Define min and max size of sizebar
@@ -129,12 +136,6 @@ namespace capaPresentacion
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-        private void pGestionDietas_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -206,27 +207,56 @@ namespace capaPresentacion
         private void btnGestUser_Click(object sender, EventArgs e)
         {
             pUsuarios.Visible = true;
-            pSolicitudDieta.Visible = false;
             pGestionDietas.Visible = false;
+            pSolicitudDieta.Visible = false;
         }
 
         private void btnSolDietas_Click(object sender, EventArgs e)
         {
-            pSolicitudDieta.Visible = true;
             pUsuarios.Visible = false;
             pGestionDietas.Visible = false;
+            pSolicitudDieta.Visible = true;
         }
 
         private void btnGestDietas_Click(object sender, EventArgs e)
         {
+            pUsuarios.Visible = false;
             pGestionDietas.Visible = true;
             pSolicitudDieta.Visible = false;
-            pUsuarios.Visible = false;
         }
 
         private void dgvUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            tbDepartment.Text = dgvUser.CurrentRow.Cells[0].Value.ToString();
+            tbIdUser.Text = dgvUser.CurrentRow.Cells[1].Value.ToString();
+            tbEmail.Text = dgvUser.CurrentRow.Cells[2].Value.ToString();
+            tbPassword.Text = dgvUser.CurrentRow.Cells[3].Value.ToString();
+            tbOcupacion.Text = dgvUser.CurrentRow.Cells[4].Value.ToString();
 
+        }
+
+        private void dgvDietas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvKilometraje_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnSolDieta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvUser_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tbDepartment.Text = dgvUser.CurrentRow.Cells[0].Value.ToString();
+            tbIdUser.Text = dgvUser.CurrentRow.Cells[1].Value.ToString();
+            tbEmail.Text = dgvUser.CurrentRow.Cells[2].Value.ToString();
+            tbPassword.Text = dgvUser.CurrentRow.Cells[3].Value.ToString();
+            tbOcupacion.Text = dgvUser.CurrentRow.Cells[4].Value.ToString();
         }
     }
 }

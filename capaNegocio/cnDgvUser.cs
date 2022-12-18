@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace capaNegocio
 {
-    internal class cnDgvUser
+    public class cnDgvUser
     {
+
     }
 }

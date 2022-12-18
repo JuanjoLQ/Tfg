@@ -238,8 +238,6 @@ namespace capaDatos
                 }
             }
 
-            MessageBox.Show("Roles del usuario: " + namesRole.ToString());
-
             dr.Close();// Close reader.
             conn.Close();// Close connection.
 
@@ -252,5 +250,3 @@ namespace capaDatos
 
     }
 }
-
-
