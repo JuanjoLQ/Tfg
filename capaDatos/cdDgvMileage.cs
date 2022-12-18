@@ -24,6 +24,7 @@ namespace capaDatos
         private static ArrayList final = new ArrayList();
         private static ArrayList pricePerKilometer = new ArrayList();
         private static ArrayList states = new ArrayList();
+        private static ArrayList kilometers = new ArrayList();
 
         public void GetData()
         {
@@ -31,7 +32,7 @@ namespace capaDatos
             {
                 MySqlConnection conn = new MySqlConnection(cadenaConexion);
                 conn.Open();
-                string query = "select user.email, mileage.title, mileage.fechado, mileage.subcategory, mileage.origen, mileage.destino, mileage.final, mileage.priceperkilometer, mileage.state " +
+                string query = "select user.email, mileage.title, mileage.fechado, mileage.subcategory, mileage.origen, mileage.destino, mileage.final, mileage.priceperkilometer, mileage.state, mileage.kilometers " +
                     "from user, mileage where user.idUser = mileage.User_idUser";
 
                 MySqlCommand command = new MySqlCommand(query, conn);
@@ -51,6 +52,7 @@ namespace capaDatos
                         final.Add(row["final"].ToString());
                         pricePerKilometer.Add(row["priceperkilometer"].ToString());
                         states.Add(row["state"].ToString());
+                        kilometers.Add(row["kilometers"].ToString());
                     }
                 }
                 else
@@ -80,10 +82,12 @@ namespace capaDatos
                 newRow.Cells[2].Value = date[i];
                 newRow.Cells[3].Value = subcategory[i];
                 newRow.Cells[4].Value = origen[i];
-                newRow.Cells[6].Value = destino[i];
-                newRow.Cells[7].Value = final[i];
-                newRow.Cells[8].Value = pricePerKilometer[i];
-                newRow.Cells[5].Value = states[i];
+                newRow.Cells[5].Value = destino[i];
+                newRow.Cells[6].Value = kilometers[i];
+                newRow.Cells[7].Value = pricePerKilometer[i];
+                newRow.Cells[8].Value = final[i];
+                newRow.Cells[9].Value = states[i];
+                
                 dgvMileage.Rows.Add(newRow);
             }
         }

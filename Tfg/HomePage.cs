@@ -38,6 +38,9 @@ namespace capaPresentacion
             pUsuarios.Visible = false;
             pGestionDietas.Visible = false;
 
+            pGestDietasDietas.Visible = false;
+            pGestDietasKilometraje.Visible = false;
+
             StringBuilder sb = new StringBuilder("User: ", 50);
             sb.Append(ceGlobals.email);
             lbUser.Text = sb.ToString();
@@ -225,16 +228,6 @@ namespace capaPresentacion
             pSolicitudDieta.Visible = false;
         }
 
-        private void dgvUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            tbDepartment.Text = dgvUser.CurrentRow.Cells[0].Value.ToString();
-            tbIdUser.Text = dgvUser.CurrentRow.Cells[1].Value.ToString();
-            tbEmail.Text = dgvUser.CurrentRow.Cells[2].Value.ToString();
-            tbPassword.Text = dgvUser.CurrentRow.Cells[3].Value.ToString();
-            tbOcupacion.Text = dgvUser.CurrentRow.Cells[4].Value.ToString();
-
-        }
-
         private void dgvDietas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -250,6 +243,16 @@ namespace capaPresentacion
 
         }
 
+        private void dgvUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tbDepartment.Text = dgvUser.CurrentRow.Cells[0].Value.ToString();
+            tbIdUser.Text = dgvUser.CurrentRow.Cells[1].Value.ToString();
+            tbEmail.Text = dgvUser.CurrentRow.Cells[2].Value.ToString();
+            tbPassword.Text = dgvUser.CurrentRow.Cells[3].Value.ToString();
+            tbOcupacion.Text = dgvUser.CurrentRow.Cells[4].Value.ToString();
+
+        }
+
         private void dgvUser_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             tbDepartment.Text = dgvUser.CurrentRow.Cells[0].Value.ToString();
@@ -257,6 +260,61 @@ namespace capaPresentacion
             tbEmail.Text = dgvUser.CurrentRow.Cells[2].Value.ToString();
             tbPassword.Text = dgvUser.CurrentRow.Cells[3].Value.ToString();
             tbOcupacion.Text = dgvUser.CurrentRow.Cells[4].Value.ToString();
+        }
+
+        private void dgvDietas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tbDietasEmail.Text = dgvDietas.CurrentRow.Cells[0].Value.ToString();
+            tbDietasTitulo.Text = dgvDietas.CurrentRow.Cells[1].Value.ToString();
+            tbDietasObservations.Text = dgvDietas.CurrentRow.Cells[2].Value.ToString();
+            tbDietasDate.Text = dgvDietas.CurrentRow.Cells[3].Value.ToString();
+            tbDietasStartHour.Text = dgvDietas.CurrentRow.Cells[4].Value.ToString();
+            tbDietasEndHour.Text = dgvDietas.CurrentRow.Cells[5].Value.ToString();
+            tbDietasState.Text = dgvDietas.CurrentRow.Cells[7].Value.ToString();
+
+        }
+
+        private void dgvKilometraje_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tbKilometrajeEmail.Text = dgvKilometraje.CurrentRow.Cells[0].Value.ToString();
+            tbKilometrajeTitulo.Text = dgvKilometraje.CurrentRow.Cells[1].Value.ToString();
+            tbKilometrajeDate.Text = dgvKilometraje.CurrentRow.Cells[2].Value.ToString();
+            tbKilometrajeSubcategory.Text = dgvKilometraje.CurrentRow.Cells[3].Value.ToString();
+            tbKilometrajeOrigen.Text = dgvKilometraje.CurrentRow.Cells[4].Value.ToString();
+            tbKilometrajeDestino.Text = dgvKilometraje.CurrentRow.Cells[5].Value.ToString();
+            tbKilometrajeKilometers.Text = dgvKilometraje.CurrentRow.Cells[6].Value.ToString();
+            tbKilometrajePricePerKilometer.Text = dgvKilometraje.CurrentRow.Cells[7].Value.ToString();
+            tbKilometrajeFinal.Text = dgvKilometraje.CurrentRow.Cells[8].Value.ToString();
+            tbKilometrajeState.Text = dgvKilometraje.CurrentRow.Cells[9].Value.ToString();
+            
+        }
+
+        private void cbGestDietas_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cbGestDietas.SelectedItem.Equals("Dietas"))
+            {
+                pGestDietasDietas.Visible = true;
+                pGestDietasKilometraje.Visible = false;
+            }
+            else
+            {
+                pGestDietasDietas.Visible = false;
+                pGestDietasKilometraje.Visible = true;
+            }
+        }
+
+        private void cbSolicitudDietas_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cbGestDietas.SelectedItem.Equals("Dietas"))
+            {
+                pGestDietasDietas.Visible = true;
+                pGestDietasKilometraje.Visible = false;
+            }
+            else
+            {
+                pGestDietasDietas.Visible = false;
+                pGestDietasKilometraje.Visible = true;
+            }
         }
     }
 }

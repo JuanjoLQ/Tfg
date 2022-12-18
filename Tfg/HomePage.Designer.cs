@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePage));
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
+            this.pHome = new System.Windows.Forms.Panel();
+            this.btnHome = new System.Windows.Forms.Button();
             this.containerModulos = new System.Windows.Forms.Panel();
             this.pGestDietas = new System.Windows.Forms.Panel();
             this.btnGestDietas = new System.Windows.Forms.Button();
@@ -74,7 +76,7 @@
             this.dtpTimeDietas = new System.Windows.Forms.DateTimePicker();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lbAllowance = new System.Windows.Forms.Label();
-            this.cbDietas = new System.Windows.Forms.ComboBox();
+            this.cbSolicitudDietas = new System.Windows.Forms.ComboBox();
             this.btnUploadFile = new System.Windows.Forms.Button();
             this.btnSolDieta = new System.Windows.Forms.Button();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
@@ -107,10 +109,53 @@
             this.tbRPassword = new System.Windows.Forms.TextBox();
             this.tbREmail = new System.Windows.Forms.TextBox();
             this.pGestionDietas = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.dgvKilometraje = new System.Windows.Forms.DataGridView();
+            this.pGestDietasKilometraje = new System.Windows.Forms.Panel();
+            this.lbKilometrajeKilometers = new System.Windows.Forms.Label();
+            this.tbKilometrajeKilometers = new System.Windows.Forms.TextBox();
+            this.lbKilometrajeState = new System.Windows.Forms.Label();
+            this.tbKilometrajeState = new System.Windows.Forms.TextBox();
+            this.lbKilometrajePricePerKilometer = new System.Windows.Forms.Label();
+            this.tbKilometrajePricePerKilometer = new System.Windows.Forms.TextBox();
+            this.lbKilometrajeFinal = new System.Windows.Forms.Label();
+            this.tbKilometrajeFinal = new System.Windows.Forms.TextBox();
+            this.lbKilometrajeDate = new System.Windows.Forms.Label();
+            this.tbKilometrajeDate = new System.Windows.Forms.TextBox();
+            this.lbKilometrajeSubcategory = new System.Windows.Forms.Label();
+            this.tbKilometrajeSubcategory = new System.Windows.Forms.TextBox();
+            this.lbKilometrajeOrigen = new System.Windows.Forms.Label();
+            this.tbKilometrajeOrigen = new System.Windows.Forms.TextBox();
+            this.lbKilometrajeDestino = new System.Windows.Forms.Label();
+            this.tbKilometrajeDestino = new System.Windows.Forms.TextBox();
+            this.lbKilometrajeTitulo = new System.Windows.Forms.Label();
+            this.tbKilometrajeTitulo = new System.Windows.Forms.TextBox();
+            this.lbKilometrajeEmail = new System.Windows.Forms.Label();
+            this.tbKilometrajeEmail = new System.Windows.Forms.TextBox();
             this.lbKilometraje = new System.Windows.Forms.Label();
-            this.lbDietas = new System.Windows.Forms.Label();
+            this.dgvKilometraje = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subcategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.origen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.destino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kilometers = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pricePerKilometer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Final = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pGestDietasDietas = new System.Windows.Forms.Panel();
+            this.lbDietasObservations = new System.Windows.Forms.Label();
+            this.tbDietasObservations = new System.Windows.Forms.TextBox();
+            this.lbDietasDate = new System.Windows.Forms.Label();
+            this.tbDietasDate = new System.Windows.Forms.TextBox();
+            this.lbDietasStartHour = new System.Windows.Forms.Label();
+            this.tbDietasStartHour = new System.Windows.Forms.TextBox();
+            this.lbDietasEndHour = new System.Windows.Forms.Label();
+            this.tbDietasEndHour = new System.Windows.Forms.TextBox();
+            this.lbDietasState = new System.Windows.Forms.Label();
+            this.tbDietasState = new System.Windows.Forms.TextBox();
+            this.lbDietasTitle = new System.Windows.Forms.Label();
+            this.tbDietasTitulo = new System.Windows.Forms.TextBox();
+            this.lbEmailDietas = new System.Windows.Forms.Label();
             this.dgvDietas = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -120,22 +165,15 @@
             this.endHour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.invoice = new System.Windows.Forms.DataGridViewImageColumn();
             this.state = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbDietasEmail = new System.Windows.Forms.TextBox();
+            this.lbDietas = new System.Windows.Forms.Label();
+            this.cbGestDietas = new System.Windows.Forms.ComboBox();
             this.lbGestDietas = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.pGestDietasDietas = new System.Windows.Forms.Panel();
-            this.pGestDietasKilometraje = new System.Windows.Forms.Panel();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subcategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.origen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.destino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Final = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pricePerKilometer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnHome = new System.Windows.Forms.Button();
-            this.pHome = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbTitleDietas = new System.Windows.Forms.Label();
             this.sidebar.SuspendLayout();
+            this.pHome.SuspendLayout();
             this.containerModulos.SuspendLayout();
             this.pGestDietas.SuspendLayout();
             this.pSoliDietas.SuspendLayout();
@@ -151,11 +189,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             this.pRegister.SuspendLayout();
             this.pGestionDietas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKilometraje)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDietas)).BeginInit();
-            this.pGestDietasDietas.SuspendLayout();
             this.pGestDietasKilometraje.SuspendLayout();
-            this.pHome.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKilometraje)).BeginInit();
+            this.pGestDietasDietas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDietas)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidebar
@@ -172,6 +210,33 @@
             this.sidebar.Size = new System.Drawing.Size(225, 550);
             this.sidebar.TabIndex = 0;
             this.sidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+            // 
+            // pHome
+            // 
+            this.pHome.BackColor = System.Drawing.Color.Transparent;
+            this.pHome.Controls.Add(this.btnHome);
+            this.pHome.Location = new System.Drawing.Point(3, 1);
+            this.pHome.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.pHome.Name = "pHome";
+            this.pHome.Size = new System.Drawing.Size(180, 40);
+            this.pHome.TabIndex = 1;
+            // 
+            // btnHome
+            // 
+            this.btnHome.BackColor = System.Drawing.Color.Transparent;
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnHome.ForeColor = System.Drawing.Color.White;
+            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.Location = new System.Drawing.Point(-3, -9);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.btnHome.Size = new System.Drawing.Size(185, 60);
+            this.btnHome.TabIndex = 5;
+            this.btnHome.Text = "Home";
+            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // containerModulos
             // 
@@ -397,21 +462,13 @@
             // pSolicitudDieta
             // 
             this.pSolicitudDieta.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pSolicitudDieta.Controls.Add(this.panel1);
+            this.pSolicitudDieta.Controls.Add(this.pGestionDietas);
             this.pSolicitudDieta.Controls.Add(this.pSolKilometraje);
             this.pSolicitudDieta.Controls.Add(this.lbSolDietas);
-            this.pSolicitudDieta.Controls.Add(this.thumbNailInvoice);
-            this.pSolicitudDieta.Controls.Add(this.dtpTimeDietas);
-            this.pSolicitudDieta.Controls.Add(this.textBox1);
-            this.pSolicitudDieta.Controls.Add(this.lbAllowance);
-            this.pSolicitudDieta.Controls.Add(this.cbDietas);
-            this.pSolicitudDieta.Controls.Add(this.btnUploadFile);
-            this.pSolicitudDieta.Controls.Add(this.btnSolDieta);
-            this.pSolicitudDieta.Controls.Add(this.dtpDate);
-            this.pSolicitudDieta.Controls.Add(this.lbDescripcion);
-            this.pSolicitudDieta.Controls.Add(this.lbFechaDieta);
-            this.pSolicitudDieta.Controls.Add(this.textBox2);
+            this.pSolicitudDieta.Controls.Add(this.cbSolicitudDietas);
             this.pSolicitudDieta.Controls.Add(this.lbTitleSolDieta);
-            this.pSolicitudDieta.Location = new System.Drawing.Point(0, 0);
+            this.pSolicitudDieta.Location = new System.Drawing.Point(228, 71);
             this.pSolicitudDieta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pSolicitudDieta.Name = "pSolicitudDieta";
             this.pSolicitudDieta.Size = new System.Drawing.Size(1196, 557);
@@ -438,7 +495,7 @@
             this.pSolKilometraje.Controls.Add(this.lbTotalFinal);
             this.pSolKilometraje.Controls.Add(this.lbPricepKilometer);
             this.pSolKilometraje.Controls.Add(this.lbSolKilometraje);
-            this.pSolKilometraje.Location = new System.Drawing.Point(659, 74);
+            this.pSolKilometraje.Location = new System.Drawing.Point(772, 52);
             this.pSolKilometraje.Name = "pSolKilometraje";
             this.pSolKilometraje.Size = new System.Drawing.Size(327, 298);
             this.pSolKilometraje.TabIndex = 7;
@@ -600,7 +657,7 @@
             // 
             // thumbNailInvoice
             // 
-            this.thumbNailInvoice.Location = new System.Drawing.Point(49, 369);
+            this.thumbNailInvoice.Location = new System.Drawing.Point(33, 208);
             this.thumbNailInvoice.Name = "thumbNailInvoice";
             this.thumbNailInvoice.Size = new System.Drawing.Size(157, 119);
             this.thumbNailInvoice.TabIndex = 12;
@@ -609,7 +666,7 @@
             // dtpTimeDietas
             // 
             this.dtpTimeDietas.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpTimeDietas.Location = new System.Drawing.Point(421, 313);
+            this.dtpTimeDietas.Location = new System.Drawing.Point(332, 191);
             this.dtpTimeDietas.MaxDate = new System.DateTime(2022, 12, 18, 23, 23, 0, 0);
             this.dtpTimeDietas.Name = "dtpTimeDietas";
             this.dtpTimeDietas.Size = new System.Drawing.Size(201, 23);
@@ -617,7 +674,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(82, 62);
+            this.textBox1.Location = new System.Drawing.Point(61, 50);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(84, 23);
             this.textBox1.TabIndex = 10;
@@ -625,26 +682,27 @@
             // lbAllowance
             // 
             this.lbAllowance.AutoSize = true;
-            this.lbAllowance.Location = new System.Drawing.Point(25, 65);
+            this.lbAllowance.Location = new System.Drawing.Point(4, 53);
             this.lbAllowance.Name = "lbAllowance";
             this.lbAllowance.Size = new System.Drawing.Size(37, 15);
             this.lbAllowance.TabIndex = 9;
             this.lbAllowance.Text = "Título";
             // 
-            // cbDietas
+            // cbSolicitudDietas
             // 
-            this.cbDietas.FormattingEnabled = true;
-            this.cbDietas.Items.AddRange(new object[] {
+            this.cbSolicitudDietas.FormattingEnabled = true;
+            this.cbSolicitudDietas.Items.AddRange(new object[] {
             "Dieta",
             "Kilometraje"});
-            this.cbDietas.Location = new System.Drawing.Point(218, 15);
-            this.cbDietas.Name = "cbDietas";
-            this.cbDietas.Size = new System.Drawing.Size(134, 23);
-            this.cbDietas.TabIndex = 8;
+            this.cbSolicitudDietas.Location = new System.Drawing.Point(211, 23);
+            this.cbSolicitudDietas.Name = "cbSolicitudDietas";
+            this.cbSolicitudDietas.Size = new System.Drawing.Size(134, 23);
+            this.cbSolicitudDietas.TabIndex = 8;
+            this.cbSolicitudDietas.SelectionChangeCommitted += new System.EventHandler(this.cbSolicitudDietas_SelectionChangeCommitted);
             // 
             // btnUploadFile
             // 
-            this.btnUploadFile.Location = new System.Drawing.Point(248, 411);
+            this.btnUploadFile.Location = new System.Drawing.Point(209, 255);
             this.btnUploadFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUploadFile.Name = "btnUploadFile";
             this.btnUploadFile.Size = new System.Drawing.Size(141, 29);
@@ -654,7 +712,7 @@
             // 
             // btnSolDieta
             // 
-            this.btnSolDieta.Location = new System.Drawing.Point(236, 452);
+            this.btnSolDieta.Location = new System.Drawing.Point(209, 367);
             this.btnSolDieta.Name = "btnSolDieta";
             this.btnSolDieta.Size = new System.Drawing.Size(157, 46);
             this.btnSolDieta.TabIndex = 6;
@@ -666,7 +724,7 @@
             // 
             this.dtpDate.CustomFormat = "dd/MM/yyyy";
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDate.Location = new System.Drawing.Point(421, 268);
+            this.dtpDate.Location = new System.Drawing.Point(410, 21);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(108, 23);
             this.dtpDate.TabIndex = 5;
@@ -675,7 +733,7 @@
             // lbDescripcion
             // 
             this.lbDescripcion.AutoSize = true;
-            this.lbDescripcion.Location = new System.Drawing.Point(7, 120);
+            this.lbDescripcion.Location = new System.Drawing.Point(4, 87);
             this.lbDescripcion.Name = "lbDescripcion";
             this.lbDescripcion.Size = new System.Drawing.Size(69, 15);
             this.lbDescripcion.TabIndex = 4;
@@ -684,7 +742,7 @@
             // lbFechaDieta
             // 
             this.lbFechaDieta.AutoSize = true;
-            this.lbFechaDieta.Location = new System.Drawing.Point(339, 269);
+            this.lbFechaDieta.Location = new System.Drawing.Point(328, 22);
             this.lbFechaDieta.Name = "lbFechaDieta";
             this.lbFechaDieta.Size = new System.Drawing.Size(38, 15);
             this.lbFechaDieta.TabIndex = 3;
@@ -692,7 +750,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(82, 128);
+            this.textBox2.Location = new System.Drawing.Point(79, 95);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(230, 95);
@@ -710,7 +768,6 @@
             // pUsuarios
             // 
             this.pUsuarios.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.pUsuarios.Controls.Add(this.pSolicitudDieta);
             this.pUsuarios.Controls.Add(this.tbOcupacion);
             this.pUsuarios.Controls.Add(this.tbPassword);
             this.pUsuarios.Controls.Add(this.tbEmail);
@@ -775,7 +832,7 @@
             // lbOcupacion
             // 
             this.lbOcupacion.AutoSize = true;
-            this.lbOcupacion.Location = new System.Drawing.Point(36, 392);
+            this.lbOcupacion.Location = new System.Drawing.Point(36, 412);
             this.lbOcupacion.Name = "lbOcupacion";
             this.lbOcupacion.Size = new System.Drawing.Size(65, 15);
             this.lbOcupacion.TabIndex = 11;
@@ -784,7 +841,7 @@
             // lbPassword
             // 
             this.lbPassword.AutoSize = true;
-            this.lbPassword.Location = new System.Drawing.Point(36, 358);
+            this.lbPassword.Location = new System.Drawing.Point(38, 376);
             this.lbPassword.Name = "lbPassword";
             this.lbPassword.Size = new System.Drawing.Size(57, 15);
             this.lbPassword.TabIndex = 10;
@@ -954,25 +1011,223 @@
             this.pGestionDietas.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pGestionDietas.Controls.Add(this.pGestDietasKilometraje);
             this.pGestionDietas.Controls.Add(this.pGestDietasDietas);
-            this.pGestionDietas.Controls.Add(this.comboBox2);
+            this.pGestionDietas.Controls.Add(this.cbGestDietas);
             this.pGestionDietas.Controls.Add(this.lbGestDietas);
-            this.pGestionDietas.Location = new System.Drawing.Point(228, 71);
+            this.pGestionDietas.Location = new System.Drawing.Point(740, 412);
             this.pGestionDietas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pGestionDietas.Name = "pGestionDietas";
-            this.pGestionDietas.Size = new System.Drawing.Size(1171, 557);
+            this.pGestionDietas.Size = new System.Drawing.Size(1196, 557);
             this.pGestionDietas.TabIndex = 3;
             this.pGestionDietas.Visible = false;
             // 
-            // comboBox2
+            // pGestDietasKilometraje
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Dietas",
-            "Kilometraje"});
-            this.comboBox2.Location = new System.Drawing.Point(202, 26);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 23);
-            this.comboBox2.TabIndex = 7;
+            this.pGestDietasKilometraje.Controls.Add(this.lbKilometrajeKilometers);
+            this.pGestDietasKilometraje.Controls.Add(this.tbKilometrajeKilometers);
+            this.pGestDietasKilometraje.Controls.Add(this.lbKilometrajeState);
+            this.pGestDietasKilometraje.Controls.Add(this.tbKilometrajeState);
+            this.pGestDietasKilometraje.Controls.Add(this.lbKilometrajePricePerKilometer);
+            this.pGestDietasKilometraje.Controls.Add(this.tbKilometrajePricePerKilometer);
+            this.pGestDietasKilometraje.Controls.Add(this.lbKilometrajeFinal);
+            this.pGestDietasKilometraje.Controls.Add(this.tbKilometrajeFinal);
+            this.pGestDietasKilometraje.Controls.Add(this.lbKilometrajeDate);
+            this.pGestDietasKilometraje.Controls.Add(this.tbKilometrajeDate);
+            this.pGestDietasKilometraje.Controls.Add(this.lbKilometrajeSubcategory);
+            this.pGestDietasKilometraje.Controls.Add(this.tbKilometrajeSubcategory);
+            this.pGestDietasKilometraje.Controls.Add(this.lbKilometrajeOrigen);
+            this.pGestDietasKilometraje.Controls.Add(this.tbKilometrajeOrigen);
+            this.pGestDietasKilometraje.Controls.Add(this.lbKilometrajeDestino);
+            this.pGestDietasKilometraje.Controls.Add(this.tbKilometrajeDestino);
+            this.pGestDietasKilometraje.Controls.Add(this.lbKilometrajeTitulo);
+            this.pGestDietasKilometraje.Controls.Add(this.tbKilometrajeTitulo);
+            this.pGestDietasKilometraje.Controls.Add(this.lbKilometrajeEmail);
+            this.pGestDietasKilometraje.Controls.Add(this.tbKilometrajeEmail);
+            this.pGestDietasKilometraje.Controls.Add(this.lbKilometraje);
+            this.pGestDietasKilometraje.Controls.Add(this.dgvKilometraje);
+            this.pGestDietasKilometraje.Location = new System.Drawing.Point(16, 65);
+            this.pGestDietasKilometraje.Name = "pGestDietasKilometraje";
+            this.pGestDietasKilometraje.Size = new System.Drawing.Size(1134, 437);
+            this.pGestDietasKilometraje.TabIndex = 9;
+            // 
+            // lbKilometrajeKilometers
+            // 
+            this.lbKilometrajeKilometers.AutoSize = true;
+            this.lbKilometrajeKilometers.Location = new System.Drawing.Point(245, 297);
+            this.lbKilometrajeKilometers.Name = "lbKilometrajeKilometers";
+            this.lbKilometrajeKilometers.Size = new System.Drawing.Size(63, 15);
+            this.lbKilometrajeKilometers.TabIndex = 45;
+            this.lbKilometrajeKilometers.Text = "Kilometers";
+            // 
+            // tbKilometrajeKilometers
+            // 
+            this.tbKilometrajeKilometers.Location = new System.Drawing.Point(313, 294);
+            this.tbKilometrajeKilometers.Name = "tbKilometrajeKilometers";
+            this.tbKilometrajeKilometers.PlaceholderText = "State";
+            this.tbKilometrajeKilometers.Size = new System.Drawing.Size(117, 23);
+            this.tbKilometrajeKilometers.TabIndex = 44;
+            // 
+            // lbKilometrajeState
+            // 
+            this.lbKilometrajeState.AutoSize = true;
+            this.lbKilometrajeState.Location = new System.Drawing.Point(483, 217);
+            this.lbKilometrajeState.Name = "lbKilometrajeState";
+            this.lbKilometrajeState.Size = new System.Drawing.Size(33, 15);
+            this.lbKilometrajeState.TabIndex = 43;
+            this.lbKilometrajeState.Text = "State";
+            // 
+            // tbKilometrajeState
+            // 
+            this.tbKilometrajeState.Location = new System.Drawing.Point(551, 214);
+            this.tbKilometrajeState.Name = "tbKilometrajeState";
+            this.tbKilometrajeState.PlaceholderText = "State";
+            this.tbKilometrajeState.Size = new System.Drawing.Size(117, 23);
+            this.tbKilometrajeState.TabIndex = 42;
+            // 
+            // lbKilometrajePricePerKilometer
+            // 
+            this.lbKilometrajePricePerKilometer.AutoSize = true;
+            this.lbKilometrajePricePerKilometer.Location = new System.Drawing.Point(241, 336);
+            this.lbKilometrajePricePerKilometer.Name = "lbKilometrajePricePerKilometer";
+            this.lbKilometrajePricePerKilometer.Size = new System.Drawing.Size(107, 15);
+            this.lbKilometrajePricePerKilometer.TabIndex = 41;
+            this.lbKilometrajePricePerKilometer.Text = "Price Per Kilometer";
+            // 
+            // tbKilometrajePricePerKilometer
+            // 
+            this.tbKilometrajePricePerKilometer.Location = new System.Drawing.Point(354, 331);
+            this.tbKilometrajePricePerKilometer.Name = "tbKilometrajePricePerKilometer";
+            this.tbKilometrajePricePerKilometer.PlaceholderText = "Price Per Kilometer";
+            this.tbKilometrajePricePerKilometer.Size = new System.Drawing.Size(117, 23);
+            this.tbKilometrajePricePerKilometer.TabIndex = 40;
+            // 
+            // lbKilometrajeFinal
+            // 
+            this.lbKilometrajeFinal.AutoSize = true;
+            this.lbKilometrajeFinal.Location = new System.Drawing.Point(245, 375);
+            this.lbKilometrajeFinal.Name = "lbKilometrajeFinal";
+            this.lbKilometrajeFinal.Size = new System.Drawing.Size(32, 15);
+            this.lbKilometrajeFinal.TabIndex = 39;
+            this.lbKilometrajeFinal.Text = "Final";
+            // 
+            // tbKilometrajeFinal
+            // 
+            this.tbKilometrajeFinal.Location = new System.Drawing.Point(313, 372);
+            this.tbKilometrajeFinal.Name = "tbKilometrajeFinal";
+            this.tbKilometrajeFinal.PlaceholderText = "Final";
+            this.tbKilometrajeFinal.Size = new System.Drawing.Size(117, 23);
+            this.tbKilometrajeFinal.TabIndex = 38;
+            // 
+            // lbKilometrajeDate
+            // 
+            this.lbKilometrajeDate.AutoSize = true;
+            this.lbKilometrajeDate.Location = new System.Drawing.Point(24, 291);
+            this.lbKilometrajeDate.Name = "lbKilometrajeDate";
+            this.lbKilometrajeDate.Size = new System.Drawing.Size(31, 15);
+            this.lbKilometrajeDate.TabIndex = 35;
+            this.lbKilometrajeDate.Text = "Date";
+            // 
+            // tbKilometrajeDate
+            // 
+            this.tbKilometrajeDate.Location = new System.Drawing.Point(66, 288);
+            this.tbKilometrajeDate.Name = "tbKilometrajeDate";
+            this.tbKilometrajeDate.PlaceholderText = "Fecha";
+            this.tbKilometrajeDate.Size = new System.Drawing.Size(117, 23);
+            this.tbKilometrajeDate.TabIndex = 34;
+            // 
+            // lbKilometrajeSubcategory
+            // 
+            this.lbKilometrajeSubcategory.AutoSize = true;
+            this.lbKilometrajeSubcategory.Location = new System.Drawing.Point(23, 331);
+            this.lbKilometrajeSubcategory.Name = "lbKilometrajeSubcategory";
+            this.lbKilometrajeSubcategory.Size = new System.Drawing.Size(73, 15);
+            this.lbKilometrajeSubcategory.TabIndex = 33;
+            this.lbKilometrajeSubcategory.Text = "Subcategory";
+            // 
+            // tbKilometrajeSubcategory
+            // 
+            this.tbKilometrajeSubcategory.Location = new System.Drawing.Point(102, 331);
+            this.tbKilometrajeSubcategory.Name = "tbKilometrajeSubcategory";
+            this.tbKilometrajeSubcategory.PlaceholderText = "Subcategoría";
+            this.tbKilometrajeSubcategory.Size = new System.Drawing.Size(117, 23);
+            this.tbKilometrajeSubcategory.TabIndex = 32;
+            // 
+            // lbKilometrajeOrigen
+            // 
+            this.lbKilometrajeOrigen.AutoSize = true;
+            this.lbKilometrajeOrigen.Location = new System.Drawing.Point(245, 217);
+            this.lbKilometrajeOrigen.Name = "lbKilometrajeOrigen";
+            this.lbKilometrajeOrigen.Size = new System.Drawing.Size(43, 15);
+            this.lbKilometrajeOrigen.TabIndex = 31;
+            this.lbKilometrajeOrigen.Text = "Origen";
+            // 
+            // tbKilometrajeOrigen
+            // 
+            this.tbKilometrajeOrigen.Location = new System.Drawing.Point(313, 214);
+            this.tbKilometrajeOrigen.Name = "tbKilometrajeOrigen";
+            this.tbKilometrajeOrigen.PlaceholderText = "Origen";
+            this.tbKilometrajeOrigen.Size = new System.Drawing.Size(117, 23);
+            this.tbKilometrajeOrigen.TabIndex = 30;
+            // 
+            // lbKilometrajeDestino
+            // 
+            this.lbKilometrajeDestino.AutoSize = true;
+            this.lbKilometrajeDestino.Location = new System.Drawing.Point(245, 261);
+            this.lbKilometrajeDestino.Name = "lbKilometrajeDestino";
+            this.lbKilometrajeDestino.Size = new System.Drawing.Size(47, 15);
+            this.lbKilometrajeDestino.TabIndex = 29;
+            this.lbKilometrajeDestino.Text = "Destino";
+            // 
+            // tbKilometrajeDestino
+            // 
+            this.tbKilometrajeDestino.Location = new System.Drawing.Point(313, 258);
+            this.tbKilometrajeDestino.Name = "tbKilometrajeDestino";
+            this.tbKilometrajeDestino.PlaceholderText = "Destino";
+            this.tbKilometrajeDestino.ReadOnly = true;
+            this.tbKilometrajeDestino.Size = new System.Drawing.Size(117, 23);
+            this.tbKilometrajeDestino.TabIndex = 28;
+            // 
+            // lbKilometrajeTitulo
+            // 
+            this.lbKilometrajeTitulo.AutoSize = true;
+            this.lbKilometrajeTitulo.Location = new System.Drawing.Point(23, 250);
+            this.lbKilometrajeTitulo.Name = "lbKilometrajeTitulo";
+            this.lbKilometrajeTitulo.Size = new System.Drawing.Size(37, 15);
+            this.lbKilometrajeTitulo.TabIndex = 27;
+            this.lbKilometrajeTitulo.Text = "Título";
+            // 
+            // tbKilometrajeTitulo
+            // 
+            this.tbKilometrajeTitulo.Location = new System.Drawing.Point(66, 250);
+            this.tbKilometrajeTitulo.Name = "tbKilometrajeTitulo";
+            this.tbKilometrajeTitulo.PlaceholderText = "Títutlo";
+            this.tbKilometrajeTitulo.Size = new System.Drawing.Size(117, 23);
+            this.tbKilometrajeTitulo.TabIndex = 26;
+            // 
+            // lbKilometrajeEmail
+            // 
+            this.lbKilometrajeEmail.AutoSize = true;
+            this.lbKilometrajeEmail.Location = new System.Drawing.Point(24, 217);
+            this.lbKilometrajeEmail.Name = "lbKilometrajeEmail";
+            this.lbKilometrajeEmail.Size = new System.Drawing.Size(36, 15);
+            this.lbKilometrajeEmail.TabIndex = 25;
+            this.lbKilometrajeEmail.Text = "Email";
+            // 
+            // tbKilometrajeEmail
+            // 
+            this.tbKilometrajeEmail.Location = new System.Drawing.Point(66, 214);
+            this.tbKilometrajeEmail.Name = "tbKilometrajeEmail";
+            this.tbKilometrajeEmail.PlaceholderText = "Email";
+            this.tbKilometrajeEmail.Size = new System.Drawing.Size(117, 23);
+            this.tbKilometrajeEmail.TabIndex = 24;
+            // 
+            // lbKilometraje
+            // 
+            this.lbKilometraje.AutoSize = true;
+            this.lbKilometraje.Location = new System.Drawing.Point(3, 8);
+            this.lbKilometraje.Name = "lbKilometraje";
+            this.lbKilometraje.Size = new System.Drawing.Size(67, 15);
+            this.lbKilometraje.TabIndex = 5;
+            this.lbKilometraje.Text = "Kilometraje";
             // 
             // dgvKilometraje
             // 
@@ -987,8 +1242,9 @@
             this.subcategory,
             this.origen,
             this.destino,
-            this.Final,
+            this.kilometers,
             this.pricePerKilometer,
+            this.Final,
             this.dataGridViewComboBoxColumn1});
             this.dgvKilometraje.Location = new System.Drawing.Point(3, 31);
             this.dgvKilometraje.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -997,25 +1253,211 @@
             this.dgvKilometraje.RowTemplate.Height = 29;
             this.dgvKilometraje.Size = new System.Drawing.Size(1149, 172);
             this.dgvKilometraje.TabIndex = 6;
+            this.dgvKilometraje.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKilometraje_CellClick);
             this.dgvKilometraje.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKilometraje_CellContentClick);
             // 
-            // lbKilometraje
+            // dataGridViewTextBoxColumn1
             // 
-            this.lbKilometraje.AutoSize = true;
-            this.lbKilometraje.Location = new System.Drawing.Point(3, 13);
-            this.lbKilometraje.Name = "lbKilometraje";
-            this.lbKilometraje.Size = new System.Drawing.Size(67, 15);
-            this.lbKilometraje.TabIndex = 5;
-            this.lbKilometraje.Text = "Kilometraje";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Email";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
-            // lbDietas
+            // title
             // 
-            this.lbDietas.AutoSize = true;
-            this.lbDietas.Location = new System.Drawing.Point(3, 8);
-            this.lbDietas.Name = "lbDietas";
-            this.lbDietas.Size = new System.Drawing.Size(39, 15);
-            this.lbDietas.TabIndex = 4;
-            this.lbDietas.Text = "Dietas";
+            this.title.HeaderText = "Title";
+            this.title.MinimumWidth = 6;
+            this.title.Name = "title";
+            this.title.Width = 125;
+            // 
+            // date
+            // 
+            this.date.HeaderText = "Date";
+            this.date.MinimumWidth = 6;
+            this.date.Name = "date";
+            this.date.Width = 75;
+            // 
+            // subcategory
+            // 
+            this.subcategory.HeaderText = "Subcategory";
+            this.subcategory.MinimumWidth = 6;
+            this.subcategory.Name = "subcategory";
+            this.subcategory.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.subcategory.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.subcategory.Width = 125;
+            // 
+            // origen
+            // 
+            this.origen.HeaderText = "Origen";
+            this.origen.MinimumWidth = 6;
+            this.origen.Name = "origen";
+            this.origen.Width = 125;
+            // 
+            // destino
+            // 
+            this.destino.HeaderText = "Destino";
+            this.destino.MinimumWidth = 6;
+            this.destino.Name = "destino";
+            this.destino.Width = 125;
+            // 
+            // kilometers
+            // 
+            this.kilometers.HeaderText = "Kilometers";
+            this.kilometers.Name = "kilometers";
+            // 
+            // pricePerKilometer
+            // 
+            this.pricePerKilometer.HeaderText = "Price Per Kilometer";
+            this.pricePerKilometer.MinimumWidth = 6;
+            this.pricePerKilometer.Name = "pricePerKilometer";
+            this.pricePerKilometer.Width = 125;
+            // 
+            // Final
+            // 
+            this.Final.HeaderText = "Final";
+            this.Final.MinimumWidth = 6;
+            this.Final.Name = "Final";
+            this.Final.ReadOnly = true;
+            this.Final.Width = 75;
+            // 
+            // dataGridViewComboBoxColumn1
+            // 
+            this.dataGridViewComboBoxColumn1.HeaderText = "State";
+            this.dataGridViewComboBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewComboBoxColumn1.Name = "dataGridViewComboBoxColumn1";
+            this.dataGridViewComboBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewComboBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewComboBoxColumn1.Width = 125;
+            // 
+            // pGestDietasDietas
+            // 
+            this.pGestDietasDietas.Controls.Add(this.lbDietasObservations);
+            this.pGestDietasDietas.Controls.Add(this.tbDietasObservations);
+            this.pGestDietasDietas.Controls.Add(this.lbDietasDate);
+            this.pGestDietasDietas.Controls.Add(this.tbDietasDate);
+            this.pGestDietasDietas.Controls.Add(this.lbDietasStartHour);
+            this.pGestDietasDietas.Controls.Add(this.tbDietasStartHour);
+            this.pGestDietasDietas.Controls.Add(this.lbDietasEndHour);
+            this.pGestDietasDietas.Controls.Add(this.tbDietasEndHour);
+            this.pGestDietasDietas.Controls.Add(this.lbDietasState);
+            this.pGestDietasDietas.Controls.Add(this.tbDietasState);
+            this.pGestDietasDietas.Controls.Add(this.lbDietasTitle);
+            this.pGestDietasDietas.Controls.Add(this.tbDietasTitulo);
+            this.pGestDietasDietas.Controls.Add(this.lbEmailDietas);
+            this.pGestDietasDietas.Controls.Add(this.dgvDietas);
+            this.pGestDietasDietas.Controls.Add(this.tbDietasEmail);
+            this.pGestDietasDietas.Controls.Add(this.lbDietas);
+            this.pGestDietasDietas.Location = new System.Drawing.Point(16, 65);
+            this.pGestDietasDietas.Name = "pGestDietasDietas";
+            this.pGestDietasDietas.Size = new System.Drawing.Size(1134, 437);
+            this.pGestDietasDietas.TabIndex = 8;
+            // 
+            // lbDietasObservations
+            // 
+            this.lbDietasObservations.AutoSize = true;
+            this.lbDietasObservations.Location = new System.Drawing.Point(0, 239);
+            this.lbDietasObservations.Name = "lbDietasObservations";
+            this.lbDietasObservations.Size = new System.Drawing.Size(84, 15);
+            this.lbDietasObservations.TabIndex = 23;
+            this.lbDietasObservations.Text = "Observaciones";
+            // 
+            // tbDietasObservations
+            // 
+            this.tbDietasObservations.Location = new System.Drawing.Point(83, 239);
+            this.tbDietasObservations.Multiline = true;
+            this.tbDietasObservations.Name = "tbDietasObservations";
+            this.tbDietasObservations.Size = new System.Drawing.Size(140, 78);
+            this.tbDietasObservations.TabIndex = 22;
+            // 
+            // lbDietasDate
+            // 
+            this.lbDietasDate.AutoSize = true;
+            this.lbDietasDate.Location = new System.Drawing.Point(245, 160);
+            this.lbDietasDate.Name = "lbDietasDate";
+            this.lbDietasDate.Size = new System.Drawing.Size(31, 15);
+            this.lbDietasDate.TabIndex = 21;
+            this.lbDietasDate.Text = "Date";
+            // 
+            // tbDietasDate
+            // 
+            this.tbDietasDate.Location = new System.Drawing.Point(305, 154);
+            this.tbDietasDate.Name = "tbDietasDate";
+            this.tbDietasDate.Size = new System.Drawing.Size(117, 23);
+            this.tbDietasDate.TabIndex = 20;
+            // 
+            // lbDietasStartHour
+            // 
+            this.lbDietasStartHour.AutoSize = true;
+            this.lbDietasStartHour.Location = new System.Drawing.Point(255, 198);
+            this.lbDietasStartHour.Name = "lbDietasStartHour";
+            this.lbDietasStartHour.Size = new System.Drawing.Size(61, 15);
+            this.lbDietasStartHour.TabIndex = 19;
+            this.lbDietasStartHour.Text = "Start Hour";
+            // 
+            // tbDietasStartHour
+            // 
+            this.tbDietasStartHour.Location = new System.Drawing.Point(323, 195);
+            this.tbDietasStartHour.Name = "tbDietasStartHour";
+            this.tbDietasStartHour.Size = new System.Drawing.Size(117, 23);
+            this.tbDietasStartHour.TabIndex = 18;
+            // 
+            // lbDietasEndHour
+            // 
+            this.lbDietasEndHour.AutoSize = true;
+            this.lbDietasEndHour.Location = new System.Drawing.Point(258, 250);
+            this.lbDietasEndHour.Name = "lbDietasEndHour";
+            this.lbDietasEndHour.Size = new System.Drawing.Size(57, 15);
+            this.lbDietasEndHour.TabIndex = 17;
+            this.lbDietasEndHour.Text = "End Hour";
+            // 
+            // tbDietasEndHour
+            // 
+            this.tbDietasEndHour.Location = new System.Drawing.Point(326, 247);
+            this.tbDietasEndHour.Name = "tbDietasEndHour";
+            this.tbDietasEndHour.Size = new System.Drawing.Size(117, 23);
+            this.tbDietasEndHour.TabIndex = 16;
+            // 
+            // lbDietasState
+            // 
+            this.lbDietasState.AutoSize = true;
+            this.lbDietasState.Location = new System.Drawing.Point(258, 294);
+            this.lbDietasState.Name = "lbDietasState";
+            this.lbDietasState.Size = new System.Drawing.Size(33, 15);
+            this.lbDietasState.TabIndex = 15;
+            this.lbDietasState.Text = "State";
+            // 
+            // tbDietasState
+            // 
+            this.tbDietasState.Location = new System.Drawing.Point(326, 291);
+            this.tbDietasState.Name = "tbDietasState";
+            this.tbDietasState.PlaceholderText = "State";
+            this.tbDietasState.ReadOnly = true;
+            this.tbDietasState.Size = new System.Drawing.Size(117, 23);
+            this.tbDietasState.TabIndex = 14;
+            // 
+            // lbDietasTitle
+            // 
+            this.lbDietasTitle.AutoSize = true;
+            this.lbDietasTitle.Location = new System.Drawing.Point(3, 198);
+            this.lbDietasTitle.Name = "lbDietasTitle";
+            this.lbDietasTitle.Size = new System.Drawing.Size(37, 15);
+            this.lbDietasTitle.TabIndex = 13;
+            this.lbDietasTitle.Text = "Título";
+            // 
+            // tbDietasTitulo
+            // 
+            this.tbDietasTitulo.Location = new System.Drawing.Point(46, 198);
+            this.tbDietasTitulo.Name = "tbDietasTitulo";
+            this.tbDietasTitulo.Size = new System.Drawing.Size(117, 23);
+            this.tbDietasTitulo.TabIndex = 12;
+            // 
+            // lbEmailDietas
+            // 
+            this.lbEmailDietas.AutoSize = true;
+            this.lbEmailDietas.Location = new System.Drawing.Point(4, 165);
+            this.lbEmailDietas.Name = "lbEmailDietas";
+            this.lbEmailDietas.Size = new System.Drawing.Size(36, 15);
+            this.lbEmailDietas.TabIndex = 11;
+            this.lbEmailDietas.Text = "Email";
             // 
             // dgvDietas
             // 
@@ -1039,6 +1481,7 @@
             this.dgvDietas.RowTemplate.Height = 29;
             this.dgvDietas.Size = new System.Drawing.Size(1065, 115);
             this.dgvDietas.TabIndex = 3;
+            this.dgvDietas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDietas_CellClick);
             this.dgvDietas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDietas_CellContentClick);
             // 
             // dataGridViewTextBoxColumn2
@@ -1104,6 +1547,35 @@
             this.state.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.state.Width = 125;
             // 
+            // tbDietasEmail
+            // 
+            this.tbDietasEmail.Location = new System.Drawing.Point(46, 162);
+            this.tbDietasEmail.Name = "tbDietasEmail";
+            this.tbDietasEmail.PlaceholderText = "Email";
+            this.tbDietasEmail.Size = new System.Drawing.Size(117, 23);
+            this.tbDietasEmail.TabIndex = 10;
+            // 
+            // lbDietas
+            // 
+            this.lbDietas.AutoSize = true;
+            this.lbDietas.Location = new System.Drawing.Point(3, 8);
+            this.lbDietas.Name = "lbDietas";
+            this.lbDietas.Size = new System.Drawing.Size(39, 15);
+            this.lbDietas.TabIndex = 4;
+            this.lbDietas.Text = "Dietas";
+            // 
+            // cbGestDietas
+            // 
+            this.cbGestDietas.FormattingEnabled = true;
+            this.cbGestDietas.Items.AddRange(new object[] {
+            "Dietas",
+            "Kilometraje"});
+            this.cbGestDietas.Location = new System.Drawing.Point(172, 20);
+            this.cbGestDietas.Name = "cbGestDietas";
+            this.cbGestDietas.Size = new System.Drawing.Size(121, 23);
+            this.cbGestDietas.TabIndex = 7;
+            this.cbGestDietas.SelectionChangeCommitted += new System.EventHandler(this.cbGestDietas_SelectionChangeCommitted);
+            // 
             // lbGestDietas
             // 
             this.lbGestDietas.AutoSize = true;
@@ -1124,124 +1596,39 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // pGestDietasDietas
+            // panel1
             // 
-            this.pGestDietasDietas.Controls.Add(this.dgvDietas);
-            this.pGestDietasDietas.Controls.Add(this.lbDietas);
-            this.pGestDietasDietas.Location = new System.Drawing.Point(16, 65);
-            this.pGestDietasDietas.Name = "pGestDietasDietas";
-            this.pGestDietasDietas.Size = new System.Drawing.Size(1134, 145);
-            this.pGestDietasDietas.TabIndex = 8;
+            this.panel1.Controls.Add(this.lbTitleDietas);
+            this.panel1.Controls.Add(this.lbAllowance);
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.lbDescripcion);
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.thumbNailInvoice);
+            this.panel1.Controls.Add(this.btnSolDieta);
+            this.panel1.Controls.Add(this.btnUploadFile);
+            this.panel1.Controls.Add(this.dtpDate);
+            this.panel1.Controls.Add(this.dtpTimeDietas);
+            this.panel1.Controls.Add(this.lbFechaDieta);
+            this.panel1.Location = new System.Drawing.Point(25, 52);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(536, 448);
+            this.panel1.TabIndex = 14;
             // 
-            // pGestDietasKilometraje
+            // lbTitleDietas
             // 
-            this.pGestDietasKilometraje.Controls.Add(this.lbKilometraje);
-            this.pGestDietasKilometraje.Controls.Add(this.dgvKilometraje);
-            this.pGestDietasKilometraje.Location = new System.Drawing.Point(16, 248);
-            this.pGestDietasKilometraje.Name = "pGestDietasKilometraje";
-            this.pGestDietasKilometraje.Size = new System.Drawing.Size(1155, 226);
-            this.pGestDietasKilometraje.TabIndex = 9;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Email";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // title
-            // 
-            this.title.HeaderText = "Title";
-            this.title.MinimumWidth = 6;
-            this.title.Name = "title";
-            this.title.Width = 125;
-            // 
-            // date
-            // 
-            this.date.HeaderText = "Date";
-            this.date.MinimumWidth = 6;
-            this.date.Name = "date";
-            this.date.Width = 75;
-            // 
-            // subcategory
-            // 
-            this.subcategory.HeaderText = "Subcategory";
-            this.subcategory.MinimumWidth = 6;
-            this.subcategory.Name = "subcategory";
-            this.subcategory.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.subcategory.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.subcategory.Width = 125;
-            // 
-            // origen
-            // 
-            this.origen.HeaderText = "Origen";
-            this.origen.MinimumWidth = 6;
-            this.origen.Name = "origen";
-            this.origen.Width = 125;
-            // 
-            // destino
-            // 
-            this.destino.HeaderText = "Destino";
-            this.destino.MinimumWidth = 6;
-            this.destino.Name = "destino";
-            this.destino.Width = 125;
-            // 
-            // Final
-            // 
-            this.Final.HeaderText = "Final";
-            this.Final.MinimumWidth = 6;
-            this.Final.Name = "Final";
-            this.Final.ReadOnly = true;
-            this.Final.Width = 75;
-            // 
-            // pricePerKilometer
-            // 
-            this.pricePerKilometer.HeaderText = "Price Per Kilometer";
-            this.pricePerKilometer.MinimumWidth = 6;
-            this.pricePerKilometer.Name = "pricePerKilometer";
-            this.pricePerKilometer.Width = 125;
-            // 
-            // dataGridViewComboBoxColumn1
-            // 
-            this.dataGridViewComboBoxColumn1.HeaderText = "State";
-            this.dataGridViewComboBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewComboBoxColumn1.Name = "dataGridViewComboBoxColumn1";
-            this.dataGridViewComboBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewComboBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewComboBoxColumn1.Width = 125;
-            // 
-            // btnHome
-            // 
-            this.btnHome.BackColor = System.Drawing.Color.Transparent;
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnHome.ForeColor = System.Drawing.Color.White;
-            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
-            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(-3, -9);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.btnHome.Size = new System.Drawing.Size(185, 60);
-            this.btnHome.TabIndex = 5;
-            this.btnHome.Text = "Home";
-            this.btnHome.UseVisualStyleBackColor = false;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
-            // pHome
-            // 
-            this.pHome.BackColor = System.Drawing.Color.Transparent;
-            this.pHome.Controls.Add(this.btnHome);
-            this.pHome.Location = new System.Drawing.Point(3, 1);
-            this.pHome.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.pHome.Name = "pHome";
-            this.pHome.Size = new System.Drawing.Size(180, 40);
-            this.pHome.TabIndex = 1;
+            this.lbTitleDietas.AutoSize = true;
+            this.lbTitleDietas.Location = new System.Drawing.Point(16, 11);
+            this.lbTitleDietas.Name = "lbTitleDietas";
+            this.lbTitleDietas.Size = new System.Drawing.Size(39, 15);
+            this.lbTitleDietas.TabIndex = 13;
+            this.lbTitleDietas.Text = "Dietas";
             // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1702, 777);
-            this.Controls.Add(this.pGestionDietas);
+            this.Controls.Add(this.pSolicitudDieta);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.pUsuarios);
             this.Controls.Add(this.sidebar);
@@ -1251,6 +1638,7 @@
             this.Text = "Home Page";
             this.Load += new System.EventHandler(this.HomePage_Load);
             this.sidebar.ResumeLayout(false);
+            this.pHome.ResumeLayout(false);
             this.containerModulos.ResumeLayout(false);
             this.pGestDietas.ResumeLayout(false);
             this.pSoliDietas.ResumeLayout(false);
@@ -1273,13 +1661,14 @@
             this.pRegister.PerformLayout();
             this.pGestionDietas.ResumeLayout(false);
             this.pGestionDietas.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKilometraje)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDietas)).EndInit();
-            this.pGestDietasDietas.ResumeLayout(false);
-            this.pGestDietasDietas.PerformLayout();
             this.pGestDietasKilometraje.ResumeLayout(false);
             this.pGestDietasKilometraje.PerformLayout();
-            this.pHome.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKilometraje)).EndInit();
+            this.pGestDietasDietas.ResumeLayout(false);
+            this.pGestDietasDietas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDietas)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1345,7 +1734,7 @@
         private DataGridView dgvKilometraje;
         private Label lbKilometraje;
         private Label lbDietas;
-        private ComboBox cbDietas;
+        private ComboBox cbSolicitudDietas;
         private TextBox textBox1;
         private Label lbAllowance;
         private DateTimePicker dtpTimeDietas;
@@ -1369,7 +1758,7 @@
         private Label lbTotalFinal;
         private Label lbPricepKilometer;
         private Label lbSolKilometraje;
-        private ComboBox comboBox2;
+        private ComboBox cbGestDietas;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn observations;
@@ -1379,17 +1768,54 @@
         private DataGridViewImageColumn invoice;
         private DataGridViewTextBoxColumn state;
         private Panel pGestDietasKilometraje;
+        private Panel pGestDietasDietas;
+        private Panel pHome;
+        private Button btnHome;
+        private Label lbDietasObservations;
+        private TextBox tbDietasObservations;
+        private Label lbDietasDate;
+        private TextBox tbDietasDate;
+        private Label lbDietasStartHour;
+        private TextBox tbDietasStartHour;
+        private Label lbDietasEndHour;
+        private TextBox tbDietasEndHour;
+        private Label lbDietasState;
+        private TextBox tbDietasState;
+        private Label lbDietasTitle;
+        private TextBox tbDietasTitulo;
+        private Label lbEmailDietas;
+        private TextBox tbDietasEmail;
+        private Label lbKilometrajeState;
+        private TextBox tbKilometrajeState;
+        private Label lbKilometrajePricePerKilometer;
+        private TextBox tbKilometrajePricePerKilometer;
+        private Label lbKilometrajeFinal;
+        private TextBox tbKilometrajeFinal;
+        private Label lbKilometrajeDate;
+        private TextBox tbKilometrajeDate;
+        private Label lbKilometrajeSubcategory;
+        private TextBox tbKilometrajeSubcategory;
+        private Label lbKilometrajeOrigen;
+        private TextBox tbKilometrajeOrigen;
+        private Label lbKilometrajeDestino;
+        private TextBox tbKilometrajeDestino;
+        private Label lbKilometrajeTitulo;
+        private TextBox tbKilometrajeTitulo;
+        private Label lbKilometrajeEmail;
+        private TextBox tbKilometrajeEmail;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn title;
         private DataGridViewTextBoxColumn date;
         private DataGridViewTextBoxColumn subcategory;
         private DataGridViewTextBoxColumn origen;
         private DataGridViewTextBoxColumn destino;
-        private DataGridViewTextBoxColumn Final;
+        private DataGridViewTextBoxColumn kilometers;
         private DataGridViewTextBoxColumn pricePerKilometer;
+        private DataGridViewTextBoxColumn Final;
         private DataGridViewTextBoxColumn dataGridViewComboBoxColumn1;
-        private Panel pGestDietasDietas;
-        private Panel pHome;
-        private Button btnHome;
+        private Label lbKilometrajeKilometers;
+        private TextBox tbKilometrajeKilometers;
+        private Panel panel1;
+        private Label lbTitleDietas;
     }
 }

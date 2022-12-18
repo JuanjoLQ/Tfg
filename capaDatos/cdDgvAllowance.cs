@@ -78,9 +78,9 @@ namespace capaDatos
                 newRow.Cells[2].Value = observations[i];
                 newRow.Cells[3].Value = date[i];
                 newRow.Cells[4].Value = startHours[i];
-                newRow.Cells[2].Value = endHours[i];
-                newRow.Cells[3].Value = invoices[i];
-                newRow.Cells[4].Value = states[i];
+                newRow.Cells[5].Value = endHours[i];
+                //newRow.Cells[6].Value = invoices[i];
+                newRow.Cells[7].Value = states[i];
                 dgvAllowance.Rows.Add(newRow);
             }
         }
