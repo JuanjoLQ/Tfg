@@ -24,10 +24,23 @@ namespace capaDatos
         private static ArrayList invoices = new ArrayList();
         private static ArrayList states = new ArrayList();
 
+        public void resetData()
+        {
+            emailUsers.Clear();
+            titles.Clear();
+            observations.Clear();
+            date.Clear();
+            startHours.Clear();
+            endHours.Clear();
+            invoices.Clear();
+            states.Clear();
+        }
+
         public void GetData()
         {
             try
             {
+                resetData();
                 MySqlConnection conn = new MySqlConnection(cadenaConexion);
                 conn.Open();
                 string query = "select user.email, allowance.title, allowance.observations, allowance.starttime, allowance.starthour, allowance.endhour, allowance.invoice, allowance.state " +
@@ -67,7 +80,7 @@ namespace capaDatos
 
         public void updateDatagrid(DataGridView dgvAllowance)
         {
-            dgvAllowance.Rows.Clear();
+            dgvAllowance.RowCount = 0;
             for (int i = 0; i < emailUsers.Count; i++)
             {
                 DataGridViewRow newRow = new DataGridViewRow();

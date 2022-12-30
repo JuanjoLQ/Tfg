@@ -92,6 +92,7 @@
             this.lbTitleSolDieta = new System.Windows.Forms.Label();
             this.pGestionDietas = new System.Windows.Forms.Panel();
             this.pGestDietasDietas = new System.Windows.Forms.Panel();
+            this.btnGestDietasDietasUpdate = new System.Windows.Forms.Button();
             this.pGestDietasKilometraje = new System.Windows.Forms.Panel();
             this.lbKilometrajeKilometers = new System.Windows.Forms.Label();
             this.tbKilometrajeKilometers = new System.Windows.Forms.TextBox();
@@ -211,12 +212,12 @@
             this.sidebar.Controls.Add(this.pHome);
             this.sidebar.Controls.Add(this.containerModulos);
             this.sidebar.Controls.Add(this.pSettings);
-            this.sidebar.Location = new System.Drawing.Point(0, 92);
-            this.sidebar.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            this.sidebar.MaximumSize = new System.Drawing.Size(257, 733);
-            this.sidebar.MinimumSize = new System.Drawing.Size(73, 729);
+            this.sidebar.Location = new System.Drawing.Point(0, 69);
+            this.sidebar.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.sidebar.MaximumSize = new System.Drawing.Size(225, 550);
+            this.sidebar.MinimumSize = new System.Drawing.Size(64, 547);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(257, 733);
+            this.sidebar.Size = new System.Drawing.Size(225, 550);
             this.sidebar.TabIndex = 0;
             this.sidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
@@ -227,7 +228,7 @@
             this.pHome.Location = new System.Drawing.Point(3, 1);
             this.pHome.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.pHome.Name = "pHome";
-            this.pHome.Size = new System.Drawing.Size(206, 53);
+            this.pHome.Size = new System.Drawing.Size(180, 40);
             this.pHome.TabIndex = 1;
             // 
             // btnHome
@@ -238,11 +239,10 @@
             this.btnHome.ForeColor = System.Drawing.Color.White;
             this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(-3, -12);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnHome.Location = new System.Drawing.Point(-3, -9);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
-            this.btnHome.Size = new System.Drawing.Size(211, 80);
+            this.btnHome.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.btnHome.Size = new System.Drawing.Size(185, 60);
             this.btnHome.TabIndex = 5;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = false;
@@ -255,21 +255,21 @@
             this.containerModulos.Controls.Add(this.pSoliDietas);
             this.containerModulos.Controls.Add(this.pGestionUsers);
             this.containerModulos.Controls.Add(this.btnSubMenu);
-            this.containerModulos.Location = new System.Drawing.Point(3, 56);
+            this.containerModulos.Location = new System.Drawing.Point(3, 43);
             this.containerModulos.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.containerModulos.MaximumSize = new System.Drawing.Size(206, 229);
-            this.containerModulos.MinimumSize = new System.Drawing.Size(206, 67);
+            this.containerModulos.MaximumSize = new System.Drawing.Size(180, 172);
+            this.containerModulos.MinimumSize = new System.Drawing.Size(180, 50);
             this.containerModulos.Name = "containerModulos";
-            this.containerModulos.Size = new System.Drawing.Size(206, 229);
+            this.containerModulos.Size = new System.Drawing.Size(180, 172);
             this.containerModulos.TabIndex = 2;
             // 
             // pGestDietas
             // 
             this.pGestDietas.Controls.Add(this.btnGestDietas);
-            this.pGestDietas.Location = new System.Drawing.Point(1, 183);
+            this.pGestDietas.Location = new System.Drawing.Point(1, 137);
             this.pGestDietas.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.pGestDietas.Name = "pGestDietas";
-            this.pGestDietas.Size = new System.Drawing.Size(205, 60);
+            this.pGestDietas.Size = new System.Drawing.Size(179, 45);
             this.pGestDietas.TabIndex = 12;
             this.pGestDietas.Visible = false;
             // 
@@ -280,11 +280,10 @@
             this.btnGestDietas.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnGestDietas.ForeColor = System.Drawing.Color.White;
             this.btnGestDietas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGestDietas.Location = new System.Drawing.Point(-5, -17);
-            this.btnGestDietas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnGestDietas.Location = new System.Drawing.Point(-4, -13);
             this.btnGestDietas.Name = "btnGestDietas";
-            this.btnGestDietas.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
-            this.btnGestDietas.Size = new System.Drawing.Size(219, 80);
+            this.btnGestDietas.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.btnGestDietas.Size = new System.Drawing.Size(192, 60);
             this.btnGestDietas.TabIndex = 11;
             this.btnGestDietas.Text = "          Gest. Dietas";
             this.btnGestDietas.UseVisualStyleBackColor = false;
@@ -293,10 +292,10 @@
             // pSoliDietas
             // 
             this.pSoliDietas.Controls.Add(this.btnSolDietas);
-            this.pSoliDietas.Location = new System.Drawing.Point(1, 124);
+            this.pSoliDietas.Location = new System.Drawing.Point(1, 93);
             this.pSoliDietas.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.pSoliDietas.Name = "pSoliDietas";
-            this.pSoliDietas.Size = new System.Drawing.Size(205, 60);
+            this.pSoliDietas.Size = new System.Drawing.Size(179, 45);
             this.pSoliDietas.TabIndex = 8;
             this.pSoliDietas.Visible = false;
             // 
@@ -307,11 +306,10 @@
             this.btnSolDietas.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSolDietas.ForeColor = System.Drawing.Color.White;
             this.btnSolDietas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSolDietas.Location = new System.Drawing.Point(-5, -16);
-            this.btnSolDietas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSolDietas.Location = new System.Drawing.Point(-4, -12);
             this.btnSolDietas.Name = "btnSolDietas";
-            this.btnSolDietas.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
-            this.btnSolDietas.Size = new System.Drawing.Size(219, 80);
+            this.btnSolDietas.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.btnSolDietas.Size = new System.Drawing.Size(192, 60);
             this.btnSolDietas.TabIndex = 11;
             this.btnSolDietas.Text = "          Sol. Dietas";
             this.btnSolDietas.UseVisualStyleBackColor = false;
@@ -320,10 +318,10 @@
             // pGestionUsers
             // 
             this.pGestionUsers.Controls.Add(this.btnGestUsers);
-            this.pGestionUsers.Location = new System.Drawing.Point(0, 65);
+            this.pGestionUsers.Location = new System.Drawing.Point(0, 49);
             this.pGestionUsers.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.pGestionUsers.Name = "pGestionUsers";
-            this.pGestionUsers.Size = new System.Drawing.Size(206, 60);
+            this.pGestionUsers.Size = new System.Drawing.Size(180, 45);
             this.pGestionUsers.TabIndex = 9;
             this.pGestionUsers.Visible = false;
             // 
@@ -334,11 +332,10 @@
             this.btnGestUsers.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnGestUsers.ForeColor = System.Drawing.Color.White;
             this.btnGestUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGestUsers.Location = new System.Drawing.Point(-3, -12);
-            this.btnGestUsers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnGestUsers.Location = new System.Drawing.Point(-3, -9);
             this.btnGestUsers.Name = "btnGestUsers";
-            this.btnGestUsers.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
-            this.btnGestUsers.Size = new System.Drawing.Size(219, 80);
+            this.btnGestUsers.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.btnGestUsers.Size = new System.Drawing.Size(192, 60);
             this.btnGestUsers.TabIndex = 6;
             this.btnGestUsers.Text = "          Gest. Users";
             this.btnGestUsers.UseVisualStyleBackColor = false;
@@ -352,11 +349,10 @@
             this.btnSubMenu.ForeColor = System.Drawing.Color.White;
             this.btnSubMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnSubMenu.Image")));
             this.btnSubMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubMenu.Location = new System.Drawing.Point(-3, -7);
-            this.btnSubMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSubMenu.Location = new System.Drawing.Point(-3, -5);
             this.btnSubMenu.Name = "btnSubMenu";
-            this.btnSubMenu.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
-            this.btnSubMenu.Size = new System.Drawing.Size(211, 80);
+            this.btnSubMenu.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.btnSubMenu.Size = new System.Drawing.Size(185, 60);
             this.btnSubMenu.TabIndex = 8;
             this.btnSubMenu.Text = "Módulos";
             this.btnSubMenu.UseVisualStyleBackColor = false;
@@ -366,10 +362,10 @@
             // 
             this.pSettings.BackColor = System.Drawing.Color.Transparent;
             this.pSettings.Controls.Add(this.btnSettings);
-            this.pSettings.Location = new System.Drawing.Point(3, 287);
+            this.pSettings.Location = new System.Drawing.Point(3, 217);
             this.pSettings.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.pSettings.Name = "pSettings";
-            this.pSettings.Size = new System.Drawing.Size(206, 53);
+            this.pSettings.Size = new System.Drawing.Size(180, 40);
             this.pSettings.TabIndex = 3;
             // 
             // btnSettings
@@ -380,11 +376,10 @@
             this.btnSettings.ForeColor = System.Drawing.Color.White;
             this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
             this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(-3, -12);
-            this.btnSettings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSettings.Location = new System.Drawing.Point(-3, -9);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
-            this.btnSettings.Size = new System.Drawing.Size(211, 80);
+            this.btnSettings.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.btnSettings.Size = new System.Drawing.Size(185, 60);
             this.btnSettings.TabIndex = 6;
             this.btnSettings.Text = "Settings";
             this.btnSettings.UseVisualStyleBackColor = false;
@@ -393,9 +388,10 @@
             // 
             this.pMenu.Controls.Add(this.lbMenu);
             this.pMenu.Controls.Add(this.btnMenu);
-            this.pMenu.Location = new System.Drawing.Point(15, 0);
+            this.pMenu.Location = new System.Drawing.Point(13, 0);
+            this.pMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pMenu.Name = "pMenu";
-            this.pMenu.Size = new System.Drawing.Size(194, 77);
+            this.pMenu.Size = new System.Drawing.Size(170, 58);
             this.pMenu.TabIndex = 0;
             // 
             // lbMenu
@@ -403,9 +399,9 @@
             this.lbMenu.AutoSize = true;
             this.lbMenu.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(107)))), ((int)(((byte)(114)))));
-            this.lbMenu.Location = new System.Drawing.Point(77, 28);
+            this.lbMenu.Location = new System.Drawing.Point(67, 21);
             this.lbMenu.Name = "lbMenu";
-            this.lbMenu.Size = new System.Drawing.Size(81, 31);
+            this.lbMenu.Size = new System.Drawing.Size(61, 24);
             this.lbMenu.TabIndex = 1;
             this.lbMenu.Text = "Menu";
             // 
@@ -413,10 +409,9 @@
             // 
             this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.Location = new System.Drawing.Point(10, 13);
-            this.btnMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnMenu.Location = new System.Drawing.Point(9, 10);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(48, 56);
+            this.btnMenu.Size = new System.Drawing.Size(42, 42);
             this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMenu.TabIndex = 0;
             this.btnMenu.TabStop = false;
@@ -442,24 +437,24 @@
             this.pHeader.Location = new System.Drawing.Point(0, 0);
             this.pHeader.Margin = new System.Windows.Forms.Padding(0);
             this.pHeader.Name = "pHeader";
-            this.pHeader.Size = new System.Drawing.Size(1627, 92);
+            this.pHeader.Size = new System.Drawing.Size(1424, 69);
             this.pHeader.TabIndex = 1;
             // 
             // lbUser
             // 
             this.lbUser.AutoSize = true;
-            this.lbUser.Location = new System.Drawing.Point(1267, 57);
+            this.lbUser.Location = new System.Drawing.Point(1109, 43);
             this.lbUser.Name = "lbUser";
-            this.lbUser.Size = new System.Drawing.Size(71, 20);
+            this.lbUser.Size = new System.Drawing.Size(55, 15);
             this.lbUser.TabIndex = 3;
             this.lbUser.Text = "labelUser";
             // 
             // lbRole
             // 
             this.lbRole.AutoSize = true;
-            this.lbRole.Location = new System.Drawing.Point(1290, 28);
+            this.lbRole.Location = new System.Drawing.Point(1129, 21);
             this.lbRole.Name = "lbRole";
-            this.lbRole.Size = new System.Drawing.Size(72, 20);
+            this.lbRole.Size = new System.Drawing.Size(55, 15);
             this.lbRole.TabIndex = 2;
             this.lbRole.Text = "labelRole";
             // 
@@ -468,9 +463,9 @@
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(107)))), ((int)(((byte)(114)))));
-            this.lbTitle.Location = new System.Drawing.Point(698, 28);
+            this.lbTitle.Location = new System.Drawing.Point(611, 21);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(183, 38);
+            this.lbTitle.Size = new System.Drawing.Size(146, 31);
             this.lbTitle.TabIndex = 1;
             this.lbTitle.Text = "Home Page";
             // 
@@ -482,9 +477,10 @@
             this.pSolicitudDieta.Controls.Add(this.lbSolDietas);
             this.pSolicitudDieta.Controls.Add(this.cbSolicitudDietas);
             this.pSolicitudDieta.Controls.Add(this.lbTitleSolDieta);
-            this.pSolicitudDieta.Location = new System.Drawing.Point(261, 95);
+            this.pSolicitudDieta.Location = new System.Drawing.Point(228, 71);
+            this.pSolicitudDieta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pSolicitudDieta.Name = "pSolicitudDieta";
-            this.pSolicitudDieta.Size = new System.Drawing.Size(1367, 743);
+            this.pSolicitudDieta.Size = new System.Drawing.Size(1196, 557);
             this.pSolicitudDieta.TabIndex = 4;
             this.pSolicitudDieta.Visible = false;
             // 
@@ -505,57 +501,54 @@
             this.pSolSolicitudDietas.Controls.Add(this.btnUploadFile);
             this.pSolSolicitudDietas.Controls.Add(this.dtpSolDietasStartTime);
             this.pSolSolicitudDietas.Controls.Add(this.lbStartTime);
-            this.pSolSolicitudDietas.Location = new System.Drawing.Point(29, 69);
-            this.pSolSolicitudDietas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pSolSolicitudDietas.Location = new System.Drawing.Point(25, 52);
             this.pSolSolicitudDietas.Name = "pSolSolicitudDietas";
-            this.pSolSolicitudDietas.Size = new System.Drawing.Size(613, 597);
+            this.pSolSolicitudDietas.Size = new System.Drawing.Size(536, 448);
             this.pSolSolicitudDietas.TabIndex = 14;
             // 
             // labelURL
             // 
             this.labelURL.AutoSize = true;
-            this.labelURL.Location = new System.Drawing.Point(262, 284);
+            this.labelURL.Location = new System.Drawing.Point(229, 213);
             this.labelURL.Name = "labelURL";
-            this.labelURL.Size = new System.Drawing.Size(35, 20);
+            this.labelURL.Size = new System.Drawing.Size(28, 15);
             this.labelURL.TabIndex = 18;
             this.labelURL.Text = "URL";
             // 
             // lbEndTime
             // 
             this.lbEndTime.AutoSize = true;
-            this.lbEndTime.Location = new System.Drawing.Point(254, 68);
+            this.lbEndTime.Location = new System.Drawing.Point(222, 51);
             this.lbEndTime.Name = "lbEndTime";
-            this.lbEndTime.Size = new System.Drawing.Size(71, 20);
+            this.lbEndTime.Size = new System.Drawing.Size(57, 15);
             this.lbEndTime.TabIndex = 17;
             this.lbEndTime.Text = "End Hour";
             // 
             // lbStartHour
             // 
             this.lbStartHour.AutoSize = true;
-            this.lbStartHour.Location = new System.Drawing.Point(254, 28);
+            this.lbStartHour.Location = new System.Drawing.Point(222, 21);
             this.lbStartHour.Name = "lbStartHour";
-            this.lbStartHour.Size = new System.Drawing.Size(77, 20);
+            this.lbStartHour.Size = new System.Drawing.Size(61, 15);
             this.lbStartHour.TabIndex = 16;
             this.lbStartHour.Text = "Start Hour";
             // 
             // mtbEndHour
             // 
-            this.mtbEndHour.Location = new System.Drawing.Point(334, 65);
-            this.mtbEndHour.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.mtbEndHour.Location = new System.Drawing.Point(292, 49);
             this.mtbEndHour.Mask = "00:00";
             this.mtbEndHour.Name = "mtbEndHour";
-            this.mtbEndHour.Size = new System.Drawing.Size(31, 27);
+            this.mtbEndHour.Size = new System.Drawing.Size(28, 23);
             this.mtbEndHour.TabIndex = 15;
             this.mtbEndHour.ValidatingType = typeof(System.DateTime);
             this.mtbEndHour.Leave += new System.EventHandler(this.mtbEndTime_Leave);
             // 
             // mtbStartHour
             // 
-            this.mtbStartHour.Location = new System.Drawing.Point(334, 21);
-            this.mtbStartHour.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.mtbStartHour.Location = new System.Drawing.Point(292, 16);
             this.mtbStartHour.Mask = "00:00";
             this.mtbStartHour.Name = "mtbStartHour";
-            this.mtbStartHour.Size = new System.Drawing.Size(31, 27);
+            this.mtbStartHour.Size = new System.Drawing.Size(28, 23);
             this.mtbStartHour.TabIndex = 14;
             this.mtbStartHour.ValidatingType = typeof(System.DateTime);
             this.mtbStartHour.Click += new System.EventHandler(this.mtbStartTime_Click);
@@ -565,62 +558,58 @@
             // lbTitleDietas
             // 
             this.lbTitleDietas.AutoSize = true;
-            this.lbTitleDietas.Location = new System.Drawing.Point(18, 15);
+            this.lbTitleDietas.Location = new System.Drawing.Point(16, 11);
             this.lbTitleDietas.Name = "lbTitleDietas";
-            this.lbTitleDietas.Size = new System.Drawing.Size(51, 20);
+            this.lbTitleDietas.Size = new System.Drawing.Size(39, 15);
             this.lbTitleDietas.TabIndex = 13;
             this.lbTitleDietas.Text = "Dietas";
             // 
             // lbAllowance
             // 
             this.lbAllowance.AutoSize = true;
-            this.lbAllowance.Location = new System.Drawing.Point(5, 71);
+            this.lbAllowance.Location = new System.Drawing.Point(4, 53);
             this.lbAllowance.Name = "lbAllowance";
-            this.lbAllowance.Size = new System.Drawing.Size(47, 20);
+            this.lbAllowance.Size = new System.Drawing.Size(37, 15);
             this.lbAllowance.TabIndex = 9;
             this.lbAllowance.Text = "Título";
             // 
             // tbSolTitle
             // 
-            this.tbSolTitle.Location = new System.Drawing.Point(70, 67);
-            this.tbSolTitle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbSolTitle.Location = new System.Drawing.Point(61, 50);
             this.tbSolTitle.Name = "tbSolTitle";
-            this.tbSolTitle.Size = new System.Drawing.Size(95, 27);
+            this.tbSolTitle.Size = new System.Drawing.Size(84, 23);
             this.tbSolTitle.TabIndex = 10;
             // 
             // lbObservations
             // 
             this.lbObservations.AutoSize = true;
-            this.lbObservations.Location = new System.Drawing.Point(5, 116);
+            this.lbObservations.Location = new System.Drawing.Point(4, 87);
             this.lbObservations.Name = "lbObservations";
-            this.lbObservations.Size = new System.Drawing.Size(95, 20);
+            this.lbObservations.Size = new System.Drawing.Size(76, 15);
             this.lbObservations.TabIndex = 4;
             this.lbObservations.Text = "Observations";
             // 
             // tbSolObservations
             // 
-            this.tbSolObservations.Location = new System.Drawing.Point(103, 120);
-            this.tbSolObservations.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbSolObservations.Location = new System.Drawing.Point(90, 90);
             this.tbSolObservations.Multiline = true;
             this.tbSolObservations.Name = "tbSolObservations";
-            this.tbSolObservations.Size = new System.Drawing.Size(262, 125);
+            this.tbSolObservations.Size = new System.Drawing.Size(230, 95);
             this.tbSolObservations.TabIndex = 2;
             // 
             // thumbNailInvoice
             // 
-            this.thumbNailInvoice.Location = new System.Drawing.Point(38, 277);
-            this.thumbNailInvoice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.thumbNailInvoice.Location = new System.Drawing.Point(33, 208);
             this.thumbNailInvoice.Name = "thumbNailInvoice";
-            this.thumbNailInvoice.Size = new System.Drawing.Size(179, 159);
+            this.thumbNailInvoice.Size = new System.Drawing.Size(157, 119);
             this.thumbNailInvoice.TabIndex = 12;
             this.thumbNailInvoice.TabStop = false;
             // 
             // btnSolDieta
             // 
-            this.btnSolDieta.Location = new System.Drawing.Point(239, 489);
-            this.btnSolDieta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSolDieta.Location = new System.Drawing.Point(209, 367);
             this.btnSolDieta.Name = "btnSolDieta";
-            this.btnSolDieta.Size = new System.Drawing.Size(179, 61);
+            this.btnSolDieta.Size = new System.Drawing.Size(157, 46);
             this.btnSolDieta.TabIndex = 6;
             this.btnSolDieta.Text = "Solicitar Dieta";
             this.btnSolDieta.UseVisualStyleBackColor = true;
@@ -628,9 +617,10 @@
             // 
             // btnUploadFile
             // 
-            this.btnUploadFile.Location = new System.Drawing.Point(239, 340);
+            this.btnUploadFile.Location = new System.Drawing.Point(209, 255);
+            this.btnUploadFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUploadFile.Name = "btnUploadFile";
-            this.btnUploadFile.Size = new System.Drawing.Size(161, 39);
+            this.btnUploadFile.Size = new System.Drawing.Size(141, 29);
             this.btnUploadFile.TabIndex = 7;
             this.btnUploadFile.Text = "Upload File";
             this.btnUploadFile.UseVisualStyleBackColor = true;
@@ -640,19 +630,18 @@
             // 
             this.dtpSolDietasStartTime.CustomFormat = "dd/MM/yyyy";
             this.dtpSolDietasStartTime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpSolDietasStartTime.Location = new System.Drawing.Point(469, 28);
-            this.dtpSolDietasStartTime.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dtpSolDietasStartTime.Location = new System.Drawing.Point(410, 21);
             this.dtpSolDietasStartTime.Name = "dtpSolDietasStartTime";
-            this.dtpSolDietasStartTime.Size = new System.Drawing.Size(123, 27);
+            this.dtpSolDietasStartTime.Size = new System.Drawing.Size(108, 23);
             this.dtpSolDietasStartTime.TabIndex = 5;
             this.dtpSolDietasStartTime.Value = new System.DateTime(2022, 12, 18, 0, 0, 0, 0);
             // 
             // lbStartTime
             // 
             this.lbStartTime.AutoSize = true;
-            this.lbStartTime.Location = new System.Drawing.Point(389, 33);
+            this.lbStartTime.Location = new System.Drawing.Point(340, 25);
             this.lbStartTime.Name = "lbStartTime";
-            this.lbStartTime.Size = new System.Drawing.Size(77, 20);
+            this.lbStartTime.Size = new System.Drawing.Size(60, 15);
             this.lbStartTime.TabIndex = 3;
             this.lbStartTime.Text = "Start Time";
             // 
@@ -676,18 +665,17 @@
             this.pSolKilometraje.Controls.Add(this.lbTotalFinal);
             this.pSolKilometraje.Controls.Add(this.lbPricepKilometer);
             this.pSolKilometraje.Controls.Add(this.lbSolKilometraje);
-            this.pSolKilometraje.Location = new System.Drawing.Point(715, 69);
-            this.pSolKilometraje.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pSolKilometraje.Location = new System.Drawing.Point(626, 52);
             this.pSolKilometraje.Name = "pSolKilometraje";
-            this.pSolKilometraje.Size = new System.Drawing.Size(374, 397);
+            this.pSolKilometraje.Size = new System.Drawing.Size(327, 298);
             this.pSolKilometraje.TabIndex = 7;
             // 
             // lbMileageTitle
             // 
             this.lbMileageTitle.AutoSize = true;
-            this.lbMileageTitle.Location = new System.Drawing.Point(62, 11);
+            this.lbMileageTitle.Location = new System.Drawing.Point(54, 8);
             this.lbMileageTitle.Name = "lbMileageTitle";
-            this.lbMileageTitle.Size = new System.Drawing.Size(86, 20);
+            this.lbMileageTitle.Size = new System.Drawing.Size(67, 15);
             this.lbMileageTitle.TabIndex = 29;
             this.lbMileageTitle.Text = "Kilometraje";
             // 
@@ -695,61 +683,54 @@
             // 
             this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(122, 165);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dateTimePicker1.Location = new System.Drawing.Point(107, 124);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(123, 27);
+            this.dateTimePicker1.Size = new System.Drawing.Size(108, 23);
             this.dateTimePicker1.TabIndex = 14;
             this.dateTimePicker1.Value = new System.DateTime(2022, 12, 18, 0, 0, 0, 0);
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(122, 104);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox9.Location = new System.Drawing.Point(107, 78);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(107, 27);
+            this.textBox9.Size = new System.Drawing.Size(94, 23);
             this.textBox9.TabIndex = 28;
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(182, 399);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox8.Location = new System.Drawing.Point(159, 299);
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(107, 27);
+            this.textBox8.Size = new System.Drawing.Size(94, 23);
             this.textBox8.TabIndex = 27;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(171, 355);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox7.Location = new System.Drawing.Point(150, 266);
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(107, 27);
+            this.textBox7.Size = new System.Drawing.Size(94, 23);
             this.textBox7.TabIndex = 26;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(161, 315);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox6.Location = new System.Drawing.Point(141, 236);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(107, 27);
+            this.textBox6.Size = new System.Drawing.Size(94, 23);
             this.textBox6.TabIndex = 25;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(115, 276);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox4.Location = new System.Drawing.Point(101, 207);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(107, 27);
+            this.textBox4.Size = new System.Drawing.Size(94, 23);
             this.textBox4.TabIndex = 23;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(122, 52);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox3.Location = new System.Drawing.Point(107, 39);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(107, 27);
+            this.textBox3.Size = new System.Drawing.Size(94, 23);
             this.textBox3.TabIndex = 22;
             // 
             // comboBox1
@@ -758,90 +739,89 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Vehículo propio",
             "Vehículo empresa"});
-            this.comboBox1.Location = new System.Drawing.Point(105, 217);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBox1.Location = new System.Drawing.Point(92, 163);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(124, 28);
+            this.comboBox1.Size = new System.Drawing.Size(109, 23);
             this.comboBox1.TabIndex = 21;
             // 
             // lbTitleMileage
             // 
             this.lbTitleMileage.AutoSize = true;
-            this.lbTitleMileage.Location = new System.Drawing.Point(1, 115);
+            this.lbTitleMileage.Location = new System.Drawing.Point(1, 86);
             this.lbTitleMileage.Name = "lbTitleMileage";
-            this.lbTitleMileage.Size = new System.Drawing.Size(47, 20);
+            this.lbTitleMileage.Size = new System.Drawing.Size(37, 15);
             this.lbTitleMileage.TabIndex = 14;
             this.lbTitleMileage.Text = "Título";
             // 
             // lbDate
             // 
             this.lbDate.AutoSize = true;
-            this.lbDate.Location = new System.Drawing.Point(8, 171);
+            this.lbDate.Location = new System.Drawing.Point(7, 128);
             this.lbDate.Name = "lbDate";
-            this.lbDate.Size = new System.Drawing.Size(47, 20);
+            this.lbDate.Size = new System.Drawing.Size(38, 15);
             this.lbDate.TabIndex = 15;
             this.lbDate.Text = "Fecha";
             // 
             // lbSubcategory
             // 
             this.lbSubcategory.AutoSize = true;
-            this.lbSubcategory.Location = new System.Drawing.Point(1, 221);
+            this.lbSubcategory.Location = new System.Drawing.Point(1, 166);
             this.lbSubcategory.Name = "lbSubcategory";
-            this.lbSubcategory.Size = new System.Drawing.Size(92, 20);
+            this.lbSubcategory.Size = new System.Drawing.Size(73, 15);
             this.lbSubcategory.TabIndex = 16;
             this.lbSubcategory.Text = "Subcategory";
             // 
             // lbOrigen
             // 
             this.lbOrigen.AutoSize = true;
-            this.lbOrigen.Location = new System.Drawing.Point(8, 277);
+            this.lbOrigen.Location = new System.Drawing.Point(7, 208);
             this.lbOrigen.Name = "lbOrigen";
-            this.lbOrigen.Size = new System.Drawing.Size(54, 20);
+            this.lbOrigen.Size = new System.Drawing.Size(43, 15);
             this.lbOrigen.TabIndex = 17;
             this.lbOrigen.Text = "Origen";
             // 
             // lbDestino
             // 
             this.lbDestino.AutoSize = true;
-            this.lbDestino.Location = new System.Drawing.Point(8, 315);
+            this.lbDestino.Location = new System.Drawing.Point(7, 236);
             this.lbDestino.Name = "lbDestino";
-            this.lbDestino.Size = new System.Drawing.Size(60, 20);
+            this.lbDestino.Size = new System.Drawing.Size(47, 15);
             this.lbDestino.TabIndex = 18;
             this.lbDestino.Text = "Destino";
             // 
             // lbTotalFinal
             // 
             this.lbTotalFinal.AutoSize = true;
-            this.lbTotalFinal.Location = new System.Drawing.Point(8, 359);
+            this.lbTotalFinal.Location = new System.Drawing.Point(7, 269);
             this.lbTotalFinal.Name = "lbTotalFinal";
-            this.lbTotalFinal.Size = new System.Drawing.Size(42, 20);
+            this.lbTotalFinal.Size = new System.Drawing.Size(32, 15);
             this.lbTotalFinal.TabIndex = 19;
             this.lbTotalFinal.Text = "Total";
             // 
             // lbPricepKilometer
             // 
             this.lbPricepKilometer.AutoSize = true;
-            this.lbPricepKilometer.Location = new System.Drawing.Point(8, 399);
+            this.lbPricepKilometer.Location = new System.Drawing.Point(7, 299);
             this.lbPricepKilometer.Name = "lbPricepKilometer";
-            this.lbPricepKilometer.Size = new System.Drawing.Size(145, 20);
+            this.lbPricepKilometer.Size = new System.Drawing.Size(115, 15);
             this.lbPricepKilometer.TabIndex = 20;
             this.lbPricepKilometer.Text = "Precio por kilómetro";
             // 
             // lbSolKilometraje
             // 
             this.lbSolKilometraje.AutoSize = true;
-            this.lbSolKilometraje.Location = new System.Drawing.Point(1, 56);
+            this.lbSolKilometraje.Location = new System.Drawing.Point(1, 42);
             this.lbSolKilometraje.Name = "lbSolKilometraje";
-            this.lbSolKilometraje.Size = new System.Drawing.Size(86, 20);
+            this.lbSolKilometraje.Size = new System.Drawing.Size(67, 15);
             this.lbSolKilometraje.TabIndex = 14;
             this.lbSolKilometraje.Text = "Kilometraje";
             // 
             // lbSolDietas
             // 
             this.lbSolDietas.AutoSize = true;
-            this.lbSolDietas.Location = new System.Drawing.Point(179, 35);
+            this.lbSolDietas.Location = new System.Drawing.Point(157, 26);
             this.lbSolDietas.Name = "lbSolDietas";
-            this.lbSolDietas.Size = new System.Drawing.Size(51, 20);
+            this.lbSolDietas.Size = new System.Drawing.Size(39, 15);
             this.lbSolDietas.TabIndex = 13;
             this.lbSolDietas.Text = "Dietas";
             // 
@@ -851,19 +831,18 @@
             this.cbSolicitudDietas.Items.AddRange(new object[] {
             "Dietas",
             "Kilometraje"});
-            this.cbSolicitudDietas.Location = new System.Drawing.Point(241, 31);
-            this.cbSolicitudDietas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbSolicitudDietas.Location = new System.Drawing.Point(211, 23);
             this.cbSolicitudDietas.Name = "cbSolicitudDietas";
-            this.cbSolicitudDietas.Size = new System.Drawing.Size(153, 28);
+            this.cbSolicitudDietas.Size = new System.Drawing.Size(134, 23);
             this.cbSolicitudDietas.TabIndex = 8;
             this.cbSolicitudDietas.SelectionChangeCommitted += new System.EventHandler(this.cbSolicitudDietas_SelectionChangeCommitted);
             // 
             // lbTitleSolDieta
             // 
             this.lbTitleSolDieta.AutoSize = true;
-            this.lbTitleSolDieta.Location = new System.Drawing.Point(29, 19);
+            this.lbTitleSolDieta.Location = new System.Drawing.Point(25, 14);
             this.lbTitleSolDieta.Name = "lbTitleSolDieta";
-            this.lbTitleSolDieta.Size = new System.Drawing.Size(132, 20);
+            this.lbTitleSolDieta.Size = new System.Drawing.Size(103, 15);
             this.lbTitleSolDieta.TabIndex = 0;
             this.lbTitleSolDieta.Text = "Solicitud de dietas";
             // 
@@ -873,14 +852,16 @@
             this.pGestionDietas.Controls.Add(this.pGestDietasDietas);
             this.pGestionDietas.Controls.Add(this.cbGestDietas);
             this.pGestionDietas.Controls.Add(this.lbGestDietas);
-            this.pGestionDietas.Location = new System.Drawing.Point(261, 95);
+            this.pGestionDietas.Location = new System.Drawing.Point(228, 71);
+            this.pGestionDietas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pGestionDietas.Name = "pGestionDietas";
-            this.pGestionDietas.Size = new System.Drawing.Size(1367, 743);
+            this.pGestionDietas.Size = new System.Drawing.Size(1196, 557);
             this.pGestionDietas.TabIndex = 3;
             this.pGestionDietas.Visible = false;
             // 
             // pGestDietasDietas
             // 
+            this.pGestDietasDietas.Controls.Add(this.btnGestDietasDietasUpdate);
             this.pGestDietasDietas.Controls.Add(this.pGestDietasKilometraje);
             this.pGestDietasDietas.Controls.Add(this.lbDietasObservations);
             this.pGestDietasDietas.Controls.Add(this.tbDietasObservations);
@@ -898,11 +879,20 @@
             this.pGestDietasDietas.Controls.Add(this.dgvDietas);
             this.pGestDietasDietas.Controls.Add(this.tbDietasEmail);
             this.pGestDietasDietas.Controls.Add(this.lbDietas);
-            this.pGestDietasDietas.Location = new System.Drawing.Point(18, 87);
-            this.pGestDietasDietas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pGestDietasDietas.Location = new System.Drawing.Point(16, 65);
             this.pGestDietasDietas.Name = "pGestDietasDietas";
-            this.pGestDietasDietas.Size = new System.Drawing.Size(1296, 583);
+            this.pGestDietasDietas.Size = new System.Drawing.Size(1134, 437);
             this.pGestDietasDietas.TabIndex = 8;
+            // 
+            // btnGestDietasDietasUpdate
+            // 
+            this.btnGestDietasDietasUpdate.Location = new System.Drawing.Point(534, 273);
+            this.btnGestDietasDietasUpdate.Name = "btnGestDietasDietasUpdate";
+            this.btnGestDietasDietasUpdate.Size = new System.Drawing.Size(169, 40);
+            this.btnGestDietasDietasUpdate.TabIndex = 24;
+            this.btnGestDietasDietasUpdate.Text = "Actualizar";
+            this.btnGestDietasDietasUpdate.UseVisualStyleBackColor = true;
+            this.btnGestDietasDietasUpdate.Click += new System.EventHandler(this.btnGestDietasDietasUpdate_Click);
             // 
             // pGestDietasKilometraje
             // 
@@ -928,199 +918,188 @@
             this.pGestDietasKilometraje.Controls.Add(this.tbKilometrajeEmail);
             this.pGestDietasKilometraje.Controls.Add(this.lbKilometraje);
             this.pGestDietasKilometraje.Controls.Add(this.dgvKilometraje);
-            this.pGestDietasKilometraje.Location = new System.Drawing.Point(42, 430);
-            this.pGestDietasKilometraje.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pGestDietasKilometraje.Location = new System.Drawing.Point(42, 400);
             this.pGestDietasKilometraje.Name = "pGestDietasKilometraje";
-            this.pGestDietasKilometraje.Size = new System.Drawing.Size(1296, 583);
+            this.pGestDietasKilometraje.Size = new System.Drawing.Size(1134, 437);
             this.pGestDietasKilometraje.TabIndex = 9;
             // 
             // lbKilometrajeKilometers
             // 
             this.lbKilometrajeKilometers.AutoSize = true;
-            this.lbKilometrajeKilometers.Location = new System.Drawing.Point(280, 396);
+            this.lbKilometrajeKilometers.Location = new System.Drawing.Point(245, 297);
             this.lbKilometrajeKilometers.Name = "lbKilometrajeKilometers";
-            this.lbKilometrajeKilometers.Size = new System.Drawing.Size(80, 20);
+            this.lbKilometrajeKilometers.Size = new System.Drawing.Size(63, 15);
             this.lbKilometrajeKilometers.TabIndex = 45;
             this.lbKilometrajeKilometers.Text = "Kilometers";
             // 
             // tbKilometrajeKilometers
             // 
-            this.tbKilometrajeKilometers.Location = new System.Drawing.Point(358, 392);
-            this.tbKilometrajeKilometers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbKilometrajeKilometers.Location = new System.Drawing.Point(313, 294);
             this.tbKilometrajeKilometers.Name = "tbKilometrajeKilometers";
             this.tbKilometrajeKilometers.PlaceholderText = "State";
-            this.tbKilometrajeKilometers.Size = new System.Drawing.Size(133, 27);
+            this.tbKilometrajeKilometers.Size = new System.Drawing.Size(117, 23);
             this.tbKilometrajeKilometers.TabIndex = 44;
             // 
             // lbKilometrajeState
             // 
             this.lbKilometrajeState.AutoSize = true;
-            this.lbKilometrajeState.Location = new System.Drawing.Point(552, 289);
+            this.lbKilometrajeState.Location = new System.Drawing.Point(483, 217);
             this.lbKilometrajeState.Name = "lbKilometrajeState";
-            this.lbKilometrajeState.Size = new System.Drawing.Size(43, 20);
+            this.lbKilometrajeState.Size = new System.Drawing.Size(33, 15);
             this.lbKilometrajeState.TabIndex = 43;
             this.lbKilometrajeState.Text = "State";
             // 
             // tbKilometrajeState
             // 
-            this.tbKilometrajeState.Location = new System.Drawing.Point(630, 285);
-            this.tbKilometrajeState.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbKilometrajeState.Location = new System.Drawing.Point(551, 214);
             this.tbKilometrajeState.Name = "tbKilometrajeState";
             this.tbKilometrajeState.PlaceholderText = "State";
-            this.tbKilometrajeState.Size = new System.Drawing.Size(133, 27);
+            this.tbKilometrajeState.Size = new System.Drawing.Size(117, 23);
             this.tbKilometrajeState.TabIndex = 42;
             // 
             // lbKilometrajePricePerKilometer
             // 
             this.lbKilometrajePricePerKilometer.AutoSize = true;
-            this.lbKilometrajePricePerKilometer.Location = new System.Drawing.Point(275, 448);
+            this.lbKilometrajePricePerKilometer.Location = new System.Drawing.Point(241, 336);
             this.lbKilometrajePricePerKilometer.Name = "lbKilometrajePricePerKilometer";
-            this.lbKilometrajePricePerKilometer.Size = new System.Drawing.Size(134, 20);
+            this.lbKilometrajePricePerKilometer.Size = new System.Drawing.Size(107, 15);
             this.lbKilometrajePricePerKilometer.TabIndex = 41;
             this.lbKilometrajePricePerKilometer.Text = "Price Per Kilometer";
             // 
             // tbKilometrajePricePerKilometer
             // 
-            this.tbKilometrajePricePerKilometer.Location = new System.Drawing.Point(405, 441);
-            this.tbKilometrajePricePerKilometer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbKilometrajePricePerKilometer.Location = new System.Drawing.Point(354, 331);
             this.tbKilometrajePricePerKilometer.Name = "tbKilometrajePricePerKilometer";
             this.tbKilometrajePricePerKilometer.PlaceholderText = "Price Per Kilometer";
-            this.tbKilometrajePricePerKilometer.Size = new System.Drawing.Size(133, 27);
+            this.tbKilometrajePricePerKilometer.Size = new System.Drawing.Size(117, 23);
             this.tbKilometrajePricePerKilometer.TabIndex = 40;
             // 
             // lbKilometrajeFinal
             // 
             this.lbKilometrajeFinal.AutoSize = true;
-            this.lbKilometrajeFinal.Location = new System.Drawing.Point(280, 500);
+            this.lbKilometrajeFinal.Location = new System.Drawing.Point(245, 375);
             this.lbKilometrajeFinal.Name = "lbKilometrajeFinal";
-            this.lbKilometrajeFinal.Size = new System.Drawing.Size(40, 20);
+            this.lbKilometrajeFinal.Size = new System.Drawing.Size(32, 15);
             this.lbKilometrajeFinal.TabIndex = 39;
             this.lbKilometrajeFinal.Text = "Final";
             // 
             // tbKilometrajeFinal
             // 
-            this.tbKilometrajeFinal.Location = new System.Drawing.Point(358, 496);
-            this.tbKilometrajeFinal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbKilometrajeFinal.Location = new System.Drawing.Point(313, 372);
             this.tbKilometrajeFinal.Name = "tbKilometrajeFinal";
             this.tbKilometrajeFinal.PlaceholderText = "Final";
-            this.tbKilometrajeFinal.Size = new System.Drawing.Size(133, 27);
+            this.tbKilometrajeFinal.Size = new System.Drawing.Size(117, 23);
             this.tbKilometrajeFinal.TabIndex = 38;
             // 
             // lbKilometrajeDate
             // 
             this.lbKilometrajeDate.AutoSize = true;
-            this.lbKilometrajeDate.Location = new System.Drawing.Point(27, 388);
+            this.lbKilometrajeDate.Location = new System.Drawing.Point(24, 291);
             this.lbKilometrajeDate.Name = "lbKilometrajeDate";
-            this.lbKilometrajeDate.Size = new System.Drawing.Size(41, 20);
+            this.lbKilometrajeDate.Size = new System.Drawing.Size(31, 15);
             this.lbKilometrajeDate.TabIndex = 35;
             this.lbKilometrajeDate.Text = "Date";
             // 
             // tbKilometrajeDate
             // 
-            this.tbKilometrajeDate.Location = new System.Drawing.Point(75, 384);
-            this.tbKilometrajeDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbKilometrajeDate.Location = new System.Drawing.Point(66, 288);
             this.tbKilometrajeDate.Name = "tbKilometrajeDate";
             this.tbKilometrajeDate.PlaceholderText = "Fecha";
-            this.tbKilometrajeDate.Size = new System.Drawing.Size(133, 27);
+            this.tbKilometrajeDate.Size = new System.Drawing.Size(117, 23);
             this.tbKilometrajeDate.TabIndex = 34;
             // 
             // lbKilometrajeSubcategory
             // 
             this.lbKilometrajeSubcategory.AutoSize = true;
-            this.lbKilometrajeSubcategory.Location = new System.Drawing.Point(26, 441);
+            this.lbKilometrajeSubcategory.Location = new System.Drawing.Point(23, 331);
             this.lbKilometrajeSubcategory.Name = "lbKilometrajeSubcategory";
-            this.lbKilometrajeSubcategory.Size = new System.Drawing.Size(92, 20);
+            this.lbKilometrajeSubcategory.Size = new System.Drawing.Size(73, 15);
             this.lbKilometrajeSubcategory.TabIndex = 33;
             this.lbKilometrajeSubcategory.Text = "Subcategory";
             // 
             // tbKilometrajeSubcategory
             // 
-            this.tbKilometrajeSubcategory.Location = new System.Drawing.Point(117, 441);
-            this.tbKilometrajeSubcategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbKilometrajeSubcategory.Location = new System.Drawing.Point(102, 331);
             this.tbKilometrajeSubcategory.Name = "tbKilometrajeSubcategory";
             this.tbKilometrajeSubcategory.PlaceholderText = "Subcategoría";
-            this.tbKilometrajeSubcategory.Size = new System.Drawing.Size(133, 27);
+            this.tbKilometrajeSubcategory.Size = new System.Drawing.Size(117, 23);
             this.tbKilometrajeSubcategory.TabIndex = 32;
             // 
             // lbKilometrajeOrigen
             // 
             this.lbKilometrajeOrigen.AutoSize = true;
-            this.lbKilometrajeOrigen.Location = new System.Drawing.Point(280, 289);
+            this.lbKilometrajeOrigen.Location = new System.Drawing.Point(245, 217);
             this.lbKilometrajeOrigen.Name = "lbKilometrajeOrigen";
-            this.lbKilometrajeOrigen.Size = new System.Drawing.Size(54, 20);
+            this.lbKilometrajeOrigen.Size = new System.Drawing.Size(43, 15);
             this.lbKilometrajeOrigen.TabIndex = 31;
             this.lbKilometrajeOrigen.Text = "Origen";
             // 
             // tbKilometrajeOrigen
             // 
-            this.tbKilometrajeOrigen.Location = new System.Drawing.Point(358, 285);
-            this.tbKilometrajeOrigen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbKilometrajeOrigen.Location = new System.Drawing.Point(313, 214);
             this.tbKilometrajeOrigen.Name = "tbKilometrajeOrigen";
             this.tbKilometrajeOrigen.PlaceholderText = "Origen";
-            this.tbKilometrajeOrigen.Size = new System.Drawing.Size(133, 27);
+            this.tbKilometrajeOrigen.Size = new System.Drawing.Size(117, 23);
             this.tbKilometrajeOrigen.TabIndex = 30;
             // 
             // lbKilometrajeDestino
             // 
             this.lbKilometrajeDestino.AutoSize = true;
-            this.lbKilometrajeDestino.Location = new System.Drawing.Point(280, 348);
+            this.lbKilometrajeDestino.Location = new System.Drawing.Point(245, 261);
             this.lbKilometrajeDestino.Name = "lbKilometrajeDestino";
-            this.lbKilometrajeDestino.Size = new System.Drawing.Size(60, 20);
+            this.lbKilometrajeDestino.Size = new System.Drawing.Size(47, 15);
             this.lbKilometrajeDestino.TabIndex = 29;
             this.lbKilometrajeDestino.Text = "Destino";
             // 
             // tbKilometrajeDestino
             // 
-            this.tbKilometrajeDestino.Location = new System.Drawing.Point(358, 344);
-            this.tbKilometrajeDestino.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbKilometrajeDestino.Location = new System.Drawing.Point(313, 258);
             this.tbKilometrajeDestino.Name = "tbKilometrajeDestino";
             this.tbKilometrajeDestino.PlaceholderText = "Destino";
             this.tbKilometrajeDestino.ReadOnly = true;
-            this.tbKilometrajeDestino.Size = new System.Drawing.Size(133, 27);
+            this.tbKilometrajeDestino.Size = new System.Drawing.Size(117, 23);
             this.tbKilometrajeDestino.TabIndex = 28;
             // 
             // lbKilometrajeTitulo
             // 
             this.lbKilometrajeTitulo.AutoSize = true;
-            this.lbKilometrajeTitulo.Location = new System.Drawing.Point(26, 333);
+            this.lbKilometrajeTitulo.Location = new System.Drawing.Point(23, 250);
             this.lbKilometrajeTitulo.Name = "lbKilometrajeTitulo";
-            this.lbKilometrajeTitulo.Size = new System.Drawing.Size(47, 20);
+            this.lbKilometrajeTitulo.Size = new System.Drawing.Size(37, 15);
             this.lbKilometrajeTitulo.TabIndex = 27;
             this.lbKilometrajeTitulo.Text = "Título";
             // 
             // tbKilometrajeTitulo
             // 
-            this.tbKilometrajeTitulo.Location = new System.Drawing.Point(75, 333);
-            this.tbKilometrajeTitulo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbKilometrajeTitulo.Location = new System.Drawing.Point(66, 250);
             this.tbKilometrajeTitulo.Name = "tbKilometrajeTitulo";
             this.tbKilometrajeTitulo.PlaceholderText = "Títutlo";
-            this.tbKilometrajeTitulo.Size = new System.Drawing.Size(133, 27);
+            this.tbKilometrajeTitulo.Size = new System.Drawing.Size(117, 23);
             this.tbKilometrajeTitulo.TabIndex = 26;
             // 
             // lbKilometrajeEmail
             // 
             this.lbKilometrajeEmail.AutoSize = true;
-            this.lbKilometrajeEmail.Location = new System.Drawing.Point(27, 289);
+            this.lbKilometrajeEmail.Location = new System.Drawing.Point(24, 217);
             this.lbKilometrajeEmail.Name = "lbKilometrajeEmail";
-            this.lbKilometrajeEmail.Size = new System.Drawing.Size(46, 20);
+            this.lbKilometrajeEmail.Size = new System.Drawing.Size(36, 15);
             this.lbKilometrajeEmail.TabIndex = 25;
             this.lbKilometrajeEmail.Text = "Email";
             // 
             // tbKilometrajeEmail
             // 
-            this.tbKilometrajeEmail.Location = new System.Drawing.Point(75, 285);
-            this.tbKilometrajeEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbKilometrajeEmail.Location = new System.Drawing.Point(66, 214);
             this.tbKilometrajeEmail.Name = "tbKilometrajeEmail";
             this.tbKilometrajeEmail.PlaceholderText = "Email";
-            this.tbKilometrajeEmail.Size = new System.Drawing.Size(133, 27);
+            this.tbKilometrajeEmail.Size = new System.Drawing.Size(117, 23);
             this.tbKilometrajeEmail.TabIndex = 24;
             // 
             // lbKilometraje
             // 
             this.lbKilometraje.AutoSize = true;
-            this.lbKilometraje.Location = new System.Drawing.Point(3, 11);
+            this.lbKilometraje.Location = new System.Drawing.Point(3, 8);
             this.lbKilometraje.Name = "lbKilometraje";
-            this.lbKilometraje.Size = new System.Drawing.Size(86, 20);
+            this.lbKilometraje.Size = new System.Drawing.Size(67, 15);
             this.lbKilometraje.TabIndex = 5;
             this.lbKilometraje.Text = "Kilometraje";
             // 
@@ -1141,11 +1120,12 @@
             this.pricePerKilometer,
             this.Final,
             this.dataGridViewComboBoxColumn1});
-            this.dgvKilometraje.Location = new System.Drawing.Point(3, 41);
+            this.dgvKilometraje.Location = new System.Drawing.Point(3, 31);
+            this.dgvKilometraje.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvKilometraje.Name = "dgvKilometraje";
             this.dgvKilometraje.RowHeadersWidth = 51;
             this.dgvKilometraje.RowTemplate.Height = 29;
-            this.dgvKilometraje.Size = new System.Drawing.Size(1313, 229);
+            this.dgvKilometraje.Size = new System.Drawing.Size(1149, 172);
             this.dgvKilometraje.TabIndex = 6;
             this.dgvKilometraje.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKilometraje_CellClick);
             this.dgvKilometraje.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKilometraje_CellContentClick);
@@ -1228,114 +1208,108 @@
             // lbDietasObservations
             // 
             this.lbDietasObservations.AutoSize = true;
-            this.lbDietasObservations.Location = new System.Drawing.Point(0, 319);
+            this.lbDietasObservations.Location = new System.Drawing.Point(-1, 310);
             this.lbDietasObservations.Name = "lbDietasObservations";
-            this.lbDietasObservations.Size = new System.Drawing.Size(105, 20);
+            this.lbDietasObservations.Size = new System.Drawing.Size(84, 15);
             this.lbDietasObservations.TabIndex = 23;
             this.lbDietasObservations.Text = "Observaciones";
             // 
             // tbDietasObservations
             // 
-            this.tbDietasObservations.Location = new System.Drawing.Point(95, 319);
-            this.tbDietasObservations.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbDietasObservations.Location = new System.Drawing.Point(82, 310);
             this.tbDietasObservations.Multiline = true;
             this.tbDietasObservations.Name = "tbDietasObservations";
-            this.tbDietasObservations.Size = new System.Drawing.Size(159, 103);
+            this.tbDietasObservations.Size = new System.Drawing.Size(140, 78);
             this.tbDietasObservations.TabIndex = 22;
             // 
             // lbDietasDate
             // 
             this.lbDietasDate.AutoSize = true;
-            this.lbDietasDate.Location = new System.Drawing.Point(280, 213);
+            this.lbDietasDate.Location = new System.Drawing.Point(244, 231);
             this.lbDietasDate.Name = "lbDietasDate";
-            this.lbDietasDate.Size = new System.Drawing.Size(41, 20);
+            this.lbDietasDate.Size = new System.Drawing.Size(31, 15);
             this.lbDietasDate.TabIndex = 21;
             this.lbDietasDate.Text = "Date";
             // 
             // tbDietasDate
             // 
-            this.tbDietasDate.Location = new System.Drawing.Point(349, 205);
-            this.tbDietasDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbDietasDate.Location = new System.Drawing.Point(304, 225);
             this.tbDietasDate.Name = "tbDietasDate";
-            this.tbDietasDate.Size = new System.Drawing.Size(133, 27);
+            this.tbDietasDate.Size = new System.Drawing.Size(117, 23);
             this.tbDietasDate.TabIndex = 20;
             // 
             // lbDietasStartHour
             // 
             this.lbDietasStartHour.AutoSize = true;
-            this.lbDietasStartHour.Location = new System.Drawing.Point(291, 264);
+            this.lbDietasStartHour.Location = new System.Drawing.Point(254, 269);
             this.lbDietasStartHour.Name = "lbDietasStartHour";
-            this.lbDietasStartHour.Size = new System.Drawing.Size(77, 20);
+            this.lbDietasStartHour.Size = new System.Drawing.Size(61, 15);
             this.lbDietasStartHour.TabIndex = 19;
             this.lbDietasStartHour.Text = "Start Hour";
             // 
             // tbDietasStartHour
             // 
-            this.tbDietasStartHour.Location = new System.Drawing.Point(369, 260);
-            this.tbDietasStartHour.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbDietasStartHour.Location = new System.Drawing.Point(322, 266);
             this.tbDietasStartHour.Name = "tbDietasStartHour";
-            this.tbDietasStartHour.Size = new System.Drawing.Size(133, 27);
+            this.tbDietasStartHour.Size = new System.Drawing.Size(117, 23);
             this.tbDietasStartHour.TabIndex = 18;
             // 
             // lbDietasEndHour
             // 
             this.lbDietasEndHour.AutoSize = true;
-            this.lbDietasEndHour.Location = new System.Drawing.Point(295, 333);
+            this.lbDietasEndHour.Location = new System.Drawing.Point(257, 321);
             this.lbDietasEndHour.Name = "lbDietasEndHour";
-            this.lbDietasEndHour.Size = new System.Drawing.Size(71, 20);
+            this.lbDietasEndHour.Size = new System.Drawing.Size(57, 15);
             this.lbDietasEndHour.TabIndex = 17;
             this.lbDietasEndHour.Text = "End Hour";
             // 
             // tbDietasEndHour
             // 
-            this.tbDietasEndHour.Location = new System.Drawing.Point(373, 329);
-            this.tbDietasEndHour.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbDietasEndHour.Location = new System.Drawing.Point(325, 318);
             this.tbDietasEndHour.Name = "tbDietasEndHour";
-            this.tbDietasEndHour.Size = new System.Drawing.Size(133, 27);
+            this.tbDietasEndHour.Size = new System.Drawing.Size(117, 23);
             this.tbDietasEndHour.TabIndex = 16;
             // 
             // lbDietasState
             // 
             this.lbDietasState.AutoSize = true;
-            this.lbDietasState.Location = new System.Drawing.Point(295, 392);
+            this.lbDietasState.Location = new System.Drawing.Point(257, 365);
             this.lbDietasState.Name = "lbDietasState";
-            this.lbDietasState.Size = new System.Drawing.Size(43, 20);
+            this.lbDietasState.Size = new System.Drawing.Size(33, 15);
             this.lbDietasState.TabIndex = 15;
             this.lbDietasState.Text = "State";
             // 
             // tbDietasState
             // 
-            this.tbDietasState.Location = new System.Drawing.Point(373, 388);
-            this.tbDietasState.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbDietasState.Location = new System.Drawing.Point(325, 362);
             this.tbDietasState.Name = "tbDietasState";
             this.tbDietasState.PlaceholderText = "State";
             this.tbDietasState.ReadOnly = true;
-            this.tbDietasState.Size = new System.Drawing.Size(133, 27);
+            this.tbDietasState.Size = new System.Drawing.Size(117, 23);
             this.tbDietasState.TabIndex = 14;
             // 
             // lbDietasTitle
             // 
             this.lbDietasTitle.AutoSize = true;
-            this.lbDietasTitle.Location = new System.Drawing.Point(3, 264);
+            this.lbDietasTitle.Location = new System.Drawing.Point(2, 269);
             this.lbDietasTitle.Name = "lbDietasTitle";
-            this.lbDietasTitle.Size = new System.Drawing.Size(47, 20);
+            this.lbDietasTitle.Size = new System.Drawing.Size(37, 15);
             this.lbDietasTitle.TabIndex = 13;
             this.lbDietasTitle.Text = "Título";
             // 
             // tbDietasTitulo
             // 
-            this.tbDietasTitulo.Location = new System.Drawing.Point(53, 264);
-            this.tbDietasTitulo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbDietasTitulo.Location = new System.Drawing.Point(45, 269);
             this.tbDietasTitulo.Name = "tbDietasTitulo";
-            this.tbDietasTitulo.Size = new System.Drawing.Size(133, 27);
+            this.tbDietasTitulo.Size = new System.Drawing.Size(117, 23);
             this.tbDietasTitulo.TabIndex = 12;
             // 
             // lbEmailDietas
             // 
             this.lbEmailDietas.AutoSize = true;
-            this.lbEmailDietas.Location = new System.Drawing.Point(5, 220);
+            this.lbEmailDietas.Location = new System.Drawing.Point(3, 236);
             this.lbEmailDietas.Name = "lbEmailDietas";
-            this.lbEmailDietas.Size = new System.Drawing.Size(46, 20);
+            this.lbEmailDietas.Size = new System.Drawing.Size(36, 15);
             this.lbEmailDietas.TabIndex = 11;
             this.lbEmailDietas.Text = "Email";
             // 
@@ -1354,11 +1328,12 @@
             this.endHour,
             this.invoice,
             this.state});
-            this.dgvDietas.Location = new System.Drawing.Point(0, 40);
+            this.dgvDietas.Location = new System.Drawing.Point(0, 30);
+            this.dgvDietas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvDietas.Name = "dgvDietas";
             this.dgvDietas.RowHeadersWidth = 51;
             this.dgvDietas.RowTemplate.Height = 29;
-            this.dgvDietas.Size = new System.Drawing.Size(1217, 153);
+            this.dgvDietas.Size = new System.Drawing.Size(1065, 181);
             this.dgvDietas.TabIndex = 3;
             this.dgvDietas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDietas_CellClick);
             this.dgvDietas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDietas_CellContentClick);
@@ -1428,19 +1403,18 @@
             // 
             // tbDietasEmail
             // 
-            this.tbDietasEmail.Location = new System.Drawing.Point(53, 216);
-            this.tbDietasEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbDietasEmail.Location = new System.Drawing.Point(45, 233);
             this.tbDietasEmail.Name = "tbDietasEmail";
             this.tbDietasEmail.PlaceholderText = "Email";
-            this.tbDietasEmail.Size = new System.Drawing.Size(133, 27);
+            this.tbDietasEmail.Size = new System.Drawing.Size(117, 23);
             this.tbDietasEmail.TabIndex = 10;
             // 
             // lbDietas
             // 
             this.lbDietas.AutoSize = true;
-            this.lbDietas.Location = new System.Drawing.Point(3, 11);
+            this.lbDietas.Location = new System.Drawing.Point(3, 8);
             this.lbDietas.Name = "lbDietas";
-            this.lbDietas.Size = new System.Drawing.Size(51, 20);
+            this.lbDietas.Size = new System.Drawing.Size(39, 15);
             this.lbDietas.TabIndex = 4;
             this.lbDietas.Text = "Dietas";
             // 
@@ -1450,19 +1424,18 @@
             this.cbGestDietas.Items.AddRange(new object[] {
             "Dietas",
             "Kilometraje"});
-            this.cbGestDietas.Location = new System.Drawing.Point(197, 27);
-            this.cbGestDietas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbGestDietas.Location = new System.Drawing.Point(172, 20);
             this.cbGestDietas.Name = "cbGestDietas";
-            this.cbGestDietas.Size = new System.Drawing.Size(138, 28);
+            this.cbGestDietas.Size = new System.Drawing.Size(121, 23);
             this.cbGestDietas.TabIndex = 7;
             this.cbGestDietas.SelectionChangeCommitted += new System.EventHandler(this.cbGestDietas_SelectionChangeCommitted);
             // 
             // lbGestDietas
             // 
             this.lbGestDietas.AutoSize = true;
-            this.lbGestDietas.Location = new System.Drawing.Point(37, 31);
+            this.lbGestDietas.Location = new System.Drawing.Point(32, 23);
             this.lbGestDietas.Name = "lbGestDietas";
-            this.lbGestDietas.Size = new System.Drawing.Size(124, 20);
+            this.lbGestDietas.Size = new System.Drawing.Size(97, 15);
             this.lbGestDietas.TabIndex = 2;
             this.lbGestDietas.Text = "Gestión de dietas";
             // 
@@ -1484,17 +1457,19 @@
             this.pUsuarios.Controls.Add(this.dgvUser);
             this.pUsuarios.Controls.Add(this.lbGestUsers);
             this.pUsuarios.Controls.Add(this.pRegister);
-            this.pUsuarios.Location = new System.Drawing.Point(261, 95);
+            this.pUsuarios.Location = new System.Drawing.Point(228, 71);
+            this.pUsuarios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pUsuarios.Name = "pUsuarios";
-            this.pUsuarios.Size = new System.Drawing.Size(1367, 743);
+            this.pUsuarios.Size = new System.Drawing.Size(1196, 557);
             this.pUsuarios.TabIndex = 2;
             this.pUsuarios.Visible = false;
             // 
             // btnEliminarUser
             // 
-            this.btnEliminarUser.Location = new System.Drawing.Point(121, 373);
+            this.btnEliminarUser.Location = new System.Drawing.Point(106, 280);
+            this.btnEliminarUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminarUser.Name = "btnEliminarUser";
-            this.btnEliminarUser.Size = new System.Drawing.Size(127, 25);
+            this.btnEliminarUser.Size = new System.Drawing.Size(111, 19);
             this.btnEliminarUser.TabIndex = 24;
             this.btnEliminarUser.Text = "Eliminar";
             this.btnEliminarUser.UseVisualStyleBackColor = true;
@@ -1502,9 +1477,10 @@
             // 
             // btnUpdateDtgUsers
             // 
-            this.btnUpdateDtgUsers.Location = new System.Drawing.Point(120, 333);
+            this.btnUpdateDtgUsers.Location = new System.Drawing.Point(105, 250);
+            this.btnUpdateDtgUsers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdateDtgUsers.Name = "btnUpdateDtgUsers";
-            this.btnUpdateDtgUsers.Size = new System.Drawing.Size(113, 27);
+            this.btnUpdateDtgUsers.Size = new System.Drawing.Size(99, 20);
             this.btnUpdateDtgUsers.TabIndex = 23;
             this.btnUpdateDtgUsers.Text = "Actualizar";
             this.btnUpdateDtgUsers.UseVisualStyleBackColor = true;
@@ -1513,80 +1489,85 @@
             // lbGestUsersPassword
             // 
             this.lbGestUsersPassword.AutoSize = true;
-            this.lbGestUsersPassword.Location = new System.Drawing.Point(26, 583);
+            this.lbGestUsersPassword.Location = new System.Drawing.Point(23, 437);
             this.lbGestUsersPassword.Name = "lbGestUsersPassword";
-            this.lbGestUsersPassword.Size = new System.Drawing.Size(70, 20);
+            this.lbGestUsersPassword.Size = new System.Drawing.Size(57, 15);
             this.lbGestUsersPassword.TabIndex = 22;
             this.lbGestUsersPassword.Text = "Password";
             // 
             // lbGestUsersEmail
             // 
             this.lbGestUsersEmail.AutoSize = true;
-            this.lbGestUsersEmail.Location = new System.Drawing.Point(31, 547);
+            this.lbGestUsersEmail.Location = new System.Drawing.Point(27, 410);
             this.lbGestUsersEmail.Name = "lbGestUsersEmail";
-            this.lbGestUsersEmail.Size = new System.Drawing.Size(46, 20);
+            this.lbGestUsersEmail.Size = new System.Drawing.Size(36, 15);
             this.lbGestUsersEmail.TabIndex = 21;
             this.lbGestUsersEmail.Text = "Email";
             // 
             // tbOcupacion
             // 
-            this.tbOcupacion.Location = new System.Drawing.Point(135, 583);
+            this.tbOcupacion.Location = new System.Drawing.Point(118, 437);
+            this.tbOcupacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbOcupacion.Name = "tbOcupacion";
-            this.tbOcupacion.Size = new System.Drawing.Size(133, 27);
+            this.tbOcupacion.Size = new System.Drawing.Size(117, 23);
             this.tbOcupacion.TabIndex = 19;
             // 
             // tbIdUser
             // 
-            this.tbIdUser.Location = new System.Drawing.Point(135, 543);
+            this.tbIdUser.Location = new System.Drawing.Point(118, 407);
+            this.tbIdUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbIdUser.Name = "tbIdUser";
-            this.tbIdUser.Size = new System.Drawing.Size(133, 27);
+            this.tbIdUser.Size = new System.Drawing.Size(117, 23);
             this.tbIdUser.TabIndex = 18;
             // 
             // tbDepartment
             // 
-            this.tbDepartment.Location = new System.Drawing.Point(168, 501);
+            this.tbDepartment.Location = new System.Drawing.Point(147, 376);
+            this.tbDepartment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbDepartment.Name = "tbDepartment";
-            this.tbDepartment.Size = new System.Drawing.Size(133, 27);
+            this.tbDepartment.Size = new System.Drawing.Size(117, 23);
             this.tbDepartment.TabIndex = 17;
             // 
             // tbPassword
             // 
-            this.tbPassword.Location = new System.Drawing.Point(189, 460);
+            this.tbPassword.Location = new System.Drawing.Point(165, 345);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(117, 27);
+            this.tbPassword.Size = new System.Drawing.Size(103, 23);
             this.tbPassword.TabIndex = 15;
             // 
             // tbEmail
             // 
-            this.tbEmail.Location = new System.Drawing.Point(151, 408);
+            this.tbEmail.Location = new System.Drawing.Point(132, 306);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(117, 27);
+            this.tbEmail.Size = new System.Drawing.Size(103, 23);
             this.tbEmail.TabIndex = 14;
             // 
             // lbPassword
             // 
             this.lbPassword.AutoSize = true;
-            this.lbPassword.Location = new System.Drawing.Point(43, 460);
+            this.lbPassword.Location = new System.Drawing.Point(38, 345);
             this.lbPassword.Name = "lbPassword";
-            this.lbPassword.Size = new System.Drawing.Size(70, 20);
+            this.lbPassword.Size = new System.Drawing.Size(57, 15);
             this.lbPassword.TabIndex = 10;
             this.lbPassword.Text = "Password";
             // 
             // lbEmail
             // 
             this.lbEmail.AutoSize = true;
-            this.lbEmail.Location = new System.Drawing.Point(50, 408);
+            this.lbEmail.Location = new System.Drawing.Point(44, 306);
             this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(46, 20);
+            this.lbEmail.Size = new System.Drawing.Size(36, 15);
             this.lbEmail.TabIndex = 9;
             this.lbEmail.Text = "Email";
             // 
             // lbDepartment
             // 
             this.lbDepartment.AutoSize = true;
-            this.lbDepartment.Location = new System.Drawing.Point(7, 501);
+            this.lbDepartment.Location = new System.Drawing.Point(6, 376);
             this.lbDepartment.Name = "lbDepartment";
-            this.lbDepartment.Size = new System.Drawing.Size(106, 20);
+            this.lbDepartment.Size = new System.Drawing.Size(83, 15);
             this.lbDepartment.TabIndex = 7;
             this.lbDepartment.Text = "Departamento";
             // 
@@ -1602,12 +1583,11 @@
             this.email,
             this.password,
             this.role});
-            this.dgvUser.Location = new System.Drawing.Point(391, 29);
-            this.dgvUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvUser.Location = new System.Drawing.Point(342, 22);
             this.dgvUser.Name = "dgvUser";
             this.dgvUser.RowHeadersWidth = 51;
             this.dgvUser.RowTemplate.Height = 25;
-            this.dgvUser.Size = new System.Drawing.Size(816, 341);
+            this.dgvUser.Size = new System.Drawing.Size(714, 256);
             this.dgvUser.TabIndex = 6;
             this.dgvUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUser_CellClick);
             this.dgvUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUser_CellContentClick);
@@ -1650,9 +1630,9 @@
             // lbGestUsers
             // 
             this.lbGestUsers.AutoSize = true;
-            this.lbGestUsers.Location = new System.Drawing.Point(50, 16);
+            this.lbGestUsers.Location = new System.Drawing.Point(44, 12);
             this.lbGestUsers.Name = "lbGestUsers";
-            this.lbGestUsers.Size = new System.Drawing.Size(138, 20);
+            this.lbGestUsers.Size = new System.Drawing.Size(110, 15);
             this.lbGestUsers.TabIndex = 1;
             this.lbGestUsers.Text = "Gestión de usuarios";
             // 
@@ -1665,10 +1645,9 @@
             this.pRegister.Controls.Add(this.tbRPassword);
             this.pRegister.Controls.Add(this.tbREmail);
             this.pRegister.Controls.Add(this.cbDepartamento);
-            this.pRegister.Location = new System.Drawing.Point(29, 65);
-            this.pRegister.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pRegister.Location = new System.Drawing.Point(25, 49);
             this.pRegister.Name = "pRegister";
-            this.pRegister.Size = new System.Drawing.Size(331, 257);
+            this.pRegister.Size = new System.Drawing.Size(290, 193);
             this.pRegister.TabIndex = 5;
             // 
             // cbRole
@@ -1679,18 +1658,16 @@
             "Técnico de selección",
             "Vendedor",
             "Contable"});
-            this.cbRole.Location = new System.Drawing.Point(160, 72);
-            this.cbRole.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbRole.Location = new System.Drawing.Point(140, 54);
             this.cbRole.Name = "cbRole";
-            this.cbRole.Size = new System.Drawing.Size(138, 28);
+            this.cbRole.Size = new System.Drawing.Size(121, 23);
             this.cbRole.TabIndex = 8;
             // 
             // btnRRegistrar
             // 
-            this.btnRRegistrar.Location = new System.Drawing.Point(21, 197);
-            this.btnRRegistrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRRegistrar.Location = new System.Drawing.Point(18, 148);
             this.btnRRegistrar.Name = "btnRRegistrar";
-            this.btnRRegistrar.Size = new System.Drawing.Size(105, 36);
+            this.btnRRegistrar.Size = new System.Drawing.Size(92, 27);
             this.btnRRegistrar.TabIndex = 7;
             this.btnRRegistrar.Text = "Registrar";
             this.btnRRegistrar.UseVisualStyleBackColor = true;
@@ -1699,19 +1676,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 19);
+            this.label1.Location = new System.Drawing.Point(18, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 20);
+            this.label1.Size = new System.Drawing.Size(49, 15);
             this.label1.TabIndex = 7;
             this.label1.Text = "Register";
             // 
             // tbRPassword
             // 
             this.tbRPassword.ForeColor = System.Drawing.Color.DimGray;
-            this.tbRPassword.Location = new System.Drawing.Point(21, 145);
-            this.tbRPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbRPassword.Location = new System.Drawing.Point(18, 109);
             this.tbRPassword.Name = "tbRPassword";
-            this.tbRPassword.Size = new System.Drawing.Size(119, 27);
+            this.tbRPassword.Size = new System.Drawing.Size(105, 23);
             this.tbRPassword.TabIndex = 3;
             this.tbRPassword.Text = "Password";
             this.tbRPassword.GotFocus += new System.EventHandler(this.tbRPassword_Focus);
@@ -1720,10 +1696,9 @@
             // tbREmail
             // 
             this.tbREmail.ForeColor = System.Drawing.Color.DimGray;
-            this.tbREmail.Location = new System.Drawing.Point(21, 73);
-            this.tbREmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbREmail.Location = new System.Drawing.Point(18, 55);
             this.tbREmail.Name = "tbREmail";
-            this.tbREmail.Size = new System.Drawing.Size(119, 27);
+            this.tbREmail.Size = new System.Drawing.Size(105, 23);
             this.tbREmail.TabIndex = 2;
             this.tbREmail.Text = "Email";
             this.tbREmail.GotFocus += new System.EventHandler(this.tbREmail_Focus);
@@ -1738,17 +1713,17 @@
             "Contabilidad",
             "RRHH",
             "Ventas"});
-            this.cbDepartamento.Location = new System.Drawing.Point(160, 141);
-            this.cbDepartamento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbDepartamento.Location = new System.Drawing.Point(140, 106);
             this.cbDepartamento.Name = "cbDepartamento";
-            this.cbDepartamento.Size = new System.Drawing.Size(138, 28);
+            this.cbDepartamento.Size = new System.Drawing.Size(121, 23);
             this.cbDepartamento.TabIndex = 16;
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(64, 843);
+            this.btnSalir.Location = new System.Drawing.Point(56, 632);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(94, 29);
+            this.btnSalir.Size = new System.Drawing.Size(82, 22);
             this.btnSalir.TabIndex = 6;
             this.btnSalir.Text = "cerrar";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -1767,9 +1742,9 @@
             // 
             // HomePage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1536, 841);
+            this.ClientSize = new System.Drawing.Size(1344, 631);
             this.Controls.Add(this.pGestionDietas);
             this.Controls.Add(this.pSolicitudDieta);
             this.Controls.Add(this.btnSalir);
@@ -1777,7 +1752,6 @@
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.pHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "HomePage";
             this.Text = "Home Page";
             this.Load += new System.EventHandler(this.HomePage_Load);
@@ -1970,5 +1944,6 @@
         private DataGridViewImageColumn invoice;
         private DataGridViewTextBoxColumn state;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
+        private Button btnGestDietasDietasUpdate;
     }
 }

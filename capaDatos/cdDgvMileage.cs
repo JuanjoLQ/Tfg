@@ -71,7 +71,7 @@ namespace capaDatos
 
         public void updateDatagrid(DataGridView dgvMileage)
         {
-            dgvMileage.Rows.Clear();
+            dgvMileage.RowCount= 0;
             for (int i = 0; i < emailUsers.Count; i++)
             {
                 DataGridViewRow newRow = new DataGridViewRow();

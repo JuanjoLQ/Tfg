@@ -374,10 +374,18 @@ namespace capaPresentacion
 
         private void btnUpdateDtgUsers_Click(object sender, EventArgs e)
         {
-            dgvUser.Rows.Clear();
-            dgvUser.Columns.Clear();
+            //dgvUser.Rows.Clear();
+            //dgvUser.Columns.Clear();
+            dgvUser.Update();
             dgvUser.Refresh();
             cnUser.dgvUsers(dgvUser);
+        }
+
+        private void btnGestDietasDietasUpdate_Click(object sender, EventArgs e)
+        {
+            dgvDietas.Update();
+            dgvDietas.Refresh();
+            cnDgvAllowance.dgvAllowance(dgvDietas);
         }
 
         private void btnEliminarUser_Click(object sender, EventArgs e)
@@ -426,8 +434,7 @@ namespace capaPresentacion
                     
                     if(dialog == DialogResult.Yes)
                     {
-                        fileName = ofdUpload.FileName;
-                        
+                        fileName = ofdUpload.FileName;                        
                     }
                     else
                     {
@@ -439,7 +446,6 @@ namespace capaPresentacion
 
         private void btnSolDieta_Click(object sender, EventArgs e)
         {
-            
 
             if (!tbSolTitle.Equals("") && !tbSolObservations.Equals("") && !dtpSolDietasStartTime.Equals("") 
                 && !mtbStartHour.Equals("") && !mtbEndHour.Equals("") && !fileName.Equals(""))

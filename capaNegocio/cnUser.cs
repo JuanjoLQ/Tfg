@@ -68,9 +68,11 @@ namespace capaNegocio
 
         public void dgvUsers(DataGridView dgvUser)
         {
+            //cdDgvUser.resetData();
             cdDgvUser.GetData();
             cdDgvUser.updateDatagrid(dgvUser);
         }
+
         public bool delUser(int idUser)
         {
             return cdUser.deteteUser(idUser);

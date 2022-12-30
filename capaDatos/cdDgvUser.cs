@@ -24,11 +24,21 @@ namespace capaDatos
         private static ArrayList passUsers = new ArrayList();
         private static ArrayList departmentUsers = new ArrayList();
         private static ArrayList roleUsers = new ArrayList();
+        
+        public void resetData()
+        {
+            idUsers.Clear();
+            emailUsers.Clear();
+            passUsers.Clear();
+            departmentUsers.Clear();
+            roleUsers.Clear();
+        }
 
         public void GetData()
         {
             try
             {
+                resetData();
                 MySqlConnection conn = new MySqlConnection(cadenaConexion);
                 conn.Open();
                 string query = "select dept.name, u.idUser, u.email, u.password, r.nameRole " +
@@ -69,7 +79,9 @@ namespace capaDatos
 
         public void updateDatagrid(DataGridView dgvUser)
         {
-            dgvUser.Rows.Clear();
+            dgvUser.RowCount = 0;
+
+            //dgvUser.Rows.Clear();
             for (int i = 0; i < idUsers.Count; i++)
             {
                 DataGridViewRow newRow = new DataGridViewRow();
