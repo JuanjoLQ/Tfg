@@ -456,8 +456,16 @@ namespace capaPresentacion
             {
                 MessageBox.Show("Dieta no subida");
             }
-
         }
 
+        private void btnSalirHome_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void cbStateDietas_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            tbDietasDate.Text = cbStateDietas.SelectedItem.ToString();
+        }
     }
 }

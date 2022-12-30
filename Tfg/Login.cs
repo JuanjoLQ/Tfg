@@ -58,11 +58,12 @@ namespace Tfg
                 ceGlobals.email = tbEmail.Text;
                 ceGlobals.password = tbPassword.Text;
 
+                this.Hide();
+
                 HomePage homePage = new HomePage();
                 homePage.Show();
 
             }
-
         }
 
         private void Login_Load(object sender, EventArgs e)

@@ -52,6 +52,7 @@
             this.lbUser = new System.Windows.Forms.Label();
             this.lbRole = new System.Windows.Forms.Label();
             this.lbTitle = new System.Windows.Forms.Label();
+            this.btnSalirHome = new System.Windows.Forms.Button();
             this.pSolicitudDieta = new System.Windows.Forms.Panel();
             this.pSolSolicitudDietas = new System.Windows.Forms.Panel();
             this.labelURL = new System.Windows.Forms.Label();
@@ -182,6 +183,8 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.opfSeleccionarArchivo = new System.Windows.Forms.OpenFileDialog();
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
+            this.cbStateDietas = new System.Windows.Forms.ComboBox();
+            this.lbStateDietas = new System.Windows.Forms.Label();
             this.sidebar.SuspendLayout();
             this.pHome.SuspendLayout();
             this.containerModulos.SuspendLayout();
@@ -433,6 +436,7 @@
             this.pHeader.Controls.Add(this.lbUser);
             this.pHeader.Controls.Add(this.lbRole);
             this.pHeader.Controls.Add(this.lbTitle);
+            this.pHeader.Controls.Add(this.btnSalirHome);
             this.pHeader.Controls.Add(this.pMenu);
             this.pHeader.Location = new System.Drawing.Point(0, 0);
             this.pHeader.Margin = new System.Windows.Forms.Padding(0);
@@ -468,6 +472,16 @@
             this.lbTitle.Size = new System.Drawing.Size(146, 31);
             this.lbTitle.TabIndex = 1;
             this.lbTitle.Text = "Home Page";
+            // 
+            // btnSalirHome
+            // 
+            this.btnSalirHome.Location = new System.Drawing.Point(212, 10);
+            this.btnSalirHome.Name = "btnSalirHome";
+            this.btnSalirHome.Size = new System.Drawing.Size(144, 35);
+            this.btnSalirHome.TabIndex = 4;
+            this.btnSalirHome.Text = "Salir";
+            this.btnSalirHome.UseVisualStyleBackColor = true;
+            this.btnSalirHome.Click += new System.EventHandler(this.btnSalirHome_Click);
             // 
             // pSolicitudDieta
             // 
@@ -861,6 +875,8 @@
             // 
             // pGestDietasDietas
             // 
+            this.pGestDietasDietas.Controls.Add(this.lbStateDietas);
+            this.pGestDietasDietas.Controls.Add(this.cbStateDietas);
             this.pGestDietasDietas.Controls.Add(this.btnGestDietasDietasUpdate);
             this.pGestDietasDietas.Controls.Add(this.pGestDietasKilometraje);
             this.pGestDietasDietas.Controls.Add(this.lbDietasObservations);
@@ -1740,6 +1756,28 @@
             this.mySqlCommand1.EnableCaching = false;
             this.mySqlCommand1.Transaction = null;
             // 
+            // cbStateDietas
+            // 
+            this.cbStateDietas.FormattingEnabled = true;
+            this.cbStateDietas.Items.AddRange(new object[] {
+            "Solicitado",
+            "En trámite",
+            "Aceptado"});
+            this.cbStateDietas.Location = new System.Drawing.Point(551, 230);
+            this.cbStateDietas.Name = "cbStateDietas";
+            this.cbStateDietas.Size = new System.Drawing.Size(134, 23);
+            this.cbStateDietas.TabIndex = 25;
+            this.cbStateDietas.SelectionChangeCommitted += new System.EventHandler(this.cbStateDietas_SelectionChangeCommitted);
+            // 
+            // lbStateDietas
+            // 
+            this.lbStateDietas.AutoSize = true;
+            this.lbStateDietas.Location = new System.Drawing.Point(497, 233);
+            this.lbStateDietas.Name = "lbStateDietas";
+            this.lbStateDietas.Size = new System.Drawing.Size(45, 15);
+            this.lbStateDietas.TabIndex = 26;
+            this.lbStateDietas.Text = "Estado:";
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1945,5 +1983,8 @@
         private DataGridViewTextBoxColumn state;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
         private Button btnGestDietasDietasUpdate;
+        private Button btnSalirHome;
+        private Label lbStateDietas;
+        private ComboBox cbStateDietas;
     }
 }
