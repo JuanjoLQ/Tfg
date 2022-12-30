@@ -61,15 +61,19 @@ namespace capaNegocio
             cdUser.PruebaConexion();
         }
 
-        public bool CrearUser(ceUser user, string role)
+        public bool CrearUser(ceUser user, string role, String departamento)
         {
-            return cdUser.CrearUsuario(user, role);
+            return cdUser.CrearUsuario(user, role, departamento);
         }
 
         public void dgvUsers(DataGridView dgvUser)
         {
             cdDgvUser.GetData();
             cdDgvUser.updateDatagrid(dgvUser);
+        }
+        public bool delUser(int idUser)
+        {
+            return cdUser.deteteUser(idUser);
         }
 
     }

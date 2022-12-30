@@ -8,7 +8,6 @@
         }
         public ceUser(int isAdmin, string email, string password)
         {
-
             this.Email = email;
             this.Password = password;
             this.isAdmin = isAdmin;

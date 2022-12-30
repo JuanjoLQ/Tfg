@@ -2,7 +2,9 @@
 using capaNegocio;
 using capaPresentacion;
 using Google.Protobuf.WellKnownTypes;
+using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +24,7 @@ namespace capaPresentacion
         bool sidebarSubMenu;
         int aux = 0;
         cnUser cnUser = new cnUser();
+        cnAllowance cnAllowance = new cnAllowance();
         cnDgvAllowance cnDgvAllowance = new cnDgvAllowance();
         cnDgvMileage cnDgvMileage = new cnDgvMileage();
         cnDgvUser cnDgvUser = new cnDgvUser();
@@ -34,6 +37,7 @@ namespace capaPresentacion
 
         private void HomePage_Load(object sender, EventArgs e)
         {
+
             pSolicitudDieta.Visible = false;
             pUsuarios.Visible = false;
             pGestionDietas.Visible = false;
@@ -63,7 +67,7 @@ namespace capaPresentacion
                 aux++;
             }
 
-            containerModulos.MaximumSize = new Size(180, 37 + 45 * aux);
+            containerModulos.MaximumSize = new Size(180, 37 + 67 * aux);
             containerModulos.Size = new Size(180, 37);
 
             cnUser.dgvUsers(dgvUser);
@@ -71,9 +75,17 @@ namespace capaPresentacion
             cnDgvAllowance.dgvAllowance(dgvDietas);
             cnDgvMileage.dgvUsers(dgvKilometraje);
 
-            dtpTimeDietas.Format = DateTimePickerFormat.Time;
-            dtpTimeDietas.ShowUpDown = true;
 
+
+            pSolSolicitudDietas.Visible = false;
+            pSolKilometraje.Visible = false;
+            /*
+            dtpSolDietasDate.Format = DateTimePickerFormat.Time;
+            dtpSolDietasDate.ShowUpDown = true;
+            
+
+            mtbStartTime.Mask = "00:00";
+            */
         }
 
         // Define min and max size of sizebar
@@ -150,19 +162,20 @@ namespace capaPresentacion
 
         private void btnRRegistrar_Click(object sender, EventArgs e)
         {
-            string role;
+            string role, departamento;
             ceUser user = new ceUser(0, tbREmail.Text, tbRPassword.Text);
 
             Debug.WriteLine(tbREmail.Text);
             Debug.WriteLine(tbRPassword.Text);
             Debug.WriteLine(cbRole.SelectedItem.ToString());
             role = cbRole.SelectedItem.ToString();
+            departamento = cbDepartamento.SelectedItem.ToString();
 
             if (cnUser.ValidarDatos(user) == false || role == null)
             {
                 return;
             }
-            if (cnUser.CrearUser(user, role))
+            if (cnUser.CrearUser(user, role, departamento))
             {
                 MessageBox.Show("Usuario creado con éxito.");
             }
@@ -197,6 +210,7 @@ namespace capaPresentacion
                 tbRPassword.ForeColor = Color.Black;
             }
         }
+
         private void tbRPassword_LostFocus(object sender, EventArgs e)
         {
             if (tbRPassword.Text == string.Empty)
@@ -237,11 +251,16 @@ namespace capaPresentacion
         {
 
         }
-
+        /*
         private void btnSolDieta_Click(object sender, EventArgs e)
         {
+            ceAllowance allowance = new ceAllowance()
 
+
+            cnAllowance.insAllowance(allowance);
+            
         }
+        */
 
         private void dgvUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -250,7 +269,6 @@ namespace capaPresentacion
             tbEmail.Text = dgvUser.CurrentRow.Cells[2].Value.ToString();
             tbPassword.Text = dgvUser.CurrentRow.Cells[3].Value.ToString();
             tbOcupacion.Text = dgvUser.CurrentRow.Cells[4].Value.ToString();
-
         }
 
         private void dgvUser_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -271,7 +289,6 @@ namespace capaPresentacion
             tbDietasStartHour.Text = dgvDietas.CurrentRow.Cells[4].Value.ToString();
             tbDietasEndHour.Text = dgvDietas.CurrentRow.Cells[5].Value.ToString();
             tbDietasState.Text = dgvDietas.CurrentRow.Cells[7].Value.ToString();
-
         }
 
         private void dgvKilometraje_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -286,7 +303,6 @@ namespace capaPresentacion
             tbKilometrajePricePerKilometer.Text = dgvKilometraje.CurrentRow.Cells[7].Value.ToString();
             tbKilometrajeFinal.Text = dgvKilometraje.CurrentRow.Cells[8].Value.ToString();
             tbKilometrajeState.Text = dgvKilometraje.CurrentRow.Cells[9].Value.ToString();
-            
         }
 
         private void cbGestDietas_SelectionChangeCommitted(object sender, EventArgs e)
@@ -305,16 +321,137 @@ namespace capaPresentacion
 
         private void cbSolicitudDietas_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (cbGestDietas.SelectedItem.Equals("Dietas"))
+            if (cbSolicitudDietas.SelectedItem.Equals("Dietas"))
             {
-                pGestDietasDietas.Visible = true;
-                pGestDietasKilometraje.Visible = false;
+                pSolSolicitudDietas.Visible = true;
+                pSolKilometraje.Visible = false;
             }
             else
             {
-                pGestDietasDietas.Visible = false;
-                pGestDietasKilometraje.Visible = true;
+                pSolSolicitudDietas.Visible = false;
+                pSolKilometraje.Visible = true;
             }
         }
+
+        private void mtbStartTime_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string[] arr = mtbStartHour.Text.Split(':');
+                int hours = int.Parse(arr[0].ToString());
+                int mins = int.Parse(arr[1].ToString());
+                DateTime time = Convert.ToDateTime(mtbStartHour.Text).AddHours(hours).AddMinutes(mins);
+                tbSolTitle.Text = time.ToString("hh:mm");
+            }
+        }
+
+        private void mtbStartTime_Click(object sender, EventArgs e)
+        {
+            mtbStartHour.SelectionStart = 0;
+        }
+
+        private void mtbStartTime_Leave(object sender, EventArgs e)
+        {
+            char[] arr = mtbStartHour.Text.ToCharArray(0, 5);
+
+            if (int.Parse(arr[0].ToString()) > 2 || int.Parse(arr[1].ToString()) > 4 || int.Parse(arr[3].ToString()) > 5)
+            {
+                mtbStartHour.Text = "";
+                MessageBox.Show("Fecha no válida");
+            }
+        }
+
+        private void mtbEndTime_Leave(object sender, EventArgs e)
+        {
+            char[] arr = mtbEndHour.Text.ToCharArray(0, 5);
+
+            if (int.Parse(arr[0].ToString()) > 2 || int.Parse(arr[1].ToString()) > 4 || int.Parse(arr[3].ToString()) > 5)
+            {
+                mtbStartHour.Text = "";
+                MessageBox.Show("Fecha no válida");
+            }
+        }
+
+        private void btnUpdateDtgUsers_Click(object sender, EventArgs e)
+        {
+            dgvUser.Rows.Clear();
+            dgvUser.Columns.Clear();
+            dgvUser.Refresh();
+            cnUser.dgvUsers(dgvUser);
+        }
+
+        private void btnEliminarUser_Click(object sender, EventArgs e)
+        {
+            string idUser = dgvUser.CurrentRow.Cells[1].Value.ToString();
+            cnUser.delUser(int.Parse(idUser));
+        }
+
+        string cadenaConexion = "Server=localhost;User=root;Password=TFG_ERP_C#;Port=3306;database=mydb;";
+
+        public void UploadFile(String file)
+        {
+            MySqlConnection conn = new MySqlConnection(cadenaConexion);
+            MySqlCommand cmd;
+            conn.Open();
+
+            FileStream fileStream = File.OpenRead(file);
+            byte[] contents = new byte[fileStream.Length];
+            fileStream.Read(contents, 0, (int)fileStream.Length);
+            fileStream.Close();
+
+            using (cmd = new MySqlCommand("insert into allowance(User_idUser, Title, Observations, State, StartTime, StartHour, EndHour, Invoice) " +
+                "values(@idUser, @title, @observations, @state, @startTime, @startHour, @endHour, @invoice)", conn))
+            {
+                cmd.Parameters.AddWithValue("@idUser", cnUser.idUser(ceGlobals.email));
+                cmd.Parameters.AddWithValue("@title", tbSolTitle.Text);
+                cmd.Parameters.AddWithValue("@observations", tbSolObservations.Text);
+                cmd.Parameters.AddWithValue("@state", "Solicitado");
+                cmd.Parameters.AddWithValue("@startTime", dtpSolDietasStartTime.Text);
+                cmd.Parameters.AddWithValue("@startHour", mtbStartHour.Text);
+                cmd.Parameters.AddWithValue("@endHour", mtbEndHour.Text);
+                cmd.Parameters.AddWithValue("@invoice", contents);
+                cmd.ExecuteNonQuery();
+            }
+            MessageBox.Show("Finished uploading files", "Juanjo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+        private string fileName = "";
+        private void btnUploadFile_Click(object sender, EventArgs e)
+        {
+            using(OpenFileDialog ofdUpload = new OpenFileDialog () { Filter = "Text Documents (*.pdf;) |*.pdf", ValidateNames = true})
+            {
+                if(ofdUpload.ShowDialog() == DialogResult.OK)
+                {
+                    DialogResult dialog = MessageBox.Show("Are you sure want to upload this files?", "Juanjo", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                    
+                    if(dialog == DialogResult.Yes)
+                    {
+                        fileName = ofdUpload.FileName;
+                        
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+            }
+        }
+
+        private void btnSolDieta_Click(object sender, EventArgs e)
+        {
+            
+
+            if (!tbSolTitle.Equals("") && !tbSolObservations.Equals("") && !dtpSolDietasStartTime.Equals("") 
+                && !mtbStartHour.Equals("") && !mtbEndHour.Equals("") && !fileName.Equals(""))
+            {
+                UploadFile(fileName);
+            }
+            else
+            {
+                MessageBox.Show("Dieta no subida");
+            }
+
+        }
+
     }
 }

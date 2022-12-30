@@ -53,7 +53,7 @@ namespace capaDatos
             }
         }
 
-        public bool CrearUsuario(ceUser user, string role) 
+        public bool CrearUsuario(ceUser user, string role, string departamento) 
         {
             Debug.WriteLine("cdUser -CrearUsuario");
 
@@ -86,11 +86,84 @@ namespace capaDatos
                 return false;
             }
 
+            if (assignRole2Department(user.Email, departamento) == false)
+            {
+                Debug.WriteLine("CrearUsuario -assignDepartment2User error");
+                return false;
+            }
+
+
+
+
             Debug.WriteLine("CrearUsuario Succesfull");
 
             return true;
         }
-        
+
+        public bool assignRole2Department(string email, string departamento)
+        {
+            Debug.WriteLine("cdUser -assignRole2User");
+
+            int idUser = obtainIdUser(email);
+            int idDepartment = obtainIdDepartment(departamento);
+
+            if (idUser == 0)
+            {
+                Debug.WriteLine("assignRole2User error: idUser");
+                return false;
+            }
+
+            if (idDepartment == 0)
+            {
+                Debug.WriteLine("assignRole2User error: idDepartment");
+                return false;
+            }
+
+            MySqlConnection conn = new MySqlConnection(cadenaConexion);
+            conn.Open();
+            string query = "INSERT INTO Department_User (User_idUser, Department_idDepartment) VALUES " +
+                "('" + idUser + "', '" + idDepartment + "');";
+            MySqlCommand command = new MySqlCommand(query, conn);
+            command.ExecuteNonQuery();
+            conn.Close();
+
+            Debug.WriteLine("assignDepartment2User Succesfull");
+
+            return true;
+        }
+
+        public int obtainIdDepartment(string Department)
+        {
+            int idDepartment = 0;
+            MySqlConnection conn = new MySqlConnection(cadenaConexion);
+            conn.Open();
+            string query = "SELECT idDepartment FROM Department where name='" + Department + "';";
+
+            MySqlCommand command = new MySqlCommand(query, conn);
+
+            var dr = command.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                dr.Read();// Get first record.
+                idDepartment = int.Parse(dr.GetString(0));// Get value of first column as string.
+                MessageBox.Show("Id del usuario: " + idDepartment);
+            }
+
+            MessageBox.Show("Registro de user creado");
+
+            dr.Close();// Close reader.
+            conn.Close();// Close connection.
+
+            if (idDepartment != 0)
+            {
+                return idDepartment;
+            }
+            return idDepartment;
+        }
+
+
+
         public bool assignRole2User(string email, string role)
         {
             Debug.WriteLine("cdUser -assignRole2User");
@@ -246,6 +319,85 @@ namespace capaDatos
                 return null;
             }
             return namesRole.ToString();
+        }
+
+
+
+
+
+
+        public bool deteteUser(int idUser)
+        {
+            try
+            {
+                if(delDepartment_User(idUser) && delRole_User(idUser))
+                {
+                    MySqlConnection conn = new MySqlConnection(cadenaConexion);
+                    conn.Open();
+                    string query = "delete from user where idUser='" + idUser + "';";
+
+                    MySqlCommand command = new MySqlCommand(query, conn);
+
+                    var dr = command.ExecuteReader();
+
+                    dr.Close();// Close reader.
+                    conn.Close();// Close connection.
+
+                    return true;
+                }
+                return false;
+            }
+            catch { 
+                return false;
+            }
+        }
+
+        public bool delDepartment_User(int idUser)
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(cadenaConexion);
+                conn.Open();
+                string query = "delete from Department_User where User_idUser='" + idUser + "';";
+
+                MySqlCommand command = new MySqlCommand(query, conn);
+
+                var dr = command.ExecuteReader();
+
+                dr.Close();// Close reader.
+                conn.Close();// Close connection.
+
+                return true;
+
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool delRole_User(int idUser)
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(cadenaConexion);
+                conn.Open();
+                string query = "delete from Role_User where User_idUser ='" + idUser + "';";
+
+                MySqlCommand command = new MySqlCommand(query, conn);
+
+                var dr = command.ExecuteReader();
+
+                dr.Close();// Close reader.
+                conn.Close();// Close connection.
+
+                return true;
+
+            }
+            catch
+            {
+                return false;
+            }
         }
 
     }
