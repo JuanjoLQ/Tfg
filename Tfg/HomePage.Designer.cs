@@ -93,7 +93,12 @@
             this.lbTitleSolDieta = new System.Windows.Forms.Label();
             this.pGestionDietas = new System.Windows.Forms.Panel();
             this.pGestDietasDietas = new System.Windows.Forms.Panel();
-            this.btnGestDietasDietasUpdate = new System.Windows.Forms.Button();
+            this.lbGestDietasIdAllowance = new System.Windows.Forms.Label();
+            this.tbGestDietasIdAllowance = new System.Windows.Forms.TextBox();
+            this.btnGestDietasUpdate = new System.Windows.Forms.Button();
+            this.lbStateDietas = new System.Windows.Forms.Label();
+            this.cbStateDietas = new System.Windows.Forms.ComboBox();
+            this.btnGestDietasDietasRefresh = new System.Windows.Forms.Button();
             this.pGestDietasKilometraje = new System.Windows.Forms.Panel();
             this.lbKilometrajeKilometers = new System.Windows.Forms.Label();
             this.tbKilometrajeKilometers = new System.Windows.Forms.TextBox();
@@ -141,6 +146,7 @@
             this.tbDietasTitulo = new System.Windows.Forms.TextBox();
             this.lbEmailDietas = new System.Windows.Forms.Label();
             this.dgvDietas = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.observations = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -167,10 +173,10 @@
             this.lbEmail = new System.Windows.Forms.Label();
             this.lbDepartment = new System.Windows.Forms.Label();
             this.dgvUser = new System.Windows.Forms.DataGridView();
-            this.dept = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dept = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbGestUsers = new System.Windows.Forms.Label();
             this.pRegister = new System.Windows.Forms.Panel();
@@ -183,8 +189,6 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.opfSeleccionarArchivo = new System.Windows.Forms.OpenFileDialog();
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
-            this.cbStateDietas = new System.Windows.Forms.ComboBox();
-            this.lbStateDietas = new System.Windows.Forms.Label();
             this.sidebar.SuspendLayout();
             this.pHome.SuspendLayout();
             this.containerModulos.SuspendLayout();
@@ -875,9 +879,12 @@
             // 
             // pGestDietasDietas
             // 
+            this.pGestDietasDietas.Controls.Add(this.lbGestDietasIdAllowance);
+            this.pGestDietasDietas.Controls.Add(this.tbGestDietasIdAllowance);
+            this.pGestDietasDietas.Controls.Add(this.btnGestDietasUpdate);
             this.pGestDietasDietas.Controls.Add(this.lbStateDietas);
             this.pGestDietasDietas.Controls.Add(this.cbStateDietas);
-            this.pGestDietasDietas.Controls.Add(this.btnGestDietasDietasUpdate);
+            this.pGestDietasDietas.Controls.Add(this.btnGestDietasDietasRefresh);
             this.pGestDietasDietas.Controls.Add(this.pGestDietasKilometraje);
             this.pGestDietasDietas.Controls.Add(this.lbDietasObservations);
             this.pGestDietasDietas.Controls.Add(this.tbDietasObservations);
@@ -900,15 +907,64 @@
             this.pGestDietasDietas.Size = new System.Drawing.Size(1134, 437);
             this.pGestDietasDietas.TabIndex = 8;
             // 
-            // btnGestDietasDietasUpdate
+            // lbGestDietasIdAllowance
             // 
-            this.btnGestDietasDietasUpdate.Location = new System.Drawing.Point(534, 273);
-            this.btnGestDietasDietasUpdate.Name = "btnGestDietasDietasUpdate";
-            this.btnGestDietasDietasUpdate.Size = new System.Drawing.Size(169, 40);
-            this.btnGestDietasDietasUpdate.TabIndex = 24;
-            this.btnGestDietasDietasUpdate.Text = "Actualizar";
-            this.btnGestDietasDietasUpdate.UseVisualStyleBackColor = true;
-            this.btnGestDietasDietasUpdate.Click += new System.EventHandler(this.btnGestDietasDietasUpdate_Click);
+            this.lbGestDietasIdAllowance.AutoSize = true;
+            this.lbGestDietasIdAllowance.Location = new System.Drawing.Point(490, 358);
+            this.lbGestDietasIdAllowance.Name = "lbGestDietasIdAllowance";
+            this.lbGestDietasIdAllowance.Size = new System.Drawing.Size(72, 15);
+            this.lbGestDietasIdAllowance.TabIndex = 29;
+            this.lbGestDietasIdAllowance.Text = "IdAllowance";
+            // 
+            // tbGestDietasIdAllowance
+            // 
+            this.tbGestDietasIdAllowance.Location = new System.Drawing.Point(573, 352);
+            this.tbGestDietasIdAllowance.Name = "tbGestDietasIdAllowance";
+            this.tbGestDietasIdAllowance.ReadOnly = true;
+            this.tbGestDietasIdAllowance.Size = new System.Drawing.Size(109, 23);
+            this.tbGestDietasIdAllowance.TabIndex = 28;
+            // 
+            // btnGestDietasUpdate
+            // 
+            this.btnGestDietasUpdate.Location = new System.Drawing.Point(525, 280);
+            this.btnGestDietasUpdate.Name = "btnGestDietasUpdate";
+            this.btnGestDietasUpdate.Size = new System.Drawing.Size(141, 46);
+            this.btnGestDietasUpdate.TabIndex = 27;
+            this.btnGestDietasUpdate.Text = "Actualizar datos";
+            this.btnGestDietasUpdate.UseVisualStyleBackColor = true;
+            this.btnGestDietasUpdate.Click += new System.EventHandler(this.btnGestDietasUpdate_Click);
+            // 
+            // lbStateDietas
+            // 
+            this.lbStateDietas.AutoSize = true;
+            this.lbStateDietas.Location = new System.Drawing.Point(497, 233);
+            this.lbStateDietas.Name = "lbStateDietas";
+            this.lbStateDietas.Size = new System.Drawing.Size(45, 15);
+            this.lbStateDietas.TabIndex = 26;
+            this.lbStateDietas.Text = "Estado:";
+            // 
+            // cbStateDietas
+            // 
+            this.cbStateDietas.FormattingEnabled = true;
+            this.cbStateDietas.Items.AddRange(new object[] {
+            "Solicitado",
+            "En trámite",
+            "Aceptado"});
+            this.cbStateDietas.Location = new System.Drawing.Point(551, 230);
+            this.cbStateDietas.Name = "cbStateDietas";
+            this.cbStateDietas.Size = new System.Drawing.Size(134, 23);
+            this.cbStateDietas.TabIndex = 25;
+            this.cbStateDietas.SelectionChangeCommitted += new System.EventHandler(this.cbStateDietas_SelectionChangeCommitted);
+            // 
+            // btnGestDietasDietasRefresh
+            // 
+            this.btnGestDietasDietasRefresh.Location = new System.Drawing.Point(702, 223);
+            this.btnGestDietasDietasRefresh.Name = "btnGestDietasDietasRefresh";
+            this.btnGestDietasDietasRefresh.Size = new System.Drawing.Size(169, 40);
+            this.btnGestDietasDietasRefresh.TabIndex = 24;
+            this.btnGestDietasDietasRefresh.Text = "Refrescar";
+            this.btnGestDietasDietasRefresh.UseVisualStyleBackColor = true;
+            this.btnGestDietasDietasRefresh.Click += new System.EventHandler(this.btnGestDietasDietasRefresh_Click);
             // 
             // pGestDietasKilometraje
             // 
@@ -1235,6 +1291,7 @@
             this.tbDietasObservations.Location = new System.Drawing.Point(82, 310);
             this.tbDietasObservations.Multiline = true;
             this.tbDietasObservations.Name = "tbDietasObservations";
+            this.tbDietasObservations.ReadOnly = true;
             this.tbDietasObservations.Size = new System.Drawing.Size(140, 78);
             this.tbDietasObservations.TabIndex = 22;
             // 
@@ -1251,6 +1308,7 @@
             // 
             this.tbDietasDate.Location = new System.Drawing.Point(304, 225);
             this.tbDietasDate.Name = "tbDietasDate";
+            this.tbDietasDate.ReadOnly = true;
             this.tbDietasDate.Size = new System.Drawing.Size(117, 23);
             this.tbDietasDate.TabIndex = 20;
             // 
@@ -1267,6 +1325,7 @@
             // 
             this.tbDietasStartHour.Location = new System.Drawing.Point(322, 266);
             this.tbDietasStartHour.Name = "tbDietasStartHour";
+            this.tbDietasStartHour.ReadOnly = true;
             this.tbDietasStartHour.Size = new System.Drawing.Size(117, 23);
             this.tbDietasStartHour.TabIndex = 18;
             // 
@@ -1283,6 +1342,7 @@
             // 
             this.tbDietasEndHour.Location = new System.Drawing.Point(325, 318);
             this.tbDietasEndHour.Name = "tbDietasEndHour";
+            this.tbDietasEndHour.ReadOnly = true;
             this.tbDietasEndHour.Size = new System.Drawing.Size(117, 23);
             this.tbDietasEndHour.TabIndex = 16;
             // 
@@ -1317,6 +1377,7 @@
             // 
             this.tbDietasTitulo.Location = new System.Drawing.Point(45, 269);
             this.tbDietasTitulo.Name = "tbDietasTitulo";
+            this.tbDietasTitulo.ReadOnly = true;
             this.tbDietasTitulo.Size = new System.Drawing.Size(117, 23);
             this.tbDietasTitulo.TabIndex = 12;
             // 
@@ -1336,6 +1397,7 @@
             this.dgvDietas.AllowUserToOrderColumns = true;
             this.dgvDietas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDietas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.observations,
@@ -1353,6 +1415,11 @@
             this.dgvDietas.TabIndex = 3;
             this.dgvDietas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDietas_CellClick);
             this.dgvDietas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDietas_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "idAllowance";
+            this.Column1.Name = "Column1";
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -1422,6 +1489,7 @@
             this.tbDietasEmail.Location = new System.Drawing.Point(45, 233);
             this.tbDietasEmail.Name = "tbDietasEmail";
             this.tbDietasEmail.PlaceholderText = "Email";
+            this.tbDietasEmail.ReadOnly = true;
             this.tbDietasEmail.Size = new System.Drawing.Size(117, 23);
             this.tbDietasEmail.TabIndex = 10;
             // 
@@ -1594,10 +1662,10 @@
             this.dgvUser.AllowUserToOrderColumns = true;
             this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dept,
             this.idUser,
             this.email,
             this.password,
+            this.dept,
             this.role});
             this.dgvUser.Location = new System.Drawing.Point(342, 22);
             this.dgvUser.Name = "dgvUser";
@@ -1607,13 +1675,6 @@
             this.dgvUser.TabIndex = 6;
             this.dgvUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUser_CellClick);
             this.dgvUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUser_CellContentClick);
-            // 
-            // dept
-            // 
-            this.dept.HeaderText = "Departamento";
-            this.dept.MinimumWidth = 6;
-            this.dept.Name = "dept";
-            this.dept.Width = 125;
             // 
             // idUser
             // 
@@ -1635,6 +1696,13 @@
             this.password.MinimumWidth = 6;
             this.password.Name = "password";
             this.password.Width = 125;
+            // 
+            // dept
+            // 
+            this.dept.HeaderText = "Departamento";
+            this.dept.MinimumWidth = 6;
+            this.dept.Name = "dept";
+            this.dept.Width = 125;
             // 
             // role
             // 
@@ -1756,28 +1824,6 @@
             this.mySqlCommand1.EnableCaching = false;
             this.mySqlCommand1.Transaction = null;
             // 
-            // cbStateDietas
-            // 
-            this.cbStateDietas.FormattingEnabled = true;
-            this.cbStateDietas.Items.AddRange(new object[] {
-            "Solicitado",
-            "En trámite",
-            "Aceptado"});
-            this.cbStateDietas.Location = new System.Drawing.Point(551, 230);
-            this.cbStateDietas.Name = "cbStateDietas";
-            this.cbStateDietas.Size = new System.Drawing.Size(134, 23);
-            this.cbStateDietas.TabIndex = 25;
-            this.cbStateDietas.SelectionChangeCommitted += new System.EventHandler(this.cbStateDietas_SelectionChangeCommitted);
-            // 
-            // lbStateDietas
-            // 
-            this.lbStateDietas.AutoSize = true;
-            this.lbStateDietas.Location = new System.Drawing.Point(497, 233);
-            this.lbStateDietas.Name = "lbStateDietas";
-            this.lbStateDietas.Size = new System.Drawing.Size(45, 15);
-            this.lbStateDietas.TabIndex = 26;
-            this.lbStateDietas.Text = "Estado:";
-            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1870,11 +1916,6 @@
         private TextBox tbSolObservations;
         private ComboBox cbRole;
         private DataGridView dgvUser;
-        private DataGridViewTextBoxColumn dept;
-        private DataGridViewTextBoxColumn idUser;
-        private DataGridViewTextBoxColumn email;
-        private DataGridViewTextBoxColumn password;
-        private DataGridViewTextBoxColumn role;
         private Label lbPassword;
         private Label lbEmail;
         private Label lbDepartment;
@@ -1973,6 +2014,18 @@
         private Label lbStartHour;
         private OpenFileDialog opfSeleccionarArchivo;
         private Label labelURL;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
+        private Button btnGestDietasDietasRefresh;
+        private Button btnSalirHome;
+        private Label lbStateDietas;
+        private ComboBox cbStateDietas;
+        private Button btnGestDietasUpdate;
+        private DataGridViewTextBoxColumn idUser;
+        private DataGridViewTextBoxColumn email;
+        private DataGridViewTextBoxColumn password;
+        private DataGridViewTextBoxColumn dept;
+        private DataGridViewTextBoxColumn role;
+        private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn observations;
@@ -1981,10 +2034,7 @@
         private DataGridViewTextBoxColumn endHour;
         private DataGridViewImageColumn invoice;
         private DataGridViewTextBoxColumn state;
-        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
-        private Button btnGestDietasDietasUpdate;
-        private Button btnSalirHome;
-        private Label lbStateDietas;
-        private ComboBox cbStateDietas;
+        private Label lbGestDietasIdAllowance;
+        private TextBox tbGestDietasIdAllowance;
     }
 }

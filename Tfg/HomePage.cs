@@ -282,13 +282,14 @@ namespace capaPresentacion
 
         private void dgvDietas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            tbDietasEmail.Text = dgvDietas.CurrentRow.Cells[0].Value.ToString();
-            tbDietasTitulo.Text = dgvDietas.CurrentRow.Cells[1].Value.ToString();
-            tbDietasObservations.Text = dgvDietas.CurrentRow.Cells[2].Value.ToString();
-            tbDietasDate.Text = dgvDietas.CurrentRow.Cells[3].Value.ToString();
-            tbDietasStartHour.Text = dgvDietas.CurrentRow.Cells[4].Value.ToString();
-            tbDietasEndHour.Text = dgvDietas.CurrentRow.Cells[5].Value.ToString();
-            tbDietasState.Text = dgvDietas.CurrentRow.Cells[7].Value.ToString();
+            tbGestDietasIdAllowance.Text = dgvDietas.CurrentRow.Cells[0].Value.ToString();
+            tbDietasEmail.Text = dgvDietas.CurrentRow.Cells[1].Value.ToString();
+            tbDietasTitulo.Text = dgvDietas.CurrentRow.Cells[2].Value.ToString();
+            tbDietasObservations.Text = dgvDietas.CurrentRow.Cells[3].Value.ToString();
+            tbDietasDate.Text = dgvDietas.CurrentRow.Cells[4].Value.ToString();
+            tbDietasStartHour.Text = dgvDietas.CurrentRow.Cells[5].Value.ToString();
+            tbDietasEndHour.Text = dgvDietas.CurrentRow.Cells[6].Value.ToString();
+            tbDietasState.Text = dgvDietas.CurrentRow.Cells[8].Value.ToString();
         }
 
         private void dgvKilometraje_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -381,7 +382,7 @@ namespace capaPresentacion
             cnUser.dgvUsers(dgvUser);
         }
 
-        private void btnGestDietasDietasUpdate_Click(object sender, EventArgs e)
+        private void btnGestDietasDietasRefresh_Click(object sender, EventArgs e)
         {
             dgvDietas.Update();
             dgvDietas.Refresh();
@@ -421,7 +422,7 @@ namespace capaPresentacion
                 cmd.ExecuteNonQuery();
             }
             MessageBox.Show("Finished uploading files", "Juanjo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            conn.Close();
         }
         private string fileName = "";
         private void btnUploadFile_Click(object sender, EventArgs e)
@@ -466,6 +467,12 @@ namespace capaPresentacion
         private void cbStateDietas_SelectionChangeCommitted(object sender, EventArgs e)
         {
             tbDietasDate.Text = cbStateDietas.SelectedItem.ToString();
+        }
+
+        private void btnGestDietasUpdate_Click(object sender, EventArgs e)
+        {
+            //ceAllowance allowance = new ceAllowance(tbGestDietasIdAllowance, tbDietasEmail, )
+            cnAllowance.updateAllowance();
         }
     }
 }

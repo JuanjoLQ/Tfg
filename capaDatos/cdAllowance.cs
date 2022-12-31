@@ -14,7 +14,6 @@ namespace capaDatos
         
         string cadenaConexion = "Server=localhost;User=root;Password=TFG_ERP_C#;Port=3306;database=mydb;";
 
-
         public bool insertAllowance(ceAllowance allowance)
         {
             MySqlConnection conn = new MySqlConnection(cadenaConexion);
@@ -28,7 +27,40 @@ namespace capaDatos
             return true;
         }
 
-        
+        //No acabado
+        public void updateAllowance(ceAllowance allowance)
+        {
+            MySqlConnection conn = new MySqlConnection(cadenaConexion);
+            MySqlCommand cmd;
+            conn.Open();
+
+            using (cmd = new MySqlCommand("update allowance set state = @state where idAllowance = @idAllowance;", conn))
+            {
+                cmd.Parameters.AddWithValue("@state", allowance.state);
+                cmd.Parameters.AddWithValue("@idAllowance", allowance.idAllowance);
+                cmd.ExecuteNonQuery();
+            }
+            MessageBox.Show("Dieta modificada", "Juanjo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            conn.Close();
+        }
+
+        //No acabado
+        public void deleteAllowance(ceAllowance allowance)
+        {
+            MySqlConnection conn = new MySqlConnection(cadenaConexion);
+            MySqlCommand cmd;
+            conn.Open();
+
+            using (cmd = new MySqlCommand("delete from allowance where idAllowance = @idAllowance;", conn))
+            {
+                cmd.Parameters.AddWithValue("@idAllowance", allowance.idAllowance);
+                cmd.ExecuteNonQuery();
+            }
+            MessageBox.Show("Dieta eliminada", "Juanjo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            conn.Close();
+        }
 
     }
 

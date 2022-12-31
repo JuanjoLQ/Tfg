@@ -41,7 +41,7 @@ namespace capaDatos
                 resetData();
                 MySqlConnection conn = new MySqlConnection(cadenaConexion);
                 conn.Open();
-                string query = "select dept.name, u.idUser, u.email, u.password, r.nameRole " +
+                string query = "select u.idUser, u.email, u.password, dept.name, r.nameRole " +
                     "from department as dept " +
                     "join department_user as dept_us on dept_us.Department_idDepartment = dept.idDepartment " +
                     "join user as u on u.idUser = dept_us.User_idUser " +
@@ -56,10 +56,10 @@ namespace capaDatos
                 {
                     while (row.Read())
                     {
-                        idUsers.Add(row["name"].ToString());
-                        emailUsers.Add(row["idUser"].ToString());
-                        passUsers.Add(row["email"].ToString());
-                        departmentUsers.Add(row["password"].ToString());
+                        idUsers.Add(row["idUser"].ToString());
+                        emailUsers.Add(row["email"].ToString());
+                        passUsers.Add(row["password"].ToString());
+                        departmentUsers.Add(row["name"].ToString());
                         roleUsers.Add(row["nameRole"].ToString());
                     }
                 }

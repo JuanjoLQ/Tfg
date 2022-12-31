@@ -14,7 +14,8 @@ namespace capaDatos
         string cadenaConexion = "Server=localhost;User=root;Password=TFG_ERP_C#;Port=3306;database=mydb;";
 
         //arraylist to getter and setter data  
-        
+
+        private static ArrayList idAllowance = new ArrayList();
         private static ArrayList emailUsers = new ArrayList();
         private static ArrayList titles = new ArrayList();
         private static ArrayList observations = new ArrayList();
@@ -43,7 +44,7 @@ namespace capaDatos
                 resetData();
                 MySqlConnection conn = new MySqlConnection(cadenaConexion);
                 conn.Open();
-                string query = "select user.email, allowance.title, allowance.observations, allowance.starttime, allowance.starthour, allowance.endhour, allowance.invoice, allowance.state " +
+                string query = "select allowance.idAllowance, user.email, allowance.title, allowance.observations, allowance.starttime, allowance.starthour, allowance.endhour, allowance.invoice, allowance.state " +
                     "from user, allowance where user.idUser = allowance.User_idUser";
 
                 MySqlCommand command = new MySqlCommand(query, conn);
@@ -54,6 +55,7 @@ namespace capaDatos
                 {
                     while (row.Read())
                     {
+                        idAllowance.Add(row["idAllowance"].ToString());
                         emailUsers.Add(row["email"].ToString());
                         titles.Add(row["title"].ToString());
                         observations.Add(row["observations"].ToString());
@@ -84,21 +86,20 @@ namespace capaDatos
             for (int i = 0; i < emailUsers.Count; i++)
             {
                 DataGridViewRow newRow = new DataGridViewRow();
-
+                
                 newRow.CreateCells(dgvAllowance);
-                newRow.Cells[0].Value = emailUsers[i];
-                newRow.Cells[1].Value = titles[i];
-                newRow.Cells[2].Value = observations[i];
-                newRow.Cells[3].Value = date[i];
-                newRow.Cells[4].Value = startHours[i];
-                newRow.Cells[5].Value = endHours[i];
-                //newRow.Cells[6].Value = invoices[i];
-                newRow.Cells[7].Value = states[i];
+                newRow.Cells[0].Value = idAllowance[i];
+                newRow.Cells[1].Value = emailUsers[i];
+                newRow.Cells[2].Value = titles[i];
+                newRow.Cells[3].Value = observations[i];
+                newRow.Cells[4].Value = date[i];
+                newRow.Cells[5].Value = startHours[i];
+                newRow.Cells[6].Value = endHours[i];
+                //newRow.Cells[7].Value = invoices[i];
+                newRow.Cells[8].Value = states[i];
                 dgvAllowance.Rows.Add(newRow);
             }
         }
-
-
 
     }
 }
