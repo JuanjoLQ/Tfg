@@ -17,14 +17,14 @@ namespace capaNegocio
             return cdAllowance.insertAllowance(allowance);
         }
 
-        public void updateAllowance(ceAllowance allowance)
+        public void updateAllowance(int idAllowance, string state)
         {
-            cdAllowance.updateAllowance(allowance);
+            cdAllowance.updateAllowance(idAllowance, state);
         }
 
-        public void deleteAllowance(ceAllowance allowance)
+        public void deleteAllowance(int idAllowance)
         {
-            cdAllowance.deleteAllowance(allowance);
+            cdAllowance.deleteAllowance(idAllowance);
         }
 
     }

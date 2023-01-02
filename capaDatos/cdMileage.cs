@@ -39,7 +39,7 @@ namespace capaDatos
             conn.Close();
         }
 
-        public void updateMileage(ceMileage mileage)
+        public void updateMileage(int idMileage, string state)
         {
             MySqlConnection conn = new MySqlConnection(cadenaConexion);
             MySqlCommand cmd;
@@ -47,8 +47,8 @@ namespace capaDatos
 
             using (cmd = new MySqlCommand("update mileage set state = @state where idMileage = @idMileage;", conn))
             {
-                cmd.Parameters.AddWithValue("@state", mileage.state);
-                cmd.Parameters.AddWithValue("@idMileage", mileage.idMileage);
+                cmd.Parameters.AddWithValue("@state", state);
+                cmd.Parameters.AddWithValue("@idMileage", idMileage);
                 cmd.ExecuteNonQuery();
             }
             MessageBox.Show("Kilometraje modificado", "Juanjo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -56,7 +56,7 @@ namespace capaDatos
             conn.Close();
         }
 
-        public void deleteMileage(ceMileage mileage)
+        public void deleteMileage(int idMileage)
         {
             MySqlConnection conn = new MySqlConnection(cadenaConexion);
             MySqlCommand cmd;
@@ -64,17 +64,13 @@ namespace capaDatos
 
             using (cmd = new MySqlCommand("delete from mileage where idMileage = @idMileage;", conn))
             {
-                cmd.Parameters.AddWithValue("@idMileage", mileage.idMileage);
+                cmd.Parameters.AddWithValue("@idMileage", idMileage);
                 cmd.ExecuteNonQuery();
             }
+
             MessageBox.Show("Kilometraje eliminado", "Juanjo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             conn.Close();
         }
-
-
-
-
-
     }
 }

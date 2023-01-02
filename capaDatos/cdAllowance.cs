@@ -28,7 +28,7 @@ namespace capaDatos
         }
 
         //No acabado
-        public void updateAllowance(ceAllowance allowance)
+        public void updateAllowance(int idAllowance, string state)
         {
             MySqlConnection conn = new MySqlConnection(cadenaConexion);
             MySqlCommand cmd;
@@ -36,8 +36,8 @@ namespace capaDatos
 
             using (cmd = new MySqlCommand("update allowance set state = @state where idAllowance = @idAllowance;", conn))
             {
-                cmd.Parameters.AddWithValue("@state", allowance.state);
-                cmd.Parameters.AddWithValue("@idAllowance", allowance.idAllowance);
+                cmd.Parameters.AddWithValue("@state", state);
+                cmd.Parameters.AddWithValue("@idAllowance", idAllowance);
                 cmd.ExecuteNonQuery();
             }
             MessageBox.Show("Dieta modificada", "Juanjo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -46,7 +46,7 @@ namespace capaDatos
         }
 
         //No acabado
-        public void deleteAllowance(ceAllowance allowance)
+        public void deleteAllowance(int idAllowance)
         {
             MySqlConnection conn = new MySqlConnection(cadenaConexion);
             MySqlCommand cmd;
@@ -54,7 +54,7 @@ namespace capaDatos
 
             using (cmd = new MySqlCommand("delete from allowance where idAllowance = @idAllowance;", conn))
             {
-                cmd.Parameters.AddWithValue("@idAllowance", allowance.idAllowance);
+                cmd.Parameters.AddWithValue("@idAllowance", idAllowance);
                 cmd.ExecuteNonQuery();
             }
             MessageBox.Show("Dieta eliminada", "Juanjo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -63,5 +63,4 @@ namespace capaDatos
         }
 
     }
-
 }

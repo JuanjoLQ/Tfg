@@ -10,7 +10,7 @@ namespace capaNegocio
     public class cnDgvMileage
     {
         cdDgvMileage cdDgvMileage = new cdDgvMileage();
-        public void dgvUsers(DataGridView dgvMileage)
+        public void dgvMileage(DataGridView dgvMileage)
         {
             cdDgvMileage.GetData();
             cdDgvMileage.updateDatagrid(dgvMileage);

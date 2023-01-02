@@ -25,6 +25,7 @@ namespace capaPresentacion
         int aux = 0;
         cnUser cnUser = new cnUser();
         cnAllowance cnAllowance = new cnAllowance();
+        cnMileage cnMileage = new cnMileage();
         cnDgvAllowance cnDgvAllowance = new cnDgvAllowance();
         cnDgvMileage cnDgvMileage = new cnDgvMileage();
         cnDgvUser cnDgvUser = new cnDgvUser();
@@ -73,7 +74,7 @@ namespace capaPresentacion
             cnUser.dgvUsers(dgvUser);
 
             cnDgvAllowance.dgvAllowance(dgvDietas);
-            cnDgvMileage.dgvUsers(dgvKilometraje);
+            cnDgvMileage.dgvMileage(dgvKilometraje);
 
 
 
@@ -294,16 +295,17 @@ namespace capaPresentacion
 
         private void dgvKilometraje_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            tbKilometrajeEmail.Text = dgvKilometraje.CurrentRow.Cells[0].Value.ToString();
-            tbKilometrajeTitulo.Text = dgvKilometraje.CurrentRow.Cells[1].Value.ToString();
-            tbKilometrajeDate.Text = dgvKilometraje.CurrentRow.Cells[2].Value.ToString();
-            tbKilometrajeSubcategory.Text = dgvKilometraje.CurrentRow.Cells[3].Value.ToString();
-            tbKilometrajeOrigen.Text = dgvKilometraje.CurrentRow.Cells[4].Value.ToString();
-            tbKilometrajeDestino.Text = dgvKilometraje.CurrentRow.Cells[5].Value.ToString();
-            tbKilometrajeKilometers.Text = dgvKilometraje.CurrentRow.Cells[6].Value.ToString();
-            tbKilometrajePricePerKilometer.Text = dgvKilometraje.CurrentRow.Cells[7].Value.ToString();
-            tbKilometrajeFinal.Text = dgvKilometraje.CurrentRow.Cells[8].Value.ToString();
-            tbKilometrajeState.Text = dgvKilometraje.CurrentRow.Cells[9].Value.ToString();
+            tbKilometrajeIdMileage.Text = dgvKilometraje.CurrentRow.Cells[0].Value.ToString();
+            tbKilometrajeEmail.Text = dgvKilometraje.CurrentRow.Cells[1].Value.ToString();
+            tbKilometrajeTitulo.Text = dgvKilometraje.CurrentRow.Cells[2].Value.ToString();
+            tbKilometrajeDate.Text = dgvKilometraje.CurrentRow.Cells[3].Value.ToString();
+            tbKilometrajeSubcategory.Text = dgvKilometraje.CurrentRow.Cells[4].Value.ToString();
+            tbKilometrajeOrigen.Text = dgvKilometraje.CurrentRow.Cells[5].Value.ToString();
+            tbKilometrajeDestino.Text = dgvKilometraje.CurrentRow.Cells[6].Value.ToString();
+            tbKilometrajeKilometers.Text = dgvKilometraje.CurrentRow.Cells[7].Value.ToString();
+            tbKilometrajePricePerKilometer.Text = dgvKilometraje.CurrentRow.Cells[8].Value.ToString();
+            tbKilometrajeFinal.Text = dgvKilometraje.CurrentRow.Cells[9].Value.ToString();
+            tbKilometrajeState.Text = dgvKilometraje.CurrentRow.Cells[10].Value.ToString();
         }
 
         private void cbGestDietas_SelectionChangeCommitted(object sender, EventArgs e)
@@ -466,13 +468,34 @@ namespace capaPresentacion
 
         private void cbStateDietas_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            tbDietasDate.Text = cbStateDietas.SelectedItem.ToString();
+            tbDietasState.Text = cbStateDietas.SelectedItem.ToString();
         }
 
         private void btnGestDietasUpdate_Click(object sender, EventArgs e)
         {
-            //ceAllowance allowance = new ceAllowance(tbGestDietasIdAllowance, tbDietasEmail, )
-            cnAllowance.updateAllowance();
+            cnAllowance.updateAllowance(int.Parse(dgvDietas.CurrentRow.Cells[0].Value.ToString()), tbDietasState.Text);
+        }
+
+        private void cbMileageState_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            tbKilometrajeState.Text = cbMileageState.SelectedItem.ToString();
+        }
+
+        private void btnUpdateStateMileage_Click(object sender, EventArgs e)
+        {
+            cnMileage.updateMileage(int.Parse(dgvKilometraje.CurrentRow.Cells[0].Value.ToString()), tbKilometrajeState.Text);
+        }
+
+        private void btnRefreshDgvMileage_Click(object sender, EventArgs e)
+        {
+            dgvKilometraje.Update();
+            dgvKilometraje.Refresh();
+            cnDgvMileage.dgvMileage(dgvKilometraje);
+        }
+
+        private void btnKilometrajeEliminar_Click(object sender, EventArgs e)
+        {
+            cnMileage.deleteMileage(int.Parse(dgvKilometraje.CurrentRow.Cells[0].Value.ToString()));
         }
     }
 }
