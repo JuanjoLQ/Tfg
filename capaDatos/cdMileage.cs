@@ -18,7 +18,7 @@ namespace capaDatos
             MySqlCommand cmd;
             conn.Open();
 
-            using (cmd = new MySqlCommand("insert into allowance (User_idUser, title, fechado, " +
+            using (cmd = new MySqlCommand("insert into mileage (User_idUser, title, fechado, " +
                 "subcategory, origen, destino, kilometers, priceperkilometer, final, state) values(@User_idUser, " +
                 "@title, @fechado, @subcategory, @origen, @destino, @kilometers, @priceperkilometer, @final, @state);", conn))
             {

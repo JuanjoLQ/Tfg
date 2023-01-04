@@ -27,7 +27,6 @@ namespace capaDatos
             return true;
         }
 
-        //No acabado
         public void updateAllowance(int idAllowance, string state)
         {
             MySqlConnection conn = new MySqlConnection(cadenaConexion);
@@ -45,7 +44,6 @@ namespace capaDatos
             conn.Close();
         }
 
-        //No acabado
         public void deleteAllowance(int idAllowance)
         {
             MySqlConnection conn = new MySqlConnection(cadenaConexion);

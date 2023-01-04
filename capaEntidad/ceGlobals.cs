@@ -11,7 +11,6 @@ namespace capaEntidad
     public static class ceGlobals
     {
         
-
         public static string lang { get; set; }
         public static string id { get; set; }
         public static string email { get; set; }
@@ -44,5 +43,6 @@ namespace capaEntidad
                 aux++;
             }
         }
+
     }
 }
