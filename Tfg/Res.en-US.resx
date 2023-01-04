@@ -117,17 +117,107 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="allowances" xml:space="preserve">
+    <value>Allowances</value>
+  </data>
+  <data name="btnRegistrar" xml:space="preserve">
+    <value>Sign Up</value>
+  </data>
+  <data name="date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="department" xml:space="preserve">
+    <value>Department</value>
+  </data>
+  <data name="destination" xml:space="preserve">
+    <value>Destination</value>
+  </data>
   <data name="Email" xml:space="preserve">
     <value>Email</value>
+  </data>
+  <data name="Email1" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="endHour" xml:space="preserve">
+    <value>End Hour</value>
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Exit</value>
   </data>
+  <data name="final" xml:space="preserve">
+    <value>Final</value>
+  </data>
   <data name="gbLogin" xml:space="preserve">
     <value>Please, Login</value>
   </data>
+  <data name="idAllowance" xml:space="preserve">
+    <value>Id Allowance</value>
+  </data>
+  <data name="idMileage" xml:space="preserve">
+    <value>Id Mileage</value>
+  </data>
+  <data name="idUser" xml:space="preserve">
+    <value>Id User</value>
+  </data>
+  <data name="invoice" xml:space="preserve">
+    <value>Invoice</value>
+  </data>
+  <data name="job" xml:space="preserve">
+    <value>Job</value>
+  </data>
+  <data name="kilometers" xml:space="preserve">
+    <value>Kilometers</value>
+  </data>
+  <data name="lbGestUsers" xml:space="preserve">
+    <value>User Management</value>
+  </data>
+  <data name="lbHomePage" xml:space="preserve">
+    <value>Home Page</value>
+  </data>
+  <data name="lbMenu" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="lbRegisterUser" xml:space="preserve">
+    <value>User Registration</value>
+  </data>
+  <data name="lbReqAllowancesOptions" xml:space="preserve">
+    <value>Choose an option: </value>
+  </data>
+  <data name="lbRole" xml:space="preserve">
+    <value>Job: </value>
+  </data>
+  <data name="lbTitleReqAllowances" xml:space="preserve">
+    <value>Allowance Claim</value>
+  </data>
+  <data name="lbUser" xml:space="preserve">
+    <value>User: </value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Login</value>
+  </data>
+  <data name="Login1" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="manageAllowances" xml:space="preserve">
+    <value>Allowance Management</value>
+  </data>
+  <data name="mileage" xml:space="preserve">
+    <value>Mileage</value>
+  </data>
+  <data name="modules" xml:space="preserve">
+    <value>Modules</value>
+  </data>
+  <data name="newState" xml:space="preserve">
+    <value>New State: </value>
+  </data>
+  <data name="newStateMileage" xml:space="preserve">
+    <value>New State of Mileage: </value>
+  </data>
+  <data name="observations" xml:space="preserve">
+    <value>Observations</value>
+  </data>
+  <data name="origin" xml:space="preserve">
+    <value>Origin</value>
   </data>
   <data name="Pass" xml:space="preserve">
     <value>Password</value>
@@ -135,8 +225,65 @@
   <data name="passwd" xml:space="preserve">
     <value>1234</value>
   </data>
+  <data name="pManAllowance" xml:space="preserve">
+    <value>Allowance Management</value>
+  </data>
+  <data name="pManUsers" xml:space="preserve">
+    <value>User Management</value>
+  </data>
+  <data name="pricePerKilometer" xml:space="preserve">
+    <value>Price per Kilometer</value>
+  </data>
+  <data name="pSettings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="pSolAllowance" xml:space="preserve">
+    <value>Allowance Management</value>
+  </data>
   <data name="Register" xml:space="preserve">
     <value>Register</value>
+  </data>
+  <data name="removeAllowance" xml:space="preserve">
+    <value>Remove Allowance</value>
+  </data>
+  <data name="removeMileage" xml:space="preserve">
+    <value>Remove Mileage</value>
+  </data>
+  <data name="removeUser" xml:space="preserve">
+    <value>Remove User</value>
+  </data>
+  <data name="requestAllowance" xml:space="preserve">
+    <value>Allowance Claim</value>
+  </data>
+  <data name="requestMileage" xml:space="preserve">
+    <value>Mileage Claim</value>
+  </data>
+  <data name="startHour" xml:space="preserve">
+    <value>Start Hour</value>
+  </data>
+  <data name="state" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="subcategory" xml:space="preserve">
+    <value>Sucategory</value>
+  </data>
+  <data name="title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="updateAllowance" xml:space="preserve">
+    <value>Update Allowance</value>
+  </data>
+  <data name="updateMileage" xml:space="preserve">
+    <value>Update Mileage</value>
+  </data>
+  <data name="updateTable" xml:space="preserve">
+    <value>Update Table</value>
+  </data>
+  <data name="UploadFile" xml:space="preserve">
+    <value>Upload File</value>
   </data>
   <data name="user" xml:space="preserve">
     <value>jose@gmail.com</value>

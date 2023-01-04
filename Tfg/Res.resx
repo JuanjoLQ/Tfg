@@ -117,17 +117,101 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="allowances" xml:space="preserve">
+    <value>Dietas</value>
+  </data>
+  <data name="btnRegistrar" xml:space="preserve">
+    <value>Registrar</value>
+  </data>
+  <data name="date" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="department" xml:space="preserve">
+    <value>Departamento</value>
+  </data>
+  <data name="destination" xml:space="preserve">
+    <value>Destino</value>
+  </data>
   <data name="Email" xml:space="preserve">
     <value>Email</value>
+  </data>
+  <data name="endHour" xml:space="preserve">
+    <value>Hora final</value>
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Salir</value>
   </data>
+  <data name="final" xml:space="preserve">
+    <value>Final</value>
+  </data>
   <data name="gbLogin" xml:space="preserve">
     <value>Por favor, inicia sesión</value>
   </data>
+  <data name="idAllowance" xml:space="preserve">
+    <value>Id de la Dieta</value>
+  </data>
+  <data name="idMileage" xml:space="preserve">
+    <value>Id del Kilometraje</value>
+  </data>
+  <data name="idUser" xml:space="preserve">
+    <value>Id del Usuario</value>
+  </data>
+  <data name="invoice" xml:space="preserve">
+    <value>Factura</value>
+  </data>
+  <data name="job" xml:space="preserve">
+    <value>Ocupación</value>
+  </data>
+  <data name="kilometers" xml:space="preserve">
+    <value>Kilómetros</value>
+  </data>
+  <data name="lbGestUsers" xml:space="preserve">
+    <value>Gestión de Usuarios</value>
+  </data>
+  <data name="lbHomePage" xml:space="preserve">
+    <value>Página Principal</value>
+  </data>
+  <data name="lbMenu" xml:space="preserve">
+    <value>Menú</value>
+  </data>
+  <data name="lbRegisterUser" xml:space="preserve">
+    <value>Registro de Usuario</value>
+  </data>
+  <data name="lbReqAllowancesOptions" xml:space="preserve">
+    <value>Elija una opción: </value>
+  </data>
+  <data name="lbRole" xml:space="preserve">
+    <value>Ocupación: </value>
+  </data>
+  <data name="lbTitleReqAllowances" xml:space="preserve">
+    <value>Solicitud de Dietas</value>
+  </data>
+  <data name="lbUser" xml:space="preserve">
+    <value>Usuario: </value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Login</value>
+  </data>
+  <data name="manageAllowances" xml:space="preserve">
+    <value>Gestión de Dietas</value>
+  </data>
+  <data name="mileage" xml:space="preserve">
+    <value>Kilometraje</value>
+  </data>
+  <data name="modules" xml:space="preserve">
+    <value>Módulos</value>
+  </data>
+  <data name="newState" xml:space="preserve">
+    <value>Nuevo estado: </value>
+  </data>
+  <data name="newStateMileage" xml:space="preserve">
+    <value>Nuevo estado del Kilometraje: </value>
+  </data>
+  <data name="observations" xml:space="preserve">
+    <value>Observaciones</value>
+  </data>
+  <data name="origin" xml:space="preserve">
+    <value>Origen</value>
   </data>
   <data name="Pass" xml:space="preserve">
     <value>Contraseña</value>
@@ -135,8 +219,65 @@
   <data name="passwd" xml:space="preserve">
     <value>1234</value>
   </data>
+  <data name="pManAllowance" xml:space="preserve">
+    <value>Gestión Dietas</value>
+  </data>
+  <data name="pManUsers" xml:space="preserve">
+    <value>Gestión Usuarios</value>
+  </data>
+  <data name="pricePerKilometer" xml:space="preserve">
+    <value>Precio por kilómetro</value>
+  </data>
+  <data name="pSettings" xml:space="preserve">
+    <value>Ajustes</value>
+  </data>
+  <data name="pSolAllowance" xml:space="preserve">
+    <value>Solicitar Dietas</value>
+  </data>
   <data name="Register" xml:space="preserve">
     <value>Registrarse</value>
+  </data>
+  <data name="removeAllowance" xml:space="preserve">
+    <value>Eliminar Dieta</value>
+  </data>
+  <data name="removeMileage" xml:space="preserve">
+    <value>Eliminar Kilometraje</value>
+  </data>
+  <data name="removeUser" xml:space="preserve">
+    <value>Eliminar Usuario</value>
+  </data>
+  <data name="requestAllowance" xml:space="preserve">
+    <value>Solicitar Dieta</value>
+  </data>
+  <data name="requestMileage" xml:space="preserve">
+    <value>Solicitar Kilometraje</value>
+  </data>
+  <data name="startHour" xml:space="preserve">
+    <value>Hora de inicio</value>
+  </data>
+  <data name="state" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="subcategory" xml:space="preserve">
+    <value>Subcategoría</value>
+  </data>
+  <data name="title" xml:space="preserve">
+    <value>Título</value>
+  </data>
+  <data name="total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="updateAllowance" xml:space="preserve">
+    <value>Actualizar Dieta</value>
+  </data>
+  <data name="updateMileage" xml:space="preserve">
+    <value>Actualizar Kilometraje</value>
+  </data>
+  <data name="updateTable" xml:space="preserve">
+    <value>Actualizar Tabla</value>
+  </data>
+  <data name="UploadFile" xml:space="preserve">
+    <value>Subir archivo</value>
   </data>
   <data name="user" xml:space="preserve">
     <value>jose@gmail.com</value>

@@ -16,6 +16,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tfg;
 
 namespace capaPresentacion
 {
@@ -76,18 +77,206 @@ namespace capaPresentacion
 
             cnUser.dgvUsers(dgvUser);
 
-            cnDgvAllowance.dgvAllowance(dgvDietas);
-            cnDgvMileage.dgvMileage(dgvKilometraje);
+            cnDgvAllowance.dgvAllowance(dgvAllowances);
+            cnDgvMileage.dgvMileage(dgvMileage);
 
             pSolSolicitudDietas.Visible = false;
             pSolKilometraje.Visible = false;
-            /*
-            dtpSolDietasDate.Format = DateTimePickerFormat.Time;
-            dtpSolDietasDate.ShowUpDown = true;
+
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(ceGlobals.lang);
+            GetLanguage(); ;
             
 
-            mtbStartTime.Mask = "00:00";
-            */
+        }
+
+        private void GetLanguage()
+        {
+            translateBars();
+            translateModules();
+        }
+
+        private void translateBars()
+        {
+            btnSalirHome.Text = Res.Exit;
+            btnSubMenu.Text = Res.modules;
+            btnGestUsers.Text = Res.pManUsers;
+            btnSolDietas.Text = Res.pSolAllowance;
+            btnGestDietas.Text = Res.pManAllowance;
+            btnSettings.Text = Res.pSettings;
+            lbTitle.Text = Res.lbHomePage;
+            lbRole.Text = Res.lbRole;
+            lbUser.Text = Res.lbUser;
+            lbMenu.Text = Res.lbMenu;
+            
+        }
+
+        private void translateModules()
+        {
+            translateUsers();
+            translateSolAllowances();
+            translateManageAllowances();
+
+        }
+
+        private void translateUsers()
+        {
+            // Labels y textboxs
+            lbGestUsers.Text = Res.lbGestUsers;
+            lbRegisterUser.Text = Res.lbRegisterUser;
+            tbREmail.PlaceholderText = Res.Email;
+            tbRPassword.PlaceholderText = Res.Pass;
+            btnRRegistrar.Text = Res.btnRegistrar;
+            btnUpdateDtgUsers.Text = Res.updateTable;
+            btnEliminarUser.Text = Res.removeUser;
+
+            tbEmail.PlaceholderText = Res.Email;
+            tbPassword.PlaceholderText = Res.Pass;
+            tbDepartment.PlaceholderText = Res.department;
+            tbIdUser.PlaceholderText = Res.idUser;
+            tbOcupacion.PlaceholderText = Res.job;
+
+            // dgvUser
+            dgvUser.Columns[0].HeaderText = Res.idUser;
+            dgvUser.Columns[1].HeaderText = Res.Email;
+            dgvUser.Columns[2].HeaderText = Res.Pass;
+            dgvUser.Columns[3].HeaderText = Res.department;
+            dgvUser.Columns[4].HeaderText = Res.job;
+
+        }
+        private void translateSolAllowances()
+        {
+            lbTitleSolDieta.Text = Res.lbTitleReqAllowances;
+            lbReqAllowancesOptions.Text = Res.lbReqAllowancesOptions;
+
+            // Allowances
+            lbReqAllowancesTitleAllowances.Text = Res.allowances;
+            lbReqAllowancesTitle.Text = Res.title;
+            lbReqAllowancesObservations.Text = Res.observations;
+            lbReqAllowancesStartHour.Text = Res.startHour;
+            lbReqAllowancesEndHour.Text = Res.endHour;
+            lbReqAllowancesDate.Text = Res.date;
+
+            tbReqAllowancesTitle.PlaceholderText = Res.title;
+            tbReqAllowancesObservations.PlaceholderText = Res.observations;
+
+            btnReqAllowancesUploadFile.Text = Res.UploadFile;
+            btnRequestAllowances.Text = Res.requestAllowance;
+
+            // Mileages
+            lbMileageTitle.Text = Res.mileage;
+            lbReqMileage.Text = Res.mileage;
+            lbTitleMileage.Text = Res.title;
+            lbReqMileageDate.Text = Res.date;
+            lbReqMileageSubcategory.Text = Res.subcategory;
+            lbReqMileageOrigin.Text = Res.origin;
+            lbReqMileageDestination.Text = Res.destination;
+            lbReqMileageTotal.Text = Res.total;
+            lbReqMileagePricePerKilometer.Text = Res.pricePerKilometer;
+
+            tbReqMileageMileage.PlaceholderText = Res.kilometers;
+            tbReqMileageTitle.PlaceholderText = Res.title;
+            tbReqMileageOrigin.PlaceholderText = Res.origin;
+            tbReqMileageDestination.PlaceholderText = Res.destination;
+            tbReqMileageTotal.PlaceholderText = Res.total;
+            tbReqMileagePricePerKilometer.PlaceholderText = Res.pricePerKilometer;
+
+            btnSolDietasSolKilometraje.Text = Res.requestMileage;
+
+        }
+
+        private void translateManageAllowances()
+        {
+            lbManAllowances.Text = Res.manageAllowances;
+            lbManAllowancesOptions.Text = Res.lbReqAllowancesOptions;
+
+            // Allowances
+            lbTitleManAllowance.Text = Res.allowances;
+
+            // dgvAllowances
+            dgvAllowances.Columns[0].HeaderText = Res.idAllowance;
+            dgvAllowances.Columns[1].HeaderText = Res.Email;
+            dgvAllowances.Columns[2].HeaderText = Res.title;
+            dgvAllowances.Columns[3].HeaderText = Res.observations;
+            dgvAllowances.Columns[4].HeaderText = Res.date;
+            dgvAllowances.Columns[5].HeaderText = Res.startHour;
+            dgvAllowances.Columns[6].HeaderText = Res.endHour;
+            dgvAllowances.Columns[7].HeaderText = Res.invoice;
+            dgvAllowances.Columns[8].HeaderText = Res.state;
+
+            // label
+            lbManAllowancesEmail.Text = Res.Email;
+            lbManAllowancesTitle.Text = Res.title;
+            lbManAllowancesObservations.Text = Res.observations;
+            lbManAllowancesDate.Text = Res.date;
+            lbManAllowancesStartHour.Text = Res.startHour;
+            lbManAllowancesEndHour.Text = Res.endHour;
+            lbManAllowancesState.Text = Res.state;
+            lbManAllowancesNewState.Text = Res.newState;
+            lbManAllowancesIdAllowance.Text = Res.idAllowance;
+
+            // textbutton
+            tbManAllowancesEmail.PlaceholderText = Res.Email;
+            tbManAllowancesTitle.PlaceholderText = Res.title;
+            tbManAllowancesObservations.PlaceholderText = Res.observations;
+            tbManAllowancesDate.PlaceholderText = Res.date;
+            tbManAllowancesStartHour.PlaceholderText = Res.startHour;
+            tbManAllowancesEndHour.PlaceholderText = Res.endHour;
+            tbManAllowancesState.PlaceholderText = Res.state;
+            tbManAllowancesIdAllowance.PlaceholderText = Res.idAllowance;
+
+            // button
+            btnManAllowancesDietasRefresh.Text = Res.updateTable;
+            btnManAllowancesUpdateData.Text = Res.updateAllowance;
+            btnManAllowancesAllowanceRemove.Text = Res.removeAllowance;
+
+            // Mileages
+            lbTitleManMileage.Text = Res.mileage;
+
+            // dgvMileage
+            dgvMileage.Columns[0].HeaderText = Res.idMileage;
+            dgvMileage.Columns[1].HeaderText = Res.Email;
+            dgvMileage.Columns[2].HeaderText = Res.title;
+            dgvMileage.Columns[3].HeaderText = Res.date;
+            dgvMileage.Columns[4].HeaderText = Res.subcategory;
+            dgvMileage.Columns[5].HeaderText = Res.origin;
+            dgvMileage.Columns[6].HeaderText = Res.destination;
+            dgvMileage.Columns[7].HeaderText = Res.kilometers;
+            dgvMileage.Columns[8].HeaderText = Res.pricePerKilometer;
+            dgvMileage.Columns[9].HeaderText = Res.final;
+            dgvMileage.Columns[10].HeaderText = Res.state;
+
+            // label
+            lbManMileageEmail.Text = Res.Email;
+            lbManMileageTitle.Text = Res.title;
+            lbManMileageDate.Text = Res.date;
+            lbManMileageSubcategory.Text = Res.subcategory;
+            lbManMileageIdMileage.Text = Res.idMileage;
+            lbManMileageOrigin.Text = Res.origin;
+            lbManMileageDestination.Text = Res.destination;
+            lbManMileageKilometers.Text = Res.kilometers;
+            lbManMileagePricePerKilometer.Text = Res.pricePerKilometer;
+            lbManMileageFinal.Text = Res.final;
+            lbManMileageState.Text = Res.state;
+            lbManMileageNewState.Text = Res.newState;
+
+            // Textbox
+            tbManMileageEmail.PlaceholderText = Res.Email;
+            tbManMileageTitle.PlaceholderText = Res.title;
+            tbManMileageDate.PlaceholderText = Res.date;
+            tbManMileageSubcategory.PlaceholderText = Res.subcategory;
+            tbManMileageIdMileage.PlaceholderText = Res.idMileage;
+            tbManMileageOrigin.PlaceholderText = Res.origin;
+            tbManMileageDestination.PlaceholderText = Res.destination;
+            tbManMileageKilometers.PlaceholderText = Res.kilometers;
+            tbManMileagePricePerKilometer.PlaceholderText = Res.pricePerKilometer;
+            tbManMileageFinal.PlaceholderText = Res.final;
+            tbManMileageState.PlaceholderText = Res.state;
+
+            // button
+            btnManMileageRefreshDgvMileage.Text = Res.updateTable;
+            btnManMileageUpdateStateMileage.Text = Res.updateMileage;
+            btnManMileageRemoveMileage.Text = Res.removeMileage;
+
         }
 
         // Define min and max size of sizebar
@@ -279,32 +468,30 @@ namespace capaPresentacion
 
         private void dgvDietas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            tbGestDietasIdAllowance.Text = dgvDietas.CurrentRow.Cells[0].Value.ToString();
-            tbDietasEmail.Text = dgvDietas.CurrentRow.Cells[1].Value.ToString();
-            tbDietasTitulo.Text = dgvDietas.CurrentRow.Cells[2].Value.ToString();
-            tbDietasObservations.Text = dgvDietas.CurrentRow.Cells[3].Value.ToString();
-            tbDietasDate.Text = dgvDietas.CurrentRow.Cells[4].Value.ToString();
-            tbDietasStartHour.Text = dgvDietas.CurrentRow.Cells[5].Value.ToString();
-            tbDietasEndHour.Text = dgvDietas.CurrentRow.Cells[6].Value.ToString();
-            tbDietasState.Text = dgvDietas.CurrentRow.Cells[8].Value.ToString();
+            tbManAllowancesIdAllowance.Text = dgvAllowances.CurrentRow.Cells[0].Value.ToString();
+            tbManAllowancesEmail.Text = dgvAllowances.CurrentRow.Cells[1].Value.ToString();
+            tbManAllowancesTitle.Text = dgvAllowances.CurrentRow.Cells[2].Value.ToString();
+            tbManAllowancesObservations.Text = dgvAllowances.CurrentRow.Cells[3].Value.ToString();
+            tbManAllowancesDate.Text = dgvAllowances.CurrentRow.Cells[4].Value.ToString();
+            tbManAllowancesStartHour.Text = dgvAllowances.CurrentRow.Cells[5].Value.ToString();
+            tbManAllowancesEndHour.Text = dgvAllowances.CurrentRow.Cells[6].Value.ToString();
+            tbManAllowancesState.Text = dgvAllowances.CurrentRow.Cells[8].Value.ToString();
 
-            mtbGestDietasStartHour.Text = dgvDietas.CurrentRow.Cells[5].Value.ToString();
-            mtbGestDietasEndHour.Text = dgvDietas.CurrentRow.Cells[6].Value.ToString();
         }
 
         private void dgvKilometraje_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            tbKilometrajeIdMileage.Text = dgvKilometraje.CurrentRow.Cells[0].Value.ToString();
-            tbKilometrajeEmail.Text = dgvKilometraje.CurrentRow.Cells[1].Value.ToString();
-            tbKilometrajeTitulo.Text = dgvKilometraje.CurrentRow.Cells[2].Value.ToString();
-            tbKilometrajeDate.Text = dgvKilometraje.CurrentRow.Cells[3].Value.ToString();
-            tbKilometrajeSubcategory.Text = dgvKilometraje.CurrentRow.Cells[4].Value.ToString();
-            tbKilometrajeOrigen.Text = dgvKilometraje.CurrentRow.Cells[5].Value.ToString();
-            tbKilometrajeDestino.Text = dgvKilometraje.CurrentRow.Cells[6].Value.ToString();
-            tbKilometrajeKilometers.Text = dgvKilometraje.CurrentRow.Cells[7].Value.ToString();
-            tbKilometrajePricePerKilometer.Text = dgvKilometraje.CurrentRow.Cells[8].Value.ToString();
-            tbKilometrajeFinal.Text = dgvKilometraje.CurrentRow.Cells[9].Value.ToString();
-            tbKilometrajeState.Text = dgvKilometraje.CurrentRow.Cells[10].Value.ToString();
+            tbManMileageIdMileage.Text = dgvMileage.CurrentRow.Cells[0].Value.ToString();
+            tbManMileageEmail.Text = dgvMileage.CurrentRow.Cells[1].Value.ToString();
+            tbManMileageTitle.Text = dgvMileage.CurrentRow.Cells[2].Value.ToString();
+            tbManMileageDate.Text = dgvMileage.CurrentRow.Cells[3].Value.ToString();
+            tbManMileageSubcategory.Text = dgvMileage.CurrentRow.Cells[4].Value.ToString();
+            tbManMileageOrigin.Text = dgvMileage.CurrentRow.Cells[5].Value.ToString();
+            tbManMileageDestination.Text = dgvMileage.CurrentRow.Cells[6].Value.ToString();
+            tbManMileageKilometers.Text = dgvMileage.CurrentRow.Cells[7].Value.ToString();
+            tbManMileagePricePerKilometer.Text = dgvMileage.CurrentRow.Cells[8].Value.ToString();
+            tbManMileageFinal.Text = dgvMileage.CurrentRow.Cells[9].Value.ToString();
+            tbManMileageState.Text = dgvMileage.CurrentRow.Cells[10].Value.ToString();
         }
 
         private void cbGestDietas_SelectionChangeCommitted(object sender, EventArgs e)
@@ -339,37 +526,37 @@ namespace capaPresentacion
         {
             if (e.KeyCode == Keys.Enter)
             {
-                string[] arr = mtbStartHour.Text.Split(':');
+                string[] arr = mtbReqAllowancesStartHour.Text.Split(':');
                 int hours = int.Parse(arr[0].ToString());
                 int mins = int.Parse(arr[1].ToString());
-                DateTime time = Convert.ToDateTime(mtbStartHour.Text).AddHours(hours).AddMinutes(mins);
-                tbSolTitle.Text = time.ToString("hh:mm");
+                DateTime time = Convert.ToDateTime(mtbReqAllowancesStartHour.Text).AddHours(hours).AddMinutes(mins);
+                tbReqAllowancesTitle.Text = time.ToString("hh:mm");
             }
         }
 
         private void mtbStartTime_Click(object sender, EventArgs e)
         {
-            mtbStartHour.SelectionStart = 0;
+            mtbReqAllowancesStartHour.SelectionStart = 0;
         }
 
         private void mtbStartTime_Leave(object sender, EventArgs e)
         {
-            char[] arr = mtbStartHour.Text.ToCharArray(0, 5);
+            char[] arr = mtbReqAllowancesStartHour.Text.ToCharArray(0, 5);
 
             if (int.Parse(arr[0].ToString()) > 2 || int.Parse(arr[1].ToString()) > 4 || int.Parse(arr[3].ToString()) > 5)
             {
-                mtbStartHour.Text = "";
+                mtbReqAllowancesStartHour.Text = "";
                 MessageBox.Show("Fecha no válida");
             }
         }
 
         private void mtbEndTime_Leave(object sender, EventArgs e)
         {
-            char[] arr = mtbEndHour.Text.ToCharArray(0, 5);
+            char[] arr = mtbReqAllowancesEndHour.Text.ToCharArray(0, 5);
 
             if (int.Parse(arr[0].ToString()) > 2 || int.Parse(arr[1].ToString()) > 4 || int.Parse(arr[3].ToString()) > 5)
             {
-                mtbStartHour.Text = "";
+                mtbReqAllowancesStartHour.Text = "";
                 MessageBox.Show("Fecha no válida");
             }
         }
@@ -388,23 +575,21 @@ namespace capaPresentacion
 
         private void btnGestDietasDietasRefresh_Click(object sender, EventArgs e)
         {
-            dgvDietas.Update();
-            dgvDietas.Refresh();
-            cnDgvAllowance.dgvAllowance(dgvDietas);
+            dgvAllowances.Update();
+            dgvAllowances.Refresh();
+            cnDgvAllowance.dgvAllowance(dgvAllowances);
             dgvUser.Update();
             dgvUser.Refresh();
             cnUser.dgvUsers(dgvUser);
-            tbDietasEmail.Text = string.Empty;
-            tbDietasTitulo.Text = string.Empty;
-            tbDietasObservations.Text = string.Empty;
-            tbDietasDate.Text = string.Empty;
-            tbDietasStartHour.Text = string.Empty;
-            tbDietasEndHour.Text = string.Empty;
-            tbDietasState.Text = string.Empty;
-            tbGestDietasIdAllowance.Text = string.Empty;
+            tbManAllowancesEmail.Text = string.Empty;
+            tbManAllowancesTitle.Text = string.Empty;
+            tbManAllowancesObservations.Text = string.Empty;
+            tbManAllowancesDate.Text = string.Empty;
+            tbManAllowancesStartHour.Text = string.Empty;
+            tbManAllowancesEndHour.Text = string.Empty;
+            tbManAllowancesState.Text = string.Empty;
+            tbManAllowancesIdAllowance.Text = string.Empty;
             cbStateDietas.Text = string.Empty;
-            mtbGestDietasStartHour.Text = string.Empty;
-            mtbGestDietasEndHour.Text = string.Empty;
         }
 
         private void btnEliminarUser_Click(object sender, EventArgs e)
@@ -435,12 +620,12 @@ namespace capaPresentacion
                 "values(@idUser, @title, @observations, @state, @startTime, @startHour, @endHour, @invoice)", conn))
             {
                 cmd.Parameters.AddWithValue("@idUser", cnUser.idUser(ceGlobals.email));
-                cmd.Parameters.AddWithValue("@title", tbSolTitle.Text);
-                cmd.Parameters.AddWithValue("@observations", tbSolObservations.Text);
+                cmd.Parameters.AddWithValue("@title", tbReqAllowancesTitle.Text);
+                cmd.Parameters.AddWithValue("@observations", tbReqAllowancesObservations.Text);
                 cmd.Parameters.AddWithValue("@state", "Solicitado");
-                cmd.Parameters.AddWithValue("@startTime", dtpSolDietasStartTime.Text);
-                cmd.Parameters.AddWithValue("@startHour", mtbStartHour.Text);
-                cmd.Parameters.AddWithValue("@endHour", mtbEndHour.Text);
+                cmd.Parameters.AddWithValue("@startTime", dtpReqAllowancesStartTime.Text);
+                cmd.Parameters.AddWithValue("@startHour", mtbReqAllowancesStartHour.Text);
+                cmd.Parameters.AddWithValue("@endHour", mtbReqAllowancesEndHour.Text);
                 cmd.Parameters.AddWithValue("@invoice", contents);
                 cmd.ExecuteNonQuery();
             }
@@ -471,8 +656,8 @@ namespace capaPresentacion
         private void btnSolDieta_Click(object sender, EventArgs e)
         {
 
-            if (!tbSolTitle.Equals("") && !tbSolObservations.Equals("") && !dtpSolDietasStartTime.Equals("") 
-                && !mtbStartHour.Equals("") && !mtbEndHour.Equals("") && !fileName.Equals(""))
+            if (!tbReqAllowancesTitle.Equals("") && !tbReqAllowancesObservations.Equals("") && !dtpReqAllowancesStartTime.Equals("") 
+                && !mtbReqAllowancesStartHour.Equals("") && !mtbReqAllowancesEndHour.Equals("") && !fileName.Equals(""))
             {
                 UploadFile(fileName);
             }
@@ -489,85 +674,85 @@ namespace capaPresentacion
 
         private void cbStateDietas_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            tbDietasState.Text = cbStateDietas.SelectedItem.ToString();
+            tbManAllowancesState.Text = cbStateDietas.SelectedItem.ToString();
         }
 
         private void btnGestDietasUpdate_Click(object sender, EventArgs e)
         {
-            cnAllowance.updateAllowance(int.Parse(dgvDietas.CurrentRow.Cells[0].Value.ToString()), tbDietasState.Text);
-            tbDietasEmail.Text = string.Empty;
-            tbDietasTitulo.Text = string.Empty;
-            tbDietasObservations.Text = string.Empty;
-            tbDietasDate.Text = string.Empty;
-            tbDietasStartHour.Text = string.Empty;
-            tbDietasEndHour.Text = string.Empty;
-            tbDietasState.Text = string.Empty;
-            tbGestDietasIdAllowance.Text = string.Empty;
+            cnAllowance.updateAllowance(int.Parse(dgvAllowances.CurrentRow.Cells[0].Value.ToString()), tbManAllowancesState.Text);
+            tbManAllowancesEmail.Text = string.Empty;
+            tbManAllowancesTitle.Text = string.Empty;
+            tbManAllowancesObservations.Text = string.Empty;
+            tbManAllowancesDate.Text = string.Empty;
+            tbManAllowancesStartHour.Text = string.Empty;
+            tbManAllowancesEndHour.Text = string.Empty;
+            tbManAllowancesState.Text = string.Empty;
+            tbManAllowancesIdAllowance.Text = string.Empty;
             cbStateDietas.Text = string.Empty;
         }
 
         private void cbMileageState_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            tbKilometrajeState.Text = cbMileageState.SelectedItem.ToString();
+            tbManMileageState.Text = cbManMileageNewState.SelectedItem.ToString();
         }
 
         private void btnUpdateStateMileage_Click(object sender, EventArgs e)
         {
-            cnMileage.updateMileage(int.Parse(dgvKilometraje.CurrentRow.Cells[0].Value.ToString()), tbKilometrajeState.Text);
+            cnMileage.updateMileage(int.Parse(dgvMileage.CurrentRow.Cells[0].Value.ToString()), tbManMileageState.Text);
         }
 
         private void btnRefreshDgvMileage_Click(object sender, EventArgs e)
         {
-            dgvKilometraje.Update();
-            dgvKilometraje.Refresh();
-            cnDgvMileage.dgvMileage(dgvKilometraje);
+            dgvMileage.Update();
+            dgvMileage.Refresh();
+            cnDgvMileage.dgvMileage(dgvMileage);
 
-            tbKilometrajeEmail.Text = string.Empty;
-            tbKilometrajeTitulo.Text = string.Empty;
-            tbKilometrajeDate.Text = string.Empty;
-            tbKilometrajeSubcategory.Text = string.Empty;
-            tbKilometrajeIdMileage.Text = string.Empty;
-            tbKilometrajeOrigen.Text = string.Empty;
-            tbKilometrajeDestino.Text = string.Empty;
-            tbKilometrajeKilometers.Text = string.Empty;
-            tbKilometrajePricePerKilometer.Text = string.Empty;
-            tbKilometrajeFinal.Text = string.Empty;
-            tbKilometrajeState.Text = string.Empty;
-            cbMileageState.Text = string.Empty;
+            tbManMileageEmail.Text = string.Empty;
+            tbManMileageTitle.Text = string.Empty;
+            tbManMileageDate.Text = string.Empty;
+            tbManMileageSubcategory.Text = string.Empty;
+            tbManMileageIdMileage.Text = string.Empty;
+            tbManMileageOrigin.Text = string.Empty;
+            tbManMileageDestination.Text = string.Empty;
+            tbManMileageKilometers.Text = string.Empty;
+            tbManMileagePricePerKilometer.Text = string.Empty;
+            tbManMileageFinal.Text = string.Empty;
+            tbManMileageState.Text = string.Empty;
+            cbManMileageNewState.Text = string.Empty;
         }
 
         private void btnKilometrajeEliminar_Click(object sender, EventArgs e)
         {
-            cnMileage.deleteMileage(int.Parse(dgvKilometraje.CurrentRow.Cells[0].Value.ToString()));
+            cnMileage.deleteMileage(int.Parse(dgvMileage.CurrentRow.Cells[0].Value.ToString()));
 
-            tbKilometrajeEmail.Text = string.Empty;
-            tbKilometrajeTitulo.Text = string.Empty;
-            tbKilometrajeDate.Text = string.Empty;
-            tbKilometrajeSubcategory.Text = string.Empty;
-            tbKilometrajeIdMileage.Text = string.Empty;
-            tbKilometrajeOrigen.Text = string.Empty;
-            tbKilometrajeDestino.Text = string.Empty;
-            tbKilometrajeKilometers.Text = string.Empty;
-            tbKilometrajePricePerKilometer.Text = string.Empty;
-            tbKilometrajeFinal.Text = string.Empty;
-            tbKilometrajeState.Text = string.Empty;
-            cbMileageState.Text = string.Empty;
+            tbManMileageEmail.Text = string.Empty;
+            tbManMileageTitle.Text = string.Empty;
+            tbManMileageDate.Text = string.Empty;
+            tbManMileageSubcategory.Text = string.Empty;
+            tbManMileageIdMileage.Text = string.Empty;
+            tbManMileageOrigin.Text = string.Empty;
+            tbManMileageDestination.Text = string.Empty;
+            tbManMileageKilometers.Text = string.Empty;
+            tbManMileagePricePerKilometer.Text = string.Empty;
+            tbManMileageFinal.Text = string.Empty;
+            tbManMileageState.Text = string.Empty;
+            cbManMileageNewState.Text = string.Empty;
         }
 
         private void btnAllowanceRemove_Click(object sender, EventArgs e)
         {
-            cnAllowance.deleteAllowance(int.Parse(dgvDietas.CurrentRow.Cells[0].Value.ToString()));
+            cnAllowance.deleteAllowance(int.Parse(dgvAllowances.CurrentRow.Cells[0].Value.ToString()));
             dgvUser.Update();
             dgvUser.Refresh();
             cnUser.dgvUsers(dgvUser);
-            tbDietasEmail.Text = string.Empty;
-            tbDietasTitulo.Text = string.Empty;
-            tbDietasObservations.Text = string.Empty;
-            tbDietasDate.Text = string.Empty;
-            tbDietasStartHour.Text = string.Empty;
-            tbDietasEndHour.Text = string.Empty;
-            tbDietasState.Text = string.Empty;
-            tbGestDietasIdAllowance.Text = string.Empty;
+            tbManAllowancesEmail.Text = string.Empty;
+            tbManAllowancesTitle.Text = string.Empty;
+            tbManAllowancesObservations.Text = string.Empty;
+            tbManAllowancesDate.Text = string.Empty;
+            tbManAllowancesStartHour.Text = string.Empty;
+            tbManAllowancesEndHour.Text = string.Empty;
+            tbManAllowancesState.Text = string.Empty;
+            tbManAllowancesIdAllowance.Text = string.Empty;
             cbStateDietas.Text = string.Empty;
         }
 
@@ -575,36 +760,20 @@ namespace capaPresentacion
         {
             MessageBox.Show("Id user: " + ceGlobals.id);
             cnMileage.insertMileage(new ceMileage(0, int.Parse(ceGlobals.id), 
-                tbSolMileageTitle.Text, dtpSolDietasMileageDate.Text, cbMileageSubCategory.SelectedItem.ToString(), 
-                tbSolMileageOrigen.Text, tbSolMileageDestino.Text, float.Parse(tbSolMileageMileage.Text), 
-                float.Parse(tbSolMileagePrecioKilometro.Text), float.Parse(tbSolMileageTotal.Text), "Solicitado"));
-
-            /*
-            public int idMileage { get; set; }
-            public int idUser { get; set; }
-            public string title { get; set; }
-            public string fechado { get; set; }
-            public string subcategory { get; set; }
-            public string origen { get; set; }
-            public string destino { get; set; }
-            public float kilometers { get; set; }
-            public float priceperkilometer { get; set; }
-            public float final { get; set; }
-            public string state { get; set; }
-            
-            */
-
+                tbReqMileageTitle.Text, dtpReqDietasMileageDate.Text, cbReqMileageSubCategory.SelectedItem.ToString(), 
+                tbReqMileageOrigin.Text, tbReqMileageDestination.Text, float.Parse(tbReqMileageMileage.Text), 
+                float.Parse(tbReqMileagePricePerKilometer.Text), float.Parse(tbReqMileageTotal.Text), "Solicitado"));
         }
 
         private void cbMileageSubCategory_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if(cbMileageSubCategory.SelectedItem.ToString() == "Vehículo propio")
+            if(cbReqMileageSubCategory.SelectedItem.ToString() == "Vehículo propio")
             {
-                tbSolMileagePrecioKilometro.Text = "0,17";
+                tbReqMileagePricePerKilometer.Text = "0,17";
             }
             else
             {
-                tbSolMileagePrecioKilometro.Text = "0,13";
+                tbReqMileagePricePerKilometer.Text = "0,13";
             }
             tbSolMileageMileage_Leave(sender, e);
         }
@@ -620,9 +789,9 @@ namespace capaPresentacion
 
         private void tbSolMileageMileage_Leave(object sender, EventArgs e)
         {
-            if(tbSolMileageMileage.Text != string.Empty && tbSolMileagePrecioKilometro.Text != string.Empty)
+            if(tbReqMileageMileage.Text != string.Empty && tbReqMileagePricePerKilometer.Text != string.Empty)
             {
-                tbSolMileageTotal.Text = (float.Parse(tbSolMileageMileage.Text) * float.Parse(tbSolMileagePrecioKilometro.Text)).ToString("0.00€");
+                tbReqMileageTotal.Text = (float.Parse(tbReqMileageMileage.Text) * float.Parse(tbReqMileagePricePerKilometer.Text)).ToString("0.00€");
             }
         }
 
