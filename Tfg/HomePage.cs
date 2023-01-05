@@ -86,7 +86,6 @@ namespace capaPresentacion
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(ceGlobals.lang);
             GetLanguage(); ;
             
-
         }
 
         private void GetLanguage()
@@ -115,25 +114,27 @@ namespace capaPresentacion
             translateUsers();
             translateSolAllowances();
             translateManageAllowances();
-
         }
 
         private void translateUsers()
         {
-            // Labels y textboxs
+            // Labels
             lbGestUsers.Text = Res.lbGestUsers;
             lbRegisterUser.Text = Res.lbRegisterUser;
+
+            // Textboxs
             tbREmail.PlaceholderText = Res.Email;
             tbRPassword.PlaceholderText = Res.Pass;
-            btnRRegistrar.Text = Res.btnRegistrar;
-            btnUpdateDtgUsers.Text = Res.updateTable;
-            btnEliminarUser.Text = Res.removeUser;
-
             tbEmail.PlaceholderText = Res.Email;
             tbPassword.PlaceholderText = Res.Pass;
             tbDepartment.PlaceholderText = Res.department;
             tbIdUser.PlaceholderText = Res.idUser;
             tbOcupacion.PlaceholderText = Res.job;
+
+            // Buttons
+            btnRRegistrar.Text = Res.btnRegistrar;
+            btnUpdateDtgUsers.Text = Res.updateTable;
+            btnEliminarUser.Text = Res.removeUser;
 
             // dgvUser
             dgvUser.Columns[0].HeaderText = Res.idUser;
@@ -149,6 +150,7 @@ namespace capaPresentacion
             lbReqAllowancesOptions.Text = Res.lbReqAllowancesOptions;
 
             // Allowances
+            // Labels
             lbReqAllowancesTitleAllowances.Text = Res.allowances;
             lbReqAllowancesTitle.Text = Res.title;
             lbReqAllowancesObservations.Text = Res.observations;
@@ -156,13 +158,16 @@ namespace capaPresentacion
             lbReqAllowancesEndHour.Text = Res.endHour;
             lbReqAllowancesDate.Text = Res.date;
 
+            // TextBoxs
             tbReqAllowancesTitle.PlaceholderText = Res.title;
             tbReqAllowancesObservations.PlaceholderText = Res.observations;
 
+            // Buttons
             btnReqAllowancesUploadFile.Text = Res.UploadFile;
             btnRequestAllowances.Text = Res.requestAllowance;
 
             // Mileages
+            // Labels
             lbMileageTitle.Text = Res.mileage;
             lbReqMileage.Text = Res.mileage;
             lbTitleMileage.Text = Res.title;
@@ -173,6 +178,7 @@ namespace capaPresentacion
             lbReqMileageTotal.Text = Res.total;
             lbReqMileagePricePerKilometer.Text = Res.pricePerKilometer;
 
+            // Textboxs
             tbReqMileageMileage.PlaceholderText = Res.kilometers;
             tbReqMileageTitle.PlaceholderText = Res.title;
             tbReqMileageOrigin.PlaceholderText = Res.origin;
@@ -180,6 +186,7 @@ namespace capaPresentacion
             tbReqMileageTotal.PlaceholderText = Res.total;
             tbReqMileagePricePerKilometer.PlaceholderText = Res.pricePerKilometer;
 
+            // Button
             btnSolDietasSolKilometraje.Text = Res.requestMileage;
 
         }
@@ -203,7 +210,7 @@ namespace capaPresentacion
             dgvAllowances.Columns[7].HeaderText = Res.invoice;
             dgvAllowances.Columns[8].HeaderText = Res.state;
 
-            // label
+            // Labels
             lbManAllowancesEmail.Text = Res.Email;
             lbManAllowancesTitle.Text = Res.title;
             lbManAllowancesObservations.Text = Res.observations;
@@ -214,7 +221,7 @@ namespace capaPresentacion
             lbManAllowancesNewState.Text = Res.newState;
             lbManAllowancesIdAllowance.Text = Res.idAllowance;
 
-            // textbutton
+            // Textboxs
             tbManAllowancesEmail.PlaceholderText = Res.Email;
             tbManAllowancesTitle.PlaceholderText = Res.title;
             tbManAllowancesObservations.PlaceholderText = Res.observations;
@@ -224,7 +231,7 @@ namespace capaPresentacion
             tbManAllowancesState.PlaceholderText = Res.state;
             tbManAllowancesIdAllowance.PlaceholderText = Res.idAllowance;
 
-            // button
+            // Buttons
             btnManAllowancesDietasRefresh.Text = Res.updateTable;
             btnManAllowancesUpdateData.Text = Res.updateAllowance;
             btnManAllowancesAllowanceRemove.Text = Res.removeAllowance;
@@ -245,7 +252,7 @@ namespace capaPresentacion
             dgvMileage.Columns[9].HeaderText = Res.final;
             dgvMileage.Columns[10].HeaderText = Res.state;
 
-            // label
+            // Labels
             lbManMileageEmail.Text = Res.Email;
             lbManMileageTitle.Text = Res.title;
             lbManMileageDate.Text = Res.date;
@@ -259,7 +266,7 @@ namespace capaPresentacion
             lbManMileageState.Text = Res.state;
             lbManMileageNewState.Text = Res.newState;
 
-            // Textbox
+            // Textboxs
             tbManMileageEmail.PlaceholderText = Res.Email;
             tbManMileageTitle.PlaceholderText = Res.title;
             tbManMileageDate.PlaceholderText = Res.date;
@@ -272,7 +279,7 @@ namespace capaPresentacion
             tbManMileageFinal.PlaceholderText = Res.final;
             tbManMileageState.PlaceholderText = Res.state;
 
-            // button
+            // Buttons
             btnManMileageRefreshDgvMileage.Text = Res.updateTable;
             btnManMileageUpdateStateMileage.Text = Res.updateMileage;
             btnManMileageRemoveMileage.Text = Res.removeMileage;
@@ -437,17 +444,7 @@ namespace capaPresentacion
         {
 
         }
-        /*
-        private void btnSolDieta_Click(object sender, EventArgs e)
-        {
-            ceAllowance allowance = new ceAllowance()
-
-
-            cnAllowance.insAllowance(allowance);
-            
-        }
-        */
-
+        
         private void dgvUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             tbDepartment.Text = dgvUser.CurrentRow.Cells[0].Value.ToString();
@@ -476,7 +473,6 @@ namespace capaPresentacion
             tbManAllowancesStartHour.Text = dgvAllowances.CurrentRow.Cells[5].Value.ToString();
             tbManAllowancesEndHour.Text = dgvAllowances.CurrentRow.Cells[6].Value.ToString();
             tbManAllowancesState.Text = dgvAllowances.CurrentRow.Cells[8].Value.ToString();
-
         }
 
         private void dgvKilometraje_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -632,6 +628,7 @@ namespace capaPresentacion
             MessageBox.Show("Finished uploading files", "Juanjo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             conn.Close();
         }
+
         private string fileName = "";
         private void btnUploadFile_Click(object sender, EventArgs e)
         {
@@ -655,7 +652,6 @@ namespace capaPresentacion
 
         private void btnSolDieta_Click(object sender, EventArgs e)
         {
-
             if (!tbReqAllowancesTitle.Equals("") && !tbReqAllowancesObservations.Equals("") && !dtpReqAllowancesStartTime.Equals("") 
                 && !mtbReqAllowancesStartHour.Equals("") && !mtbReqAllowancesEndHour.Equals("") && !fileName.Equals(""))
             {
